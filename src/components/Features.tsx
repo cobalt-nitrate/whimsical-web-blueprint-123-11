@@ -33,48 +33,46 @@ const Features = () => {
       className="py-20 bg-dark-800 opacity-0"
     >
       <div className="container mx-auto px-6">
-        <div className="mb-12">
+        <div className="mb-4">
           <div className="inline-block px-3 py-1 rounded-full bg-dark-700 text-teal-500 text-xs font-medium mb-4">
-            Cutting-Edge AI Solutions
+            We can help you with
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Deploying Multimodal Intelligence On-Premise - Your Data Stays Yours
+            Deploying Multimodal Intelligence On-Premise - <span className="text-[#F2FCE2]">Your Data Stays Yours</span>
           </h2>
+          <p className="text-gray-400 mb-8 max-w-4xl">
+            Enterprise-grade AI micro-services with built in privacy & Security (SOC2 Type 2 compliance), deployable anywhere - On Premises, Cloud, Edge, Devices, hybrid, Data Centers and more..
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <FeatureCard
             title="State-Of-The-Art Foundation Models"
-            description="Deploy our advanced models on your infrastructure with full control over data privacy and compliance requirements."
+            description="Powerful yet light weight self learning models - with Advanced reasoning, multimodal intelligence and minimal hallucinations."
             delay="100"
+            ctaText="View Our Models"
           />
           
           <FeatureCard
             title="Production-Grade Training & Deployment"
-            description="Enterprise-grade infrastructure for training and deploying large language models with reliability in mind."
+            description="Optimized training pipelines and seamless deployment - with Scalability, Low latency Inference, flexible & secure integration."
             delay="200"
+            ctaText="Learn More"
           />
           
           <FeatureCard
-            title="Semantic Retrieval-Based Prediction"
-            description="Advanced semantic search capabilities integrated with your knowledge base for precision and accuracy."
+            title="Research Backed Model Evaluations"
+            description="Rigorous model evaluation - with research backed and configurable benchmarks, across custom datasets and modalities."
             delay="300" 
+            ctaText="Learn More"
           />
           
           <FeatureCard
-            title="Analog/Digital Intelligence & Fine-Tuning"
-            description="Specialized fine-tuning and customization options to adapt models to your specific domain and use cases."
+            title="Adaptive Domain Intelligence & Fine-Tuning"
+            description="AI that adapts to your specific domain use-cases, optimizing accuracy, efficiency, and contextual intelligence."
             delay="400"
+            ctaText="Learn More"
           />
-        </div>
-      </div>
-
-      <div className="relative mt-24 mb-12">
-        <div className="absolute inset-0 flex items-center">
-          <div className="w-full border-t border-white/5"></div>
-        </div>
-        <div className="relative flex justify-center">
-          <span className="bg-dark-800 px-4 text-sm text-gray-400">Explore More</span>
         </div>
       </div>
     </section>
@@ -85,9 +83,10 @@ interface FeatureCardProps {
   title: string;
   description: string;
   delay: string;
+  ctaText?: string;
 }
 
-const FeatureCard = ({ title, description, delay }: FeatureCardProps) => {
+const FeatureCard = ({ title, description, delay, ctaText = "Learn More" }: FeatureCardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
@@ -126,7 +125,7 @@ const FeatureCard = ({ title, description, delay }: FeatureCardProps) => {
         href="#" 
         className="inline-flex items-center text-teal-500 hover:text-teal-400 transition-colors duration-300 text-sm font-medium group"
       >
-        Learn More 
+        {ctaText}
         <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
       </a>
     </div>

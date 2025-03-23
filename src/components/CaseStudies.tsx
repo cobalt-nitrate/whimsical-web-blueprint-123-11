@@ -1,9 +1,10 @@
 
-import React, { useEffect, useRef } from 'react';
-import { ArrowRight } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { ArrowRight, Search } from 'lucide-react';
 
 const CaseStudies = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -33,13 +34,29 @@ const CaseStudies = () => {
       className="py-20 bg-dark-800 opacity-0"
     >
       <div className="container mx-auto px-6">
-        <div className="mb-12 text-center">
+        <div className="mb-8 text-center">
           <div className="inline-block px-3 py-1 rounded-full bg-dark-700 text-teal-500 text-xs font-medium mb-4">
-            Success Stories
+            Industry Research
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Case Studies/Blogs
+            Research & Industry Whitepapers
           </h2>
+          <p className="text-gray-400 max-w-3xl mx-auto mb-8">
+            Explore our thorough research on specific industries and evolving AI use cases across various sectors.
+          </p>
+          
+          <div className="relative max-w-md mx-auto">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <Search className="h-5 w-5 text-gray-400" />
+            </div>
+            <input
+              type="text"
+              className="block w-full pl-10 pr-3 py-2 border border-dark-600 rounded-md leading-5 bg-dark-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500/50 focus:border-teal-500/50 transition duration-150 ease-in-out sm:text-sm"
+              placeholder="Search by industry or technology..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">

@@ -44,7 +44,7 @@ const Hero = () => {
           </h1>
           
           <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
-            A research lab with expertise for developing and optimizing research-level neural network capabilities through first-principles foundation models.
+            A Research Lab engineering AI for Low Compute & cost, Advanced Reasoning & Real World Adaptability without compromising Speed
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">

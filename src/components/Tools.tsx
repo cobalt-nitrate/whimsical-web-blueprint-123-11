@@ -37,7 +37,7 @@ const Tools = () => {
             AI Toolkit
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Section for AI Tools/Use-cases
+            Enterprise-Grade AI Solutions & Frameworks
           </h2>
           <p className="text-gray-400 max-w-3xl mx-auto">
             Explore our suite of specialized AI tools designed for enterprise applications and specific industry use cases.

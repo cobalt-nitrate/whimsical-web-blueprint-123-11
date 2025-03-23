@@ -70,7 +70,9 @@ const CaseStudyCard = ({ delay }: CaseStudyCardProps) => {
       ([entry]) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('animate-fade-in');
-          entry.target.style.animationDelay = `${delay}ms`;
+          if (entry.target instanceof HTMLElement) {
+            entry.target.style.animationDelay = `${delay}ms`;
+          }
         }
       },
       { threshold: 0.1, rootMargin: '0px 0px -100px 0px' }

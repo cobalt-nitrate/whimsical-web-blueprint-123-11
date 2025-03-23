@@ -52,11 +52,24 @@
   }
 
   body {
-    @apply bg-dark-900 text-foreground antialiased;
+    @apply bg-dark-900 text-foreground antialiased font-sans;
   }
 
   html {
     @apply scroll-smooth selection:bg-teal-500/30 selection:text-white;
+    font-family: 'Outfit', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-medium;
+  }
+
+  p, span, div {
+    @apply font-light;
+  }
+
+  button, a {
+    @apply font-normal;
   }
 }
 

@@ -129,7 +129,7 @@ const Research = () => {
             </button>)}
         </div>
 
-        <div className="bg-dark-800 rounded-xl p-8 glass-card">
+        <div className="bg-dark-800 rounded-xl p-8 glass-card px-[55px] mx-[21px]">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <div>
               <h3 className="text-2xl font-semibold mb-2 text-gradient">{activeVerticalData.title}</h3>

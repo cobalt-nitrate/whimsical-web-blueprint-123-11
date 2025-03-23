@@ -129,7 +129,7 @@ const Research = () => {
             </button>)}
         </div>
 
-        <div className="rounded-xl p-8 glass-card bg-dark-700 px-[18px] mx-[60px]">
+        <div className="bg-dark-800 rounded-xl p-8 glass-card">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <div>
               <h3 className="text-2xl font-semibold mb-2 text-gradient">{activeVerticalData.title}</h3>
@@ -147,8 +147,8 @@ const Research = () => {
           
           <div className="mt-10">
             <h4 className="text-xl font-semibold mb-6">Core Capabilities</h4>
-            <div className="grid grid-cols-4 sm:grid-cols-4 lg:grid-cols-4 gap-6">
-              {activeVerticalData.capabilities.map((capability, index) => <div key={index} className="p-5 rounded-lg bg-dark-600">
+            <div className="grid grid-cols-4 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {activeVerticalData.capabilities.map((capability, index) => <div key={index} className="bg-dark-700 p-5 rounded-lg">
                   <h5 className="font-medium text-white mb-2">{capability.title}</h5>
                   <p className="text-gray-400 text-sm">{capability.description}</p>
                 </div>)}

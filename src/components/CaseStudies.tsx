@@ -95,6 +95,11 @@ const CaseStudyCard = ({ delay }: CaseStudyCardProps) => {
       className="border border-teal-500/20 rounded-lg p-6 opacity-0 hover:border-teal-500/40 transition-colors duration-300"
     >
       <div className="grid grid-cols-2 gap-4">
+        {/* Left side reserved for image */}
+        <div className="hidden md:block">
+          {/* Image placeholder */}
+        </div>
+        
         <div>
           <div className="text-xs text-gray-400 mb-2">Category • Lorem Ipsum</div>
           <h3 className="text-lg font-semibold mb-2 text-white">Building a Lorem Ipsum for Enterprise</h3>
@@ -106,12 +111,6 @@ const CaseStudyCard = ({ delay }: CaseStudyCardProps) => {
             Read More 
             <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
           </a>
-        </div>
-        
-        <div>
-          <div className="text-xs text-gray-400 mb-2">Results</div>
-          <h3 className="text-lg font-semibold mb-2 text-white">Heading Lorem Ipsum Consectetur</h3>
-          <p className="text-gray-400 text-sm">Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
       </div>
     </div>

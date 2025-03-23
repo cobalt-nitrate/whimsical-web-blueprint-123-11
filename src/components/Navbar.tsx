@@ -37,7 +37,7 @@ const Navbar = () => {
         </div>
         
         <div className="flex items-center">
-          <button className="px-5 py-2 rounded-full bg-teal-500 hover:bg-teal-600 text-white font-medium transition-all duration-300 text-sm">
+          <button className="px-5 py-2 rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium transition-all duration-300 text-sm">
             Contact Sales
           </button>
         </div>

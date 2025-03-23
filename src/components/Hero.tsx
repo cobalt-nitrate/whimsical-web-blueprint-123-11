@@ -38,7 +38,7 @@ const Hero = () => {
       </div>
       
       <div className="container mx-auto px-6 z-10">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
+        <div className="max-w-4xl mx-auto text-center space-y-8 glass-card p-10 rounded-xl backdrop-blur-lg bg-white/5 border border-white/10">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
             We Develop <span className="text-gradient">Models, Methods</span> & <span className="text-gradient">Maths</span> Behind AGI
           </h1>
@@ -50,7 +50,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
             <a 
               href="#features" 
-              className="px-8 py-3 rounded-full bg-dark-700 hover:bg-dark-600 text-white transition-all duration-300 flex items-center justify-center group w-full sm:w-auto"
+              className="px-8 py-3 rounded-full bg-dark-700 hover:bg-dark-600 text-white transition-all duration-300 flex items-center justify-center group w-full sm:w-auto backdrop-blur-md bg-dark-700/80 border border-white/5"
             >
               View Our Solutions
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
@@ -58,7 +58,7 @@ const Hero = () => {
             
             <a 
               href="#contact" 
-              className="px-8 py-3 rounded-full bg-teal-500 hover:bg-teal-600 text-white font-medium transition-all duration-300 flex items-center justify-center w-full sm:w-auto"
+              className="px-8 py-3 rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium transition-all duration-300 flex items-center justify-center w-full sm:w-auto"
             >
               Book Free Consultation
             </a>

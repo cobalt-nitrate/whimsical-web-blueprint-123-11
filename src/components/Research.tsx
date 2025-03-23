@@ -49,9 +49,9 @@ const Research = () => {
               <p className="text-gray-400">Building digital brains to run for days on edge devices without cloud computing.</p>
             </div>
             
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Our Primary Focus</h3>
-              <p className="text-gray-400">Leading the industry in core AI research that bridges theoretical advances with practical applications.</p>
+            {/* Right top corner reserved for image */}
+            <div className="hidden md:block">
+              {/* Image placeholder */}
             </div>
           </div>
           

@@ -22,7 +22,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center">
           <a href="#" className="flex items-center space-x-2">
-            <span className="font-bold text-xl text-white">neuroforge</span>
+            <span className="font-bold text-xl text-white">novaforge</span>
             <span className="text-teal-500 font-bold text-xl">.</span>
           </a>
         </div>

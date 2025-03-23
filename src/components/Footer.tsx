@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-6 gap-8 mb-10">
           <div className="col-span-2">
             <a href="#" className="flex items-center space-x-2 mb-4">
-              <span className="font-bold text-xl text-white">neuroforge</span>
+              <span className="font-bold text-xl text-white">novaforge</span>
               <span className="text-teal-500 font-bold text-xl">.</span>
             </a>
             <p className="text-gray-400 text-sm">
@@ -58,7 +58,7 @@ const Footer = () => {
         
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} Neuroforge AI. All rights reserved.
+            &copy; {new Date().getFullYear()} Novaforge AI. All rights reserved.
           </p>
           
           <div className="flex space-x-6">

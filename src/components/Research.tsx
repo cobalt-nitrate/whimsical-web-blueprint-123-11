@@ -147,7 +147,7 @@ const Research = () => {
           
           <div className="mt-10">
             <h4 className="text-xl font-semibold mb-6">Core Capabilities</h4>
-            <div className="grid grid-cols-4 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-4 sm:grid-cols-4 lg:grid-cols-4 gap-6">
               {activeVerticalData.capabilities.map((capability, index) => <div key={index} className="bg-dark-700 p-5 rounded-lg">
                   <h5 className="font-medium text-white mb-2">{capability.title}</h5>
                   <p className="text-gray-400 text-sm">{capability.description}</p>

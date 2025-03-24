@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 
 const ContactForm = () => {
@@ -43,10 +42,10 @@ const ContactForm = () => {
       <div className="container mx-auto px-6">
         <div className="mb-12 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Sample - Have Something On Your Mind?
+            {heading}
           </h2>
           <p className="text-gray-400 max-w-3xl mx-auto">
-            Reach out to our team and let's discuss how we can help you implement cutting-edge AI solutions.
+            {description}
           </p>
         </div>
 

@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 
 const ContactForm = () => {
@@ -9,6 +10,10 @@ const ContactForm = () => {
     phone: '',
     organization: ''
   });
+
+  // Define the missing variables
+  const heading = "Have Something On Your Mind?";
+  const description = "Reach out to our team and let's explore how our AI solutions can transform your business operations and drive innovation.";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;

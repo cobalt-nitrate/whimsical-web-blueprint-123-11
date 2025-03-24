@@ -154,11 +154,11 @@ const ProjectCard = ({ industry, tech, title, description }: ProjectCardProps) =
       className="glass-card glass-card-hover p-6 rounded-lg opacity-0 h-full flex flex-col"
     >
       <div className="flex flex-wrap gap-2 mb-4 min-h-14">
-        <span className="px-3 py-1 bg-dark-700 text-teal-500 rounded-full text-xs">
+        <span className="inline-block px-3 py-1 bg-dark-700 text-teal-500 rounded-full text-xs whitespace-nowrap">
           {industry}
         </span>
         {tech.map((t) => (
-          <span key={t} className="px-3 py-1 bg-dark-700 text-teal-500 rounded-full text-xs">
+          <span key={t} className="inline-block px-3 py-1 bg-dark-700 text-teal-500 rounded-full text-xs whitespace-nowrap">
             {t}
           </span>
         ))}

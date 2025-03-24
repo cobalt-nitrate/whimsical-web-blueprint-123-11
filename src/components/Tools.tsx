@@ -1,5 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 const Tools = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -51,9 +52,9 @@ const Tools = () => {
         </div>
         
         <div className="text-center">
-          <button className="px-8 py-3 rounded-full bg-dark-700 hover:bg-dark-600 text-white transition-all duration-300">
+          <Link to="/ai-toolkit" className="px-8 py-3 rounded-full bg-dark-700 hover:bg-dark-600 text-white transition-all duration-300">
             Load More
-          </button>
+          </Link>
         </div>
       </div>
     </section>

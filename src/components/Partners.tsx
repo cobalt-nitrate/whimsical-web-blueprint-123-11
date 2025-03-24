@@ -1,6 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const Partners = () => {
@@ -150,9 +151,9 @@ const ProjectCard = ({ industry, tech, title, description }: ProjectCardProps) =
   return (
     <div 
       ref={cardRef}
-      className="glass-card glass-card-hover p-6 rounded-lg opacity-0 h-full"
+      className="glass-card glass-card-hover p-6 rounded-lg opacity-0 h-full flex flex-col"
     >
-      <div className="flex flex-wrap gap-2 mb-4">
+      <div className="flex flex-wrap gap-2 mb-4 min-h-14">
         <span className="px-3 py-1 bg-dark-700 text-teal-500 rounded-full text-xs">
           {industry}
         </span>
@@ -163,18 +164,18 @@ const ProjectCard = ({ industry, tech, title, description }: ProjectCardProps) =
         ))}
       </div>
 
-      <div className="aspect-video bg-dark-700 rounded-lg mb-4"></div>
+      <div className="aspect-video bg-dark-700 rounded-lg mb-4 w-full"></div>
       
-      <h3 className="text-xl font-semibold mb-3 text-white">{title}</h3>
-      <p className="text-gray-400 mb-4">{description}</p>
+      <h3 className="text-xl font-semibold mb-3 text-white h-14">{title}</h3>
+      <p className="text-gray-400 mb-4 flex-grow">{description}</p>
       
-      <a 
-        href="#" 
-        className="inline-flex items-center text-teal-500 hover:text-teal-400 transition-colors duration-300 text-sm font-medium group"
+      <Link 
+        to="/case-studies" 
+        className="inline-flex items-center text-teal-500 hover:text-teal-400 transition-colors duration-300 text-sm font-medium group mt-auto"
       >
         View Case Study
         <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
-      </a>
+      </Link>
     </div>
   );
 };

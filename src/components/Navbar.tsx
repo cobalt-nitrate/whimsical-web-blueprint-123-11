@@ -1,12 +1,13 @@
 
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
   
   useEffect(() => {
     const handleScroll = () => {
@@ -18,10 +19,22 @@ const Navbar = () => {
   }, []);
 
   const scrollToTop = () => {
-    if (window.location.pathname === '/') {
+    if (location.pathname === '/') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
+
+  const scrollToContact = () => {
+    const contactElement = document.getElementById('contact');
+    if (contactElement) {
+      contactElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  // Close mobile menu when changing routes
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
 
   return (
     <nav className={cn(
@@ -45,7 +58,10 @@ const Navbar = () => {
         </div>
         
         <div className="flex items-center gap-4">
-          <button className="px-5 py-2 rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium transition-all duration-300 text-sm">
+          <button 
+            className="px-5 py-2 rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium transition-all duration-300 text-sm"
+            onClick={scrollToContact}
+          >
             Contact Sales
           </button>
           
@@ -71,6 +87,15 @@ const Navbar = () => {
             <NavLink to="/enterprises" mobile>For Enterprises</NavLink>
             <NavLink to="/case-studies" mobile>Case Studies</NavLink>
             <NavLink to="/about" mobile>About Us</NavLink>
+            <button 
+              className="text-left text-gray-300 hover:text-teal-500 transition-colors duration-300 text-base py-2"
+              onClick={() => {
+                scrollToContact();
+                setIsMobileMenuOpen(false);
+              }}
+            >
+              Contact Us
+            </button>
           </div>
         </div>
       )}

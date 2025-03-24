@@ -11,9 +11,9 @@ const ContactForm = () => {
     organization: ''
   });
 
-  // Define the missing variables
-  const heading = "Have Something On Your Mind?";
-  const description = "Reach out to our team and let's explore how our AI solutions can transform your business operations and drive innovation.";
+  // Define the heading and description with more engaging content
+  const heading = "Ready to Transform Your Business with AI?";
+  const description = "Connect with our team of AI experts to explore how our cutting-edge solutions can address your unique challenges and unlock new opportunities for innovation and growth.";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;

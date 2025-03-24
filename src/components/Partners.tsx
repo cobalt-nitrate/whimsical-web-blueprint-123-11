@@ -1,6 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const Partners = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -26,6 +27,45 @@ const Partners = () => {
     };
   }, []);
 
+  const projects = [
+    {
+      industry: "Healthcare",
+      tech: ["Computer Vision", "Gen AI"],
+      title: "AI-Powered Medical Imaging",
+      description: "Advanced medical image analysis using state-of-the-art computer vision models."
+    },
+    {
+      industry: "Legal",
+      tech: ["NLP", "Gen AI"],
+      title: "Automated Legal Analysis",
+      description: "Intelligent document processing and analysis for legal professionals."
+    },
+    {
+      industry: "Education",
+      tech: ["Multimodal AI", "NLP"],
+      title: "Personalized Learning Platform",
+      description: "Adaptive learning systems that tailor educational content to individual needs."
+    },
+    {
+      industry: "Finance",
+      tech: ["Predictive Analytics", "NLP"],
+      title: "Risk Assessment Framework",
+      description: "Advanced financial risk modeling and prediction systems."
+    },
+    {
+      industry: "Sustainability",
+      tech: ["Computer Vision", "IoT"],
+      title: "Environmental Monitoring",
+      description: "Real-time environmental data analysis and predictive modeling."
+    },
+    {
+      industry: "Manufacturing",
+      tech: ["Computer Vision", "Edge AI"],
+      title: "Quality Control Automation",
+      description: "Automated visual inspection systems for manufacturing processes."
+    }
+  ];
+
   return (
     <section 
       id="partners" 
@@ -45,20 +85,25 @@ const Partners = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          <ProjectCard 
-            industry="Healthcare"
-            tech={["Computer Vision", "Gen AI"]}
-            title="AI-Powered Medical Imaging"
-            description="Advanced medical image analysis using state-of-the-art computer vision models."
-          />
-          
-          <ProjectCard 
-            industry="Legal"
-            tech={["NLP", "Gen AI"]}
-            title="Automated Legal Analysis"
-            description="Intelligent document processing and analysis for legal professionals."
-          />
+        <div className="mb-12">
+          <Carousel className="w-full">
+            <CarouselContent>
+              {projects.map((project, index) => (
+                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                  <ProjectCard 
+                    industry={project.industry}
+                    tech={project.tech}
+                    title={project.title}
+                    description={project.description}
+                  />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="flex justify-center mt-8 gap-4">
+              <CarouselPrevious className="relative static left-0 right-0 translate-y-0 bg-dark-700 hover:bg-dark-600 border-teal-500/20 text-white" />
+              <CarouselNext className="relative static left-0 right-0 translate-y-0 bg-dark-700 hover:bg-dark-600 border-teal-500/20 text-white" />
+            </div>
+          </Carousel>
         </div>
         
         <div className="text-center">
@@ -105,7 +150,7 @@ const ProjectCard = ({ industry, tech, title, description }: ProjectCardProps) =
   return (
     <div 
       ref={cardRef}
-      className="glass-card glass-card-hover p-6 rounded-lg opacity-0"
+      className="glass-card glass-card-hover p-6 rounded-lg opacity-0 h-full"
     >
       <div className="flex flex-wrap gap-2 mb-4">
         <span className="px-3 py-1 bg-dark-700 text-teal-500 rounded-full text-xs">

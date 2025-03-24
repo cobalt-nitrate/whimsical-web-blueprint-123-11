@@ -1,14 +1,12 @@
 
 import React, { useEffect } from 'react';
-import Navbar from '@/components/Navbar';
+import PageLayout from '@/components/PageLayout';
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
 import Research from '@/components/Research';
 import Partners from '@/components/Partners';
 import Tools from '@/components/Tools';
 import CaseStudies from '@/components/CaseStudies';
-import ContactForm from '@/components/ContactForm';
-import Footer from '@/components/Footer';
 
 const Index = () => {
   // Smooth scroll handling for anchor links
@@ -35,17 +33,14 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-dark-900 text-white overflow-x-hidden">
-      <Navbar />
+    <PageLayout>
       <Hero />
       <Features />
       <Research />
       <Partners />
       <Tools />
       <CaseStudies />
-      <ContactForm />
-      <Footer />
-    </div>
+    </PageLayout>
   );
 };
 

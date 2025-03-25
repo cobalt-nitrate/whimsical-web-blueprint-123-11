@@ -17,6 +17,7 @@ import Models from "./pages/Models";
 import Training from "./pages/Training";
 import Evaluations from "./pages/Evaluations";
 import FineTuning from "./pages/FineTuning";
+import Percepta from "./pages/Percepta";
 
 const queryClient = new QueryClient();
 
@@ -50,6 +51,7 @@ const App = () => (
           <Route path="/training" element={<Training />} />
           <Route path="/evaluations" element={<Evaluations />} />
           <Route path="/fine-tuning" element={<FineTuning />} />
+          <Route path="/percepta" element={<Percepta />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

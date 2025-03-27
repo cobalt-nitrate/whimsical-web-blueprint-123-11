@@ -1,8 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
 const Research = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [activeVertical, setActiveVertical] = useState('percepta');
+
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
@@ -11,15 +14,18 @@ const Research = () => {
     }, {
       threshold: 0.1
     });
+
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
+
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
       }
     };
   }, []);
+
   const verticals = [{
     id: 'percepta',
     title: 'Percepta',
@@ -111,7 +117,9 @@ const Research = () => {
       description: 'Transparent reasoning processes for trustworthy AI'
     }]
   }];
+
   const activeVerticalData = verticals.find(v => v.id === activeVertical) || verticals[0];
+
   return <section id="research" ref={sectionRef} className="py-20 bg-dark-900 opacity-0">
       <div className="container mx-auto px-6">
         <div className="mb-12 text-center">
@@ -156,13 +164,14 @@ const Research = () => {
           </div>
           
           <div className="text-center mt-8">
-            <a href="#" className="inline-flex items-center text-teal-500 hover:text-teal-400 transition-colors duration-300 text-sm font-medium">
+            <Link to="/percepta" className="inline-flex items-center text-teal-500 hover:text-teal-400 transition-colors duration-300 text-sm font-medium">
               Explore Use Cases 
               <ArrowRight className="ml-2 h-4 w-4" />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
     </section>;
 };
+
 export default Research;

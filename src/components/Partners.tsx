@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -141,14 +140,14 @@ const ProjectCard = ({
   return (
     <div ref={cardRef} className="glass-card glass-card-hover p-6 rounded-lg opacity-0 h-full flex flex-col">
       <div className="flex flex-wrap gap-2 mb-4 min-h-2">
-        <div className="inline-flex px-3 py-1 bg-dark-700 text-teal-500 rounded-full text-xs">
-          {industry}
-        </div>
         {tech.map(t => (
-          <div key={t} className="inline-flex px-3 py-1 bg-dark-700 text-teal-500 rounded-full text-xs">
+          <div key={t} className="inline-flex px-3 py-1 bg-dark-700 text-teal-500 rounded-full text-xs whitespace-nowrap">
             {t}
           </div>
         ))}
+        <div className="inline-flex px-3 py-1 bg-dark-700 text-teal-500 rounded-full text-xs whitespace-nowrap">
+          {industry}
+        </div>
       </div>
 
       <div className="aspect-video bg-dark-700 rounded-lg mb-4 w-full"></div>

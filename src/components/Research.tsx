@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -31,6 +32,7 @@ const Research = () => {
     title: 'Percepta',
     subtitle: 'Adaptive vision intelligence for domain specific use-cases',
     focus: 'Building A unified vision AI stack delivering precise results with minimal training and low computational overhead',
+    path: '/percepta',
     capabilities: [{
       title: 'Hybrid Vision Language Models',
       description: 'Context-aware scene interpretation with reasoning'
@@ -49,6 +51,7 @@ const Research = () => {
     title: 'Lexora',
     subtitle: 'Advanced language processing and understanding',
     focus: 'Developing contextual language models with efficient reasoning',
+    path: '/lexora',
     capabilities: [{
       title: 'Context-aware Processing',
       description: 'Understand nuanced language patterns and cultural context'
@@ -67,6 +70,7 @@ const Research = () => {
     title: 'Vocalis',
     subtitle: 'Speech and audio intelligence solutions',
     focus: 'Creating responsive audio processing systems with minimal latency',
+    path: '/vocalis',
     capabilities: [{
       title: 'Real-time Speech Recognition',
       description: 'Convert speech to text with high accuracy in real-time'
@@ -85,6 +89,7 @@ const Research = () => {
     title: 'Stratum',
     subtitle: 'Foundational model infrastructure',
     focus: 'Building scalable and efficient infrastructure for AI model deployment',
+    path: '/stratum',
     capabilities: [{
       title: 'Model Optimization',
       description: 'Reduce resource requirements without compromising performance'
@@ -103,6 +108,7 @@ const Research = () => {
     title: 'Aetherminds',
     subtitle: 'Advanced reasoning and decision systems',
     focus: 'Developing AI with robust reasoning capabilities for complex decision-making',
+    path: '/aetherminds',
     capabilities: [{
       title: 'Causal Reasoning',
       description: 'Understanding cause-effect relationships in complex systems'
@@ -164,10 +170,12 @@ const Research = () => {
           </div>
           
           <div className="text-center mt-8">
-            <Link to="/percepta" className="inline-flex items-center text-teal-500 hover:text-teal-400 transition-colors duration-300 text-sm font-medium">
-              Explore Use Cases 
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
+            {activeVerticalData.path && (
+              <Link to={activeVerticalData.path} className="inline-flex items-center text-teal-500 hover:text-teal-400 transition-colors duration-300 text-sm font-medium">
+                Explore Use Cases 
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            )}
           </div>
         </div>
       </div>

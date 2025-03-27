@@ -14,13 +14,15 @@ const Index = () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        const href = this.getAttribute('href') as string;
-        const target = document.querySelector(href);
-        
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth'
-          });
+        const href = this.getAttribute('href');
+        if (href && href !== "#") {
+          const target = document.querySelector(href);
+          
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth'
+            });
+          }
         }
       });
     });

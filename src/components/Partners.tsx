@@ -1,7 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const Partners = () => {
@@ -89,14 +88,6 @@ const Partners = () => {
             </div>
           </Carousel>
         </div>
-        
-        <div className="text-center">
-          <Link to="/percepta">
-            <button className="px-8 py-3 rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium transition-all duration-300">
-              Explore Percepta
-            </button>
-          </Link>
-        </div>
       </div>
     </section>
   );
@@ -155,11 +146,6 @@ const ProjectCard = ({
       
       <h3 className="text-xl font-semibold mb-3 text-white h-14">{title}</h3>
       <p className="text-gray-400 mb-4 flex-grow">{description}</p>
-      
-      <Link to="/percepta" className="inline-flex items-center text-teal-500 hover:text-teal-400 transition-colors duration-300 text-sm font-medium group mt-auto">
-        Explore Use Case
-        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
-      </Link>
     </div>
   );
 };

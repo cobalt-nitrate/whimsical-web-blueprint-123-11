@@ -32,7 +32,7 @@ const SolutionsSection = () => {
             </Link>
           </div>
           
-          <div className="grid grid-cols-1 gap-3">
+          <div className="grid grid-cols-1 gap-6">
             <SolutionCard title="Few-Shot & Self-Supervised Learning" description="Achieves high accuracy with minimal labeled data, thereby reducing annotation expenses." />
             <SolutionCard title="Adaptive Fine-Tuning" description="Facilitates dynamic model evolution through continuous learning, minimizing the need for frequent retraining cycles." />
             <SolutionCard title="Efficient Model Compression" description="Decreases computational overhead, leading to lower infrastructure costs." />

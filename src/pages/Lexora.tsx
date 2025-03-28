@@ -1,8 +1,17 @@
 
 import React from 'react';
-import { ArrowRight, Check, Server, Shield, Zap, Brain, BarChart } from 'lucide-react';
+import { ArrowRight, Server, Shield, Zap, Brain, BarChart, Building2, FileText, MessageCircle, Database, HeartPulse, GraduationCap, Scale, Code, GitBranch, LineChart, Briefcase, BookOpen, Activity, Bot, FlaskConical, FileCheck, Microscope, Search, HelpCircle } from 'lucide-react';
 import PageLayout from '@/components/PageLayout';
 import { Link } from 'react-router-dom';
+import { 
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const Lexora = () => {
   const scrollToContact = () => {
@@ -117,7 +126,7 @@ const Lexora = () => {
                 title: 'NER',
                 subtitle: 'Named Entity Recognition',
                 description: 'Identify and categorize key entities in your data.',
-                icon: Check
+                icon: Search
               },
               {
                 title: 'Search',
@@ -129,7 +138,7 @@ const Lexora = () => {
                 title: 'Agents',
                 subtitle: 'Intelligent automation',
                 description: 'Automated workflows and decision-making.',
-                icon: BarChart
+                icon: Bot
               }
             ].map((tool, index) => (
               <div key={index} className="glass-card glass-card-hover p-6 rounded-xl">
@@ -145,189 +154,417 @@ const Lexora = () => {
         </div>
       </section>
 
-      {/* Key Capabilities */}
+      {/* Key Capabilities - Redesigned with Cards */}
       <section className="py-20 bg-dark-900">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <div className="inline-block px-3 py-1 rounded-full bg-dark-700 text-teal-500 text-xs font-medium mb-4">
               Key Capabilities
             </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Transformative AI Features for Modern Enterprises
+            </h2>
+            <p className="text-gray-400 max-w-3xl mx-auto">
+              Discover how Lexora's capabilities deliver substantial value across industries
+            </p>
           </div>
           
           {/* High Context Space */}
-          <div className="mb-24">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-10">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <div className="grid grid-cols-1 gap-12 mb-16">
+            <Card className="bg-dark-800 border-white/5 shadow-xl overflow-hidden">
+              <CardHeader className="bg-gradient-to-r from-dark-700 to-dark-800 pb-8">
+                <CardTitle className="text-3xl font-bold flex items-center gap-3">
+                  <Database className="h-8 w-8 text-teal-500" />
                   High Context Space <span className="text-gradient">(10M Tokens)</span>
-                </h2>
-                <p className="text-gray-300 mb-6">
+                </CardTitle>
+                <CardDescription className="text-gray-300 text-lg mt-2">
                   Scaling AI to handle vast amounts of information without losing accuracy.
-                </p>
-                
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">Why It Matters:</h3>
-                    <ul className="space-y-2">
-                      <li className="flex items-start">
-                        <span className="text-teal-500 mr-2">•</span>
-                        <span className="text-gray-300">Enhanced Accuracy: Retains crucial details over extended conversations.</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-teal-500 mr-2">•</span>
-                        <span className="text-gray-300">Better Decision Support: Contextual insights for superior reasoning.</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-teal-500 mr-2">•</span>
-                        <span className="text-gray-300">Scalable Knowledge Processing: Designed for enterprise-scale applications.</span>
-                      </li>
-                    </ul>
+                </CardDescription>
+              </CardHeader>
+              
+              <CardContent className="pt-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  {/* Why It Matters Card */}
+                  <div className="md:col-span-1">
+                    <Card className="bg-dark-700 border-white/5 h-full">
+                      <CardHeader>
+                        <CardTitle className="text-xl font-semibold text-teal-500">
+                          Why It Matters
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <ul className="space-y-4">
+                          <li className="flex items-start gap-3">
+                            <div className="bg-teal-500/10 p-1.5 rounded-md mt-0.5">
+                              <Zap className="h-4 w-4 text-teal-500" />
+                            </div>
+                            <div>
+                              <h4 className="font-medium text-white">Enhanced Accuracy</h4>
+                              <p className="text-gray-400 text-sm">Retains crucial details over extended conversations.</p>
+                            </div>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <div className="bg-teal-500/10 p-1.5 rounded-md mt-0.5">
+                              <Brain className="h-4 w-4 text-teal-500" />
+                            </div>
+                            <div>
+                              <h4 className="font-medium text-white">Better Decision Support</h4>
+                              <p className="text-gray-400 text-sm">Contextual insights for superior reasoning.</p>
+                            </div>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <div className="bg-teal-500/10 p-1.5 rounded-md mt-0.5">
+                              <BarChart className="h-4 w-4 text-teal-500" />
+                            </div>
+                            <div>
+                              <h4 className="font-medium text-white">Scalable Knowledge</h4>
+                              <p className="text-gray-400 text-sm">Designed for enterprise-scale applications.</p>
+                            </div>
+                          </li>
+                        </ul>
+                      </CardContent>
+                    </Card>
+                  </div>
+                  
+                  {/* Use Cases Card */}
+                  <div className="md:col-span-2">
+                    <Card className="bg-dark-700 border-white/5 h-full">
+                      <CardHeader>
+                        <CardTitle className="text-xl font-semibold text-teal-500">
+                          Industry Use Cases
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          <div className="bg-dark-600 p-4 rounded-lg">
+                            <div className="flex items-start gap-3">
+                              <div className="bg-teal-500/10 p-2 rounded-md">
+                                <Scale className="h-5 w-5 text-teal-500" />
+                              </div>
+                              <div className="text-gray-300 text-sm">
+                                AI-powered legal research & case analysis
+                              </div>
+                            </div>
+                          </div>
+                          <div className="bg-dark-600 p-4 rounded-lg">
+                            <div className="flex items-start gap-3">
+                              <div className="bg-teal-500/10 p-2 rounded-md">
+                                <LineChart className="h-5 w-5 text-teal-500" />
+                              </div>
+                              <div className="text-gray-300 text-sm">
+                                Financial modeling with extensive historical data
+                              </div>
+                            </div>
+                          </div>
+                          <div className="bg-dark-600 p-4 rounded-lg">
+                            <div className="flex items-start gap-3">
+                              <div className="bg-teal-500/10 p-2 rounded-md">
+                                <MessageCircle className="h-5 w-5 text-teal-500" />
+                              </div>
+                              <div className="text-gray-300 text-sm">
+                                AI chatbots with full conversation memory
+                              </div>
+                            </div>
+                          </div>
+                          <div className="bg-dark-600 p-4 rounded-lg">
+                            <div className="flex items-start gap-3">
+                              <div className="bg-teal-500/10 p-2 rounded-md">
+                                <Database className="h-5 w-5 text-teal-500" />
+                              </div>
+                              <div className="text-gray-300 text-sm">
+                                Large-scale enterprise knowledge retrieval
+                              </div>
+                            </div>
+                          </div>
+                          <div className="bg-dark-600 p-4 rounded-lg sm:col-span-2">
+                            <div className="flex items-start gap-3">
+                              <div className="bg-teal-500/10 p-2 rounded-md">
+                                <HeartPulse className="h-5 w-5 text-teal-500" />
+                              </div>
+                              <div className="text-gray-300 text-sm">
+                                Advanced medical diagnostics with historical insights
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </CardContent>
+                      <CardFooter>
+                        <button
+                          onClick={scrollToContact}
+                          className="w-full px-4 py-2 rounded-lg bg-teal-500/10 text-teal-500 hover:bg-teal-500/20 transition-colors duration-300 font-medium"
+                        >
+                          Explore High Context Use Cases
+                        </button>
+                      </CardFooter>
+                    </Card>
                   </div>
                 </div>
-              </div>
-              
-              <div className="glass-card p-6 rounded-xl">
-                <h3 className="text-xl font-semibold mb-4">Use Cases:</h3>
-                <ul className="space-y-4">
-                  {[
-                    'AI-powered legal research & case analysis',
-                    'Financial modeling with extensive historical data',
-                    'AI chatbots with full conversation memory',
-                    'Large-scale enterprise knowledge retrieval',
-                    'Advanced medical diagnostics with historical insights'
-                  ].map((item, index) => (
-                    <li key={index} className="flex items-start">
-                      <span className="text-teal-500 mr-2">✔</span>
-                      <span className="text-gray-300">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-6">
-                  <button 
-                    onClick={scrollToContact}
-                    className="w-full px-6 py-3 rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium transition-all duration-300"
-                  >
-                    Explore High Context Use Cases
-                  </button>
-                </div>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
             
             {/* Step-by-Step Reasoning */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-10">
-              <div className="order-2 md:order-1 glass-card p-6 rounded-xl">
-                <h3 className="text-xl font-semibold mb-4">Use Cases:</h3>
-                <ul className="space-y-4">
-                  {[
-                    'AI-assisted contract review with clause breakdown',
-                    'Research assistance with structured synthesis',
-                    'Financial reports with reasoning-based insights',
-                    'AI code debugging with step-by-step explanations',
-                    'Multi-hop AI-driven question answering'
-                  ].map((item, index) => (
-                    <li key={index} className="flex items-start">
-                      <span className="text-teal-500 mr-2">✔</span>
-                      <span className="text-gray-300">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-6">
-                  <button 
-                    onClick={scrollToContact}
-                    className="w-full px-6 py-3 rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium transition-all duration-300"
-                  >
-                    Explore Reasoning Use Cases
-                  </button>
-                </div>
-              </div>
-              
-              <div className="order-1 md:order-2">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <Card className="bg-dark-800 border-white/5 shadow-xl overflow-hidden">
+              <CardHeader className="bg-gradient-to-r from-dark-700 to-dark-800 pb-8">
+                <CardTitle className="text-3xl font-bold flex items-center gap-3">
+                  <GitBranch className="h-8 w-8 text-teal-500" />
                   Step-by-Step <span className="text-gradient">Reasoning</span>
-                </h2>
-                <p className="text-gray-300 mb-6">
+                </CardTitle>
+                <CardDescription className="text-gray-300 text-lg mt-2">
                   Breaks down complex tasks into logical steps for precise and explainable AI-driven outputs.
-                </p>
-                
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">Why It Matters:</h3>
-                    <ul className="space-y-2">
-                      <li className="flex items-start">
-                        <span className="text-teal-500 mr-2">•</span>
-                        <span className="text-gray-300">Increased Transparency: Logical flow of AI decisions.</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-teal-500 mr-2">•</span>
-                        <span className="text-gray-300">Error Reduction: Iterative validation prevents misinformation.</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-teal-500 mr-2">•</span>
-                        <span className="text-gray-300">Complex Workflow Automation: Handles multi-step reasoning processes.</span>
-                      </li>
-                    </ul>
+                </CardDescription>
+              </CardHeader>
+              
+              <CardContent className="pt-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  {/* Why It Matters Card */}
+                  <div className="md:col-span-1">
+                    <Card className="bg-dark-700 border-white/5 h-full">
+                      <CardHeader>
+                        <CardTitle className="text-xl font-semibold text-teal-500">
+                          Why It Matters
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <ul className="space-y-4">
+                          <li className="flex items-start gap-3">
+                            <div className="bg-teal-500/10 p-1.5 rounded-md mt-0.5">
+                              <GraduationCap className="h-4 w-4 text-teal-500" />
+                            </div>
+                            <div>
+                              <h4 className="font-medium text-white">Increased Transparency</h4>
+                              <p className="text-gray-400 text-sm">Logical flow of AI decisions.</p>
+                            </div>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <div className="bg-teal-500/10 p-1.5 rounded-md mt-0.5">
+                              <Shield className="h-4 w-4 text-teal-500" />
+                            </div>
+                            <div>
+                              <h4 className="font-medium text-white">Error Reduction</h4>
+                              <p className="text-gray-400 text-sm">Iterative validation prevents misinformation.</p>
+                            </div>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <div className="bg-teal-500/10 p-1.5 rounded-md mt-0.5">
+                              <ArrowRight className="h-4 w-4 text-teal-500" />
+                            </div>
+                            <div>
+                              <h4 className="font-medium text-white">Complex Workflows</h4>
+                              <p className="text-gray-400 text-sm">Handles multi-step reasoning processes.</p>
+                            </div>
+                          </li>
+                        </ul>
+                      </CardContent>
+                    </Card>
+                  </div>
+                  
+                  {/* Use Cases Card */}
+                  <div className="md:col-span-2">
+                    <Card className="bg-dark-700 border-white/5 h-full">
+                      <CardHeader>
+                        <CardTitle className="text-xl font-semibold text-teal-500">
+                          Industry Use Cases
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          <div className="bg-dark-600 p-4 rounded-lg">
+                            <div className="flex items-start gap-3">
+                              <div className="bg-teal-500/10 p-2 rounded-md">
+                                <FileCheck className="h-5 w-5 text-teal-500" />
+                              </div>
+                              <div className="text-gray-300 text-sm">
+                                AI-assisted contract review with clause breakdown
+                              </div>
+                            </div>
+                          </div>
+                          <div className="bg-dark-600 p-4 rounded-lg">
+                            <div className="flex items-start gap-3">
+                              <div className="bg-teal-500/10 p-2 rounded-md">
+                                <BookOpen className="h-5 w-5 text-teal-500" />
+                              </div>
+                              <div className="text-gray-300 text-sm">
+                                Research assistance with structured synthesis
+                              </div>
+                            </div>
+                          </div>
+                          <div className="bg-dark-600 p-4 rounded-lg">
+                            <div className="flex items-start gap-3">
+                              <div className="bg-teal-500/10 p-2 rounded-md">
+                                <BarChart className="h-5 w-5 text-teal-500" />
+                              </div>
+                              <div className="text-gray-300 text-sm">
+                                Financial reports with reasoning-based insights
+                              </div>
+                            </div>
+                          </div>
+                          <div className="bg-dark-600 p-4 rounded-lg">
+                            <div className="flex items-start gap-3">
+                              <div className="bg-teal-500/10 p-2 rounded-md">
+                                <Code className="h-5 w-5 text-teal-500" />
+                              </div>
+                              <div className="text-gray-300 text-sm">
+                                AI code debugging with step-by-step explanations
+                              </div>
+                            </div>
+                          </div>
+                          <div className="bg-dark-600 p-4 rounded-lg sm:col-span-2">
+                            <div className="flex items-start gap-3">
+                              <div className="bg-teal-500/10 p-2 rounded-md">
+                                <HelpCircle className="h-5 w-5 text-teal-500" />
+                              </div>
+                              <div className="text-gray-300 text-sm">
+                                Multi-hop AI-driven question answering
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </CardContent>
+                      <CardFooter>
+                        <button
+                          onClick={scrollToContact}
+                          className="w-full px-4 py-2 rounded-lg bg-teal-500/10 text-teal-500 hover:bg-teal-500/20 transition-colors duration-300 font-medium"
+                        >
+                          Explore Reasoning Use Cases
+                        </button>
+                      </CardFooter>
+                    </Card>
                   </div>
                 </div>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
             
             {/* Lightweight & Precise */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <Card className="bg-dark-800 border-white/5 shadow-xl overflow-hidden">
+              <CardHeader className="bg-gradient-to-r from-dark-700 to-dark-800 pb-8">
+                <CardTitle className="text-3xl font-bold flex items-center gap-3">
+                  <Zap className="h-8 w-8 text-teal-500" />
                   Lightweight & Precise for <span className="text-gradient">Domain-Specific AI</span>
-                </h2>
-                <p className="text-gray-300 mb-6">
+                </CardTitle>
+                <CardDescription className="text-gray-300 text-lg mt-2">
                   Powered by a 2 Billion Parameter Proprietary LLM for precision AI.
-                </p>
-                
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">Why It Matters:</h3>
-                    <ul className="space-y-2">
-                      <li className="flex items-start">
-                        <span className="text-teal-500 mr-2">•</span>
-                        <span className="text-gray-300">Faster Performance: Optimized for efficiency with rapid inference.</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-teal-500 mr-2">•</span>
-                        <span className="text-gray-300">Higher Accuracy: Domain-specific fine-tuning reduces noise.</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-teal-500 mr-2">•</span>
-                        <span className="text-gray-300">Lower Costs: Reduced compute power requirements vs. massive LLMs.</span>
-                      </li>
-                    </ul>
+                </CardDescription>
+              </CardHeader>
+              
+              <CardContent className="pt-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  {/* Why It Matters Card */}
+                  <div className="md:col-span-1">
+                    <Card className="bg-dark-700 border-white/5 h-full">
+                      <CardHeader>
+                        <CardTitle className="text-xl font-semibold text-teal-500">
+                          Why It Matters
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <ul className="space-y-4">
+                          <li className="flex items-start gap-3">
+                            <div className="bg-teal-500/10 p-1.5 rounded-md mt-0.5">
+                              <Zap className="h-4 w-4 text-teal-500" />
+                            </div>
+                            <div>
+                              <h4 className="font-medium text-white">Faster Performance</h4>
+                              <p className="text-gray-400 text-sm">Optimized for efficiency with rapid inference.</p>
+                            </div>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <div className="bg-teal-500/10 p-1.5 rounded-md mt-0.5">
+                              <Activity className="h-4 w-4 text-teal-500" />
+                            </div>
+                            <div>
+                              <h4 className="font-medium text-white">Higher Accuracy</h4>
+                              <p className="text-gray-400 text-sm">Domain-specific fine-tuning reduces noise.</p>
+                            </div>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <div className="bg-teal-500/10 p-1.5 rounded-md mt-0.5">
+                              <BarChart className="h-4 w-4 text-teal-500" />
+                            </div>
+                            <div>
+                              <h4 className="font-medium text-white">Lower Costs</h4>
+                              <p className="text-gray-400 text-sm">Reduced compute power requirements vs. massive LLMs.</p>
+                            </div>
+                          </li>
+                        </ul>
+                      </CardContent>
+                    </Card>
+                  </div>
+                  
+                  {/* Use Cases Card */}
+                  <div className="md:col-span-2">
+                    <Card className="bg-dark-700 border-white/5 h-full">
+                      <CardHeader>
+                        <CardTitle className="text-xl font-semibold text-teal-500">
+                          Industry Use Cases
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          <div className="bg-dark-600 p-4 rounded-lg">
+                            <div className="flex items-start gap-3">
+                              <div className="bg-teal-500/10 p-2 rounded-md">
+                                <Shield className="h-5 w-5 text-teal-500" />
+                              </div>
+                              <div className="text-gray-300 text-sm">
+                                AI-driven compliance monitoring for enterprises
+                              </div>
+                            </div>
+                          </div>
+                          <div className="bg-dark-600 p-4 rounded-lg">
+                            <div className="flex items-start gap-3">
+                              <div className="bg-teal-500/10 p-2 rounded-md">
+                                <FileText className="h-5 w-5 text-teal-500" />
+                              </div>
+                              <div className="text-gray-300 text-sm">
+                                High-precision financial & legal document analysis
+                              </div>
+                            </div>
+                          </div>
+                          <div className="bg-dark-600 p-4 rounded-lg">
+                            <div className="flex items-start gap-3">
+                              <div className="bg-teal-500/10 p-2 rounded-md">
+                                <FlaskConical className="h-5 w-5 text-teal-500" />
+                              </div>
+                              <div className="text-gray-300 text-sm">
+                                AI-powered clinical research and diagnostics
+                              </div>
+                            </div>
+                          </div>
+                          <div className="bg-dark-600 p-4 rounded-lg">
+                            <div className="flex items-start gap-3">
+                              <div className="bg-teal-500/10 p-2 rounded-md">
+                                <MessageCircle className="h-5 w-5 text-teal-500" />
+                              </div>
+                              <div className="text-gray-300 text-sm">
+                                Intelligent domain-specific customer support
+                              </div>
+                            </div>
+                          </div>
+                          <div className="bg-dark-600 p-4 rounded-lg sm:col-span-2">
+                            <div className="flex items-start gap-3">
+                              <div className="bg-teal-500/10 p-2 rounded-md">
+                                <BarChart className="h-5 w-5 text-teal-500" />
+                              </div>
+                              <div className="text-gray-300 text-sm">
+                                Real-time business analytics & reporting
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </CardContent>
+                      <CardFooter>
+                        <button
+                          onClick={scrollToContact}
+                          className="w-full px-4 py-2 rounded-lg bg-teal-500/10 text-teal-500 hover:bg-teal-500/20 transition-colors duration-300 font-medium"
+                        >
+                          Explore Domain-Specific Use Cases
+                        </button>
+                      </CardFooter>
+                    </Card>
                   </div>
                 </div>
-              </div>
-              
-              <div className="glass-card p-6 rounded-xl">
-                <h3 className="text-xl font-semibold mb-4">Use Cases:</h3>
-                <ul className="space-y-4">
-                  {[
-                    'AI-driven compliance monitoring for enterprises',
-                    'High-precision financial & legal document analysis',
-                    'AI-powered clinical research and diagnostics',
-                    'Intelligent domain-specific customer support',
-                    'Real-time business analytics & reporting'
-                  ].map((item, index) => (
-                    <li key={index} className="flex items-start">
-                      <span className="text-teal-500 mr-2">✔</span>
-                      <span className="text-gray-300">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-6">
-                  <button 
-                    onClick={scrollToContact}
-                    className="w-full px-6 py-3 rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium transition-all duration-300"
-                  >
-                    Explore Domain-Specific Use Cases
-                  </button>
-                </div>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

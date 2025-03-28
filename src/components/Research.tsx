@@ -47,7 +47,7 @@ const Research = () => {
     focus: 'Optimizing lightweight LLMs for sector-specific applications & tools, delivering high accuracy with minimal compute costs.',
     path: '/lexora',
     capabilities: [{
-      title: '10 Million Contextual Window',
+      title: 'Contextual window of 10M Tokens',
       description: 'Scaling AI to handle vast amounts of information without losing accuracy'
     }, {
       title: 'Deployment Flexibility',

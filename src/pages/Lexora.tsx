@@ -1,39 +1,28 @@
-
 import React from 'react';
 import { ArrowRight, Server, Shield, Zap, Brain, BarChart, Building2, FileText, MessageCircle, Database, HeartPulse, GraduationCap, Scale, Code, GitBranch, LineChart, Briefcase, BookOpen, Activity, Bot, FlaskConical, FileCheck, Microscope, Search, HelpCircle } from 'lucide-react';
 import PageLayout from '@/components/PageLayout';
 import { Link } from 'react-router-dom';
-import { 
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-
 const Lexora = () => {
   const scrollToContact = () => {
     const contactElement = document.getElementById('contact');
     if (contactElement) {
-      contactElement.scrollIntoView({ behavior: 'smooth' });
+      contactElement.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <PageLayout>
+  return <PageLayout>
       {/* Hero Section */}
       <section className="pt-32 pb-16 md:pb-24 bg-dark-900">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="max-w-xl">
               <div className="flex flex-wrap gap-2 mb-6">
-                {['AI Language Models', 'Context-Aware AI', 'Enterprise NLP', 'Knowledge Retrieval', 'AI Agents'].map((tag) => (
-                  <span key={tag} className="px-3 py-1 rounded-full bg-dark-700 text-teal-500 text-xs font-medium">
+                {['AI Language Models', 'Context-Aware AI', 'Enterprise NLP', 'Knowledge Retrieval', 'AI Agents'].map(tag => <span key={tag} className="px-3 py-1 rounded-full bg-dark-700 text-teal-500 text-xs font-medium">
                     {tag}
-                  </span>
-                ))}
+                  </span>)}
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
@@ -45,10 +34,7 @@ const Lexora = () => {
               </p>
               
               <div className="flex flex-wrap gap-4">
-                <button 
-                  onClick={scrollToContact}
-                  className="px-6 py-3 rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium transition-all duration-300"
-                >
+                <button onClick={scrollToContact} className="px-6 py-3 rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium transition-all duration-300">
                   Get Started with Lexora
                 </button>
                 
@@ -115,41 +101,34 @@ const Lexora = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                title: 'RAG',
-                subtitle: 'Retrieval-Augmented Generation',
-                description: 'Fact-based responses with real-time knowledge retrieval.',
-                icon: Brain
-              },
-              {
-                title: 'NER',
-                subtitle: 'Named Entity Recognition',
-                description: 'Identify and categorize key entities in your data.',
-                icon: Search
-              },
-              {
-                title: 'Search',
-                subtitle: 'AI-powered search',
-                description: 'Advanced search with semantic understanding.',
-                icon: Zap
-              },
-              {
-                title: 'Agents',
-                subtitle: 'Intelligent automation',
-                description: 'Automated workflows and decision-making.',
-                icon: Bot
-              }
-            ].map((tool, index) => (
-              <div key={index} className="glass-card glass-card-hover p-6 rounded-xl">
+            {[{
+            title: 'RAG',
+            subtitle: 'Retrieval-Augmented Generation',
+            description: 'Fact-based responses with real-time knowledge retrieval.',
+            icon: Brain
+          }, {
+            title: 'NER',
+            subtitle: 'Named Entity Recognition',
+            description: 'Identify and categorize key entities in your data.',
+            icon: Search
+          }, {
+            title: 'Search',
+            subtitle: 'AI-powered search',
+            description: 'Advanced search with semantic understanding.',
+            icon: Zap
+          }, {
+            title: 'Agents',
+            subtitle: 'Intelligent automation',
+            description: 'Automated workflows and decision-making.',
+            icon: Bot
+          }].map((tool, index) => <div key={index} className="glass-card glass-card-hover p-6 rounded-xl">
                 <div className="bg-teal-500/10 w-12 h-12 flex items-center justify-center rounded-lg mb-4">
                   <tool.icon className="h-6 w-6 text-teal-500" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">{tool.title}</h3>
                 <p className="text-gray-400 text-sm mb-1">{tool.subtitle}</p>
                 <p className="text-gray-500 text-sm">{tool.description}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -289,10 +268,7 @@ const Lexora = () => {
                         </div>
                       </CardContent>
                       <CardFooter>
-                        <button
-                          onClick={scrollToContact}
-                          className="w-full px-4 py-2 rounded-lg bg-teal-500/10 text-teal-500 hover:bg-teal-500/20 transition-colors duration-300 font-medium"
-                        >
+                        <button onClick={scrollToContact} className="w-full px-4 py-2 rounded-lg bg-teal-500/10 text-teal-500 hover:bg-teal-500/20 transition-colors duration-300 font-medium">
                           Explore High Context Use Cases
                         </button>
                       </CardFooter>
@@ -421,10 +397,7 @@ const Lexora = () => {
                         </div>
                       </CardContent>
                       <CardFooter>
-                        <button
-                          onClick={scrollToContact}
-                          className="w-full px-4 py-2 rounded-lg bg-teal-500/10 text-teal-500 hover:bg-teal-500/20 transition-colors duration-300 font-medium"
-                        >
+                        <button onClick={scrollToContact} className="w-full px-4 py-2 rounded-lg bg-teal-500/10 text-teal-500 hover:bg-teal-500/20 transition-colors duration-300 font-medium">
                           Explore Reasoning Use Cases
                         </button>
                       </CardFooter>
@@ -553,10 +526,7 @@ const Lexora = () => {
                         </div>
                       </CardContent>
                       <CardFooter>
-                        <button
-                          onClick={scrollToContact}
-                          className="w-full px-4 py-2 rounded-lg bg-teal-500/10 text-teal-500 hover:bg-teal-500/20 transition-colors duration-300 font-medium"
-                        >
+                        <button onClick={scrollToContact} className="w-full px-4 py-2 rounded-lg bg-teal-500/10 text-teal-500 hover:bg-teal-500/20 transition-colors duration-300 font-medium">
                           Explore Domain-Specific Use Cases
                         </button>
                       </CardFooter>
@@ -587,38 +557,29 @@ const Lexora = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            {[
-              {
-                title: 'Enterprise Data Control',
-                description: 'Keep sensitive data within your infrastructure.',
-                icon: Shield
-              },
-              {
-                title: 'Lower Latency',
-                description: 'AI processing happens on-site, reducing response times.',
-                icon: Zap
-              },
-              {
-                title: 'Cost-Efficient Scaling',
-                description: 'No reliance on expensive cloud computing.',
-                icon: BarChart
-              }
-            ].map((benefit, index) => (
-              <div key={index} className="glass-card glass-card-hover p-6 rounded-xl">
+            {[{
+            title: 'Enterprise Data Control',
+            description: 'Keep sensitive data within your infrastructure.',
+            icon: Shield
+          }, {
+            title: 'Lower Latency',
+            description: 'AI processing happens on-site, reducing response times.',
+            icon: Zap
+          }, {
+            title: 'Cost-Efficient Scaling',
+            description: 'No reliance on expensive cloud computing.',
+            icon: BarChart
+          }].map((benefit, index) => <div key={index} className="glass-card glass-card-hover p-6 rounded-xl">
                 <div className="bg-teal-500/10 w-12 h-12 flex items-center justify-center rounded-lg mb-4">
                   <benefit.icon className="h-6 w-6 text-teal-500" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>
                 <p className="text-gray-400">{benefit.description}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
           
           <div className="text-center">
-            <button 
-              onClick={scrollToContact}
-              className="px-8 py-3 rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium transition-all duration-300"
-            >
+            <button onClick={scrollToContact} className="px-8 py-3 rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium transition-all duration-300">
               Learn About Offline Deployment
             </button>
           </div>
@@ -638,33 +599,25 @@ const Lexora = () => {
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-16">
-            {[
-              {
-                metric: '3X',
-                description: 'Faster AI Deployment: Pre-trained models reduce engineering overhead.'
-              },
-              {
-                metric: '70%',
-                description: 'Cost Reduction: Optimized AI architecture lowers operational expenses.'
-              },
-              {
-                metric: '100%',
-                description: 'Enterprise-Grade Security: Built-in compliance for regulated industries.'
-              },
-              {
-                metric: '10X',
-                description: 'Greater Context Utilization: Surpasses traditional AI models in memory retention.'
-              },
-              {
-                metric: '85%',
-                description: 'Reduced Error Rates: Step-by-step validation ensures accuracy.'
-              }
-            ].map((stat, index) => (
-              <div key={index} className="glass-card p-6 rounded-xl text-center">
+            {[{
+            metric: '3X',
+            description: 'Faster AI Deployment: Pre-trained models reduce engineering overhead.'
+          }, {
+            metric: '70%',
+            description: 'Cost Reduction: Optimized AI architecture lowers operational expenses.'
+          }, {
+            metric: '100%',
+            description: 'Enterprise-Grade Security: Built-in compliance for regulated industries.'
+          }, {
+            metric: '10X',
+            description: 'Greater Context Utilization: Surpasses traditional AI models in memory retention.'
+          }, {
+            metric: '85%',
+            description: 'Reduced Error Rates: Step-by-step validation ensures accuracy.'
+          }].map((stat, index) => <div key={index} className="glass-card p-6 rounded-xl text-center">
                 <div className="text-3xl font-bold text-teal-500 mb-2">{stat.metric}</div>
                 <p className="text-gray-400 text-sm">{stat.description}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
           
           <div className="glass-card p-8 rounded-xl mb-16">
@@ -678,29 +631,22 @@ const Lexora = () => {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                {
-                  title: 'Multi-Step Validation',
-                  description: 'AI cross-checks responses before output.'
-                },
-                {
-                  title: 'Live Knowledge Retrieval',
-                  description: 'Combines real-time data with static memory.'
-                },
-                {
-                  title: 'Adaptive AI Tuning',
-                  description: 'Context dynamically refines responses.'
-                },
-                {
-                  title: 'Confidence-Based Outputs',
-                  description: 'Uncertain responses flagged for human oversight.'
-                }
-              ].map((feature, index) => (
-                <div key={index} className="bg-dark-700 p-5 rounded-lg">
+              {[{
+              title: 'Multi-Step Validation',
+              description: 'AI cross-checks responses before output.'
+            }, {
+              title: 'Live Knowledge Retrieval',
+              description: 'Combines real-time data with static memory.'
+            }, {
+              title: 'Adaptive AI Tuning',
+              description: 'Context dynamically refines responses.'
+            }, {
+              title: 'Confidence-Based Outputs',
+              description: 'Uncertain responses flagged for human oversight.'
+            }].map((feature, index) => <div key={index} className="p-5 rounded-lg bg-dark-600">
                   <h4 className="font-medium text-white mb-2">{feature.title}</h4>
                   <p className="text-gray-400 text-sm">{feature.description}</p>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
           
@@ -714,17 +660,10 @@ const Lexora = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
               <div>
                 <ul className="space-y-4">
-                  {[
-                    'Fine-Tuned for Industry-Specific Precision',
-                    'Curated Datasets for Maximum Accuracy',
-                    'High Performance at a Fraction of the Cost',
-                    'Enterprise-Ready Security & Compliance'
-                  ].map((item, index) => (
-                    <li key={index} className="flex items-start">
+                  {['Fine-Tuned for Industry-Specific Precision', 'Curated Datasets for Maximum Accuracy', 'High Performance at a Fraction of the Cost', 'Enterprise-Ready Security & Compliance'].map((item, index) => <li key={index} className="flex items-start">
                       <span className="text-teal-500 mr-2">✔</span>
                       <span className="text-gray-300">{item}</span>
-                    </li>
-                  ))}
+                    </li>)}
                 </ul>
               </div>
               
@@ -794,17 +733,12 @@ const Lexora = () => {
             <p className="text-gray-300 mb-8">
               Join leading enterprises that have transformed their operations with Lexora's domain-specific AI solutions.
             </p>
-            <button 
-              onClick={scrollToContact}
-              className="px-8 py-4 rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium text-lg transition-all duration-300"
-            >
+            <button onClick={scrollToContact} className="px-8 py-4 rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium text-lg transition-all duration-300">
               Get Started with Lexora Today
             </button>
           </div>
         </div>
       </section>
-    </PageLayout>
-  );
+    </PageLayout>;
 };
-
 export default Lexora;

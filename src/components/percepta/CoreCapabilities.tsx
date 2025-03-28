@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { BrainCircuit, Layers, LineChart, Cpu, Workflow, Package } from 'lucide-react';
-import CapabilityCard from './CapabilityCard';
+import CapabilityCard from './CapabilityCard';    
 
 const CoreCapabilities = () => {
   return (

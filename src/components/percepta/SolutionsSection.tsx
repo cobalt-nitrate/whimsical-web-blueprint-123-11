@@ -8,7 +8,7 @@ const SolutionsSection = () => {
       <div className="container mx-auto px-6">
         <div className="mb-16">
           <div className="inline-block px-3 py-1 rounded-full bg-dark-700 text-teal-500 text-xs font-medium mb-4">
-            Problem Solving
+            Cost Effic
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Optimizing AI Development, Training, and <span className="text-gradient">Deployment Costs</span>

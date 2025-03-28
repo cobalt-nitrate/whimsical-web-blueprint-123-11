@@ -43,21 +43,21 @@ const Research = () => {
   }, {
     id: 'lexora',
     title: 'Lexora',
-    subtitle: 'Advanced language processing and understanding',
-    focus: 'Developing contextual language models with efficient reasoning',
+    subtitle: 'Domain-specific LLM Stack for Enterprises',
+    focus: 'Optimizing lightweight LLMs for sector-specific applications & tools, delivering high accuracy with minimal compute costs.',
     path: '/lexora',
     capabilities: [{
-      title: 'Context-aware Processing',
-      description: 'Understand nuanced language patterns and cultural context'
+      title: '10 Million Contextual Window',
+      description: 'Scaling AI to handle vast amounts of information without losing accuracy'
     }, {
-      title: 'Low Compute Requirements',
-      description: 'Efficient models that run on modest hardware'
+      title: 'Deployment Flexibility',
+      description: 'On-Premise Deployment, Cloud, Edge, Devices, hybrid, Data Centers'
     }, {
-      title: 'Customizable for Domains',
-      description: 'Language models adaptable to specialized fields'
+      title: 'Low-Latency',
+      description: 'Fast inference with 100x reduced resource consumption'
     }, {
-      title: 'Multilingual Support',
-      description: 'Process and understand multiple languages effectively'
+      title: 'Advanced RAG',
+      description: 'For search engines, AI agents, chatbots, and document automation'
     }]
   }, {
     id: 'vocalis',

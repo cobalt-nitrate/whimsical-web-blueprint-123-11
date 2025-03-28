@@ -1,4 +1,3 @@
-
 import React from 'react';
 import PageLayout from '@/components/PageLayout';
 import HeroSection from '@/components/percepta/HeroSection';
@@ -11,6 +10,15 @@ import UseCasesSection from '@/components/percepta/UseCasesSection';
 import CTASection from '@/components/percepta/CTASection';
 
 const Percepta = () => {
+  const scrollToContact = () => {
+    const contactElement = document.getElementById('contact');
+    if (contactElement) {
+      contactElement.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <PageLayout>
       <HeroSection />
@@ -18,8 +26,8 @@ const Percepta = () => {
       <CoreCapabilities />
       <SolutionsSection />
       <AdaptabilitySection />
-      <TechnicalHighlights />
       <UseCasesSection />
+      <TechnicalHighlights />
       <CTASection />
     </PageLayout>
   );

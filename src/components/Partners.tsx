@@ -1,11 +1,8 @@
-
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-
 const Partners = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
@@ -14,18 +11,15 @@ const Partners = () => {
     }, {
       threshold: 0.1
     });
-    
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
-    
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
       }
     };
   }, []);
-  
   const projects = [{
     industry: "Healthcare",
     tech: ["Computer Vision", "Gen AI"],
@@ -57,9 +51,7 @@ const Partners = () => {
     title: "Quality Control Automation",
     description: "Automated visual inspection systems for manufacturing processes."
   }];
-  
-  return (
-    <section id="partners" ref={sectionRef} className="py-20 bg-dark-800 opacity-0">
+  return <section id="partners" ref={sectionRef} className="py-20 bg-dark-800 opacity-0">
       <div className="container mx-auto px-6">
         <div className="mb-12 text-center">
           <div className="inline-block px-3 py-1 rounded-full bg-dark-700 text-teal-500 text-xs font-medium mb-4">
@@ -68,19 +60,15 @@ const Partners = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Transforming Industries with <span className="text-gradient">AI Innovation</span>
           </h2>
-          <p className="text-gray-400 max-w-3xl mx-auto">
-            Explore our pioneering projects across various industries
-          </p>
+          <p className="text-gray-400 max-w-3xl mx-auto">Our success story in multiple industries was possible through consistent support from our Partners, who brought their domain expertise at our doorstep. </p>
         </div>
 
         <div className="mb-12">
           <Carousel className="w-full">
             <CarouselContent>
-              {projects.map((project, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+              {projects.map((project, index) => <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <ProjectCard industry={project.industry} tech={project.tech} title={project.title} description={project.description} />
-                </CarouselItem>
-              ))}
+                </CarouselItem>)}
             </CarouselContent>
             <div className="flex justify-center mt-8 gap-4">
               <CarouselPrevious className="relative static left-0 right-0 translate-y-0 bg-dark-700 hover:bg-dark-600 border-teal-500/20 text-white" />
@@ -89,17 +77,14 @@ const Partners = () => {
           </Carousel>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 interface ProjectCardProps {
   industry: string;
   tech: string[];
   title: string;
   description: string;
 }
-
 const ProjectCard = ({
   industry,
   tech,
@@ -107,7 +92,6 @@ const ProjectCard = ({
   description
 }: ProjectCardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
-  
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
@@ -117,26 +101,20 @@ const ProjectCard = ({
       threshold: 0.1,
       rootMargin: '0px 0px -100px 0px'
     });
-    
     if (cardRef.current) {
       observer.observe(cardRef.current);
     }
-    
     return () => {
       if (cardRef.current) {
         observer.unobserve(cardRef.current);
       }
     };
   }, []);
-  
-  return (
-    <div ref={cardRef} className="glass-card glass-card-hover p-6 rounded-lg opacity-0 h-full flex flex-col">
+  return <div ref={cardRef} className="glass-card glass-card-hover p-6 rounded-lg opacity-0 h-full flex flex-col">
       <div className="flex flex-wrap gap-2 mb-4 min-h-2">
-        {tech.map(t => (
-          <div key={t} className="inline-flex px-3 py-1 bg-dark-700 text-teal-500 rounded-full text-xs whitespace-nowrap">
+        {tech.map(t => <div key={t} className="inline-flex px-3 py-1 bg-dark-700 text-teal-500 rounded-full text-xs whitespace-nowrap">
             {t}
-          </div>
-        ))}
+          </div>)}
         <div className="inline-flex px-3 py-1 bg-dark-700 text-teal-500 rounded-full text-xs whitespace-nowrap">
           {industry}
         </div>
@@ -146,8 +124,6 @@ const ProjectCard = ({
       
       <h3 className="text-xl font-semibold mb-3 text-white h-14">{title}</h3>
       <p className="text-gray-400 mb-4 flex-grow">{description}</p>
-    </div>
-  );
+    </div>;
 };
-
 export default Partners;

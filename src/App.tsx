@@ -20,6 +20,7 @@ import FineTuning from "./pages/FineTuning";
 import Percepta from "./pages/Percepta";
 import Vocalis from "./pages/Vocalis";
 import Lexora from "./pages/Lexora";
+import Aetherminds from "./pages/Aetherminds";
 
 const queryClient = new QueryClient();
 
@@ -56,6 +57,7 @@ const App = () => (
           <Route path="/percepta" element={<Percepta />} />
           <Route path="/vocalis" element={<Vocalis />} />
           <Route path="/lexora" element={<Lexora />} />
+          <Route path="/aetherminds" element={<Aetherminds />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

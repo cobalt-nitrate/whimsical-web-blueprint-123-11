@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
@@ -48,6 +49,7 @@ const Navbar = () => {
           <NavLink to="/research">Research</NavLink>
           <NavLink to="/enterprises">For Enterprises</NavLink>
           <NavLink to="/case-studies">Case Studies</NavLink>
+          <NavLink to="/aetherminds">Aetherminds</NavLink>
           <NavLink to="/about">About Us</NavLink>
         </div>
         
@@ -69,6 +71,7 @@ const Navbar = () => {
             <NavLink to="/research" mobile>Research</NavLink>
             <NavLink to="/enterprises" mobile>For Enterprises</NavLink>
             <NavLink to="/case-studies" mobile>Case Studies</NavLink>
+            <NavLink to="/aetherminds" mobile>Aetherminds</NavLink>
             <NavLink to="/about" mobile>About Us</NavLink>
             <button className="text-left text-gray-300 hover:text-teal-500 transition-colors duration-300 text-base py-2" onClick={() => {
           scrollToContact();

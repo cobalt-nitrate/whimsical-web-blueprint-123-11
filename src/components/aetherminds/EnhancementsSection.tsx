@@ -2,6 +2,7 @@
 import React from 'react';
 import SectionHeader from '@/components/ui/section-header';
 import { Brain, BarChart3, ClockIcon, FastForward } from 'lucide-react';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 
 const EnhancementsSection = () => {
   const enhancements = [
@@ -41,26 +42,25 @@ const EnhancementsSection = () => {
           align="center"
         />
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-          {enhancements.map((item, index) => (
-            <div key={index} className="glass-card p-6 rounded-lg">
-              <div className="flex flex-col h-full">
-                <div className="mb-4">
-                  {item.icon}
-                </div>
-                <h3 className="text-xl font-semibold mb-3 text-teal-400">{item.solution}</h3>
-                <p className="text-gray-400 mb-3">
-                  <span className="text-white font-semibold">Problem:</span> {item.limitation}
-                </p>
-                <div className="mt-auto">
-                  <div className="bg-dark-700 rounded-lg p-3">
-                    <p className="text-teal-500 font-semibold">Performance Boost:</p>
-                    <p className="text-white">{item.performance}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
+        <div className="mt-12 glass-card p-6 rounded-lg overflow-hidden">
+          <Table>
+            <TableHeader>
+              <TableRow className="bg-dark-700 border-b border-dark-600">
+                <TableHead className="text-white font-semibold">Limitation in Standard AI Agents</TableHead>
+                <TableHead className="text-white font-semibold">Aetherminds' Solution</TableHead>
+                <TableHead className="text-white font-semibold">Expected Performance Boost</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {enhancements.map((item, index) => (
+                <TableRow key={index} className="border-b border-dark-600">
+                  <TableCell className="text-white">{item.limitation}</TableCell>
+                  <TableCell className="text-teal-400 font-medium">{item.solution}</TableCell>
+                  <TableCell className="text-gray-300">{item.performance}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
         </div>
       </div>
     </section>

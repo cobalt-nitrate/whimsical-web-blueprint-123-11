@@ -18,7 +18,7 @@ const WhyChooseSection: React.FC<WhyChooseSectionProps> = ({ scrollToContact }) 
   return (
     <section className="py-20 bg-dark-900 relative overflow-hidden">
       <div className="absolute inset-0 overflow-hidden z-0">
-        <div className="absolute top-1/4 -right-20 w-96 h-96 rounded-full bg-purple-500/5 blur-[100px]" />
+        <div className="absolute top-1/4 -right-20 w-96 h-96 rounded-full bg-teal-500/5 blur-[100px]" />
       </div>
       
       <div className="container mx-auto px-6 relative z-10">
@@ -33,7 +33,7 @@ const WhyChooseSection: React.FC<WhyChooseSectionProps> = ({ scrollToContact }) 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {reasons.map((reason, index) => (
               <div key={index} className="flex items-start space-x-3">
-                <CheckCircle className="h-6 w-6 text-purple-400 mt-0.5 flex-shrink-0" />
+                <CheckCircle className="h-6 w-6 text-teal-400 mt-0.5 flex-shrink-0" />
                 <p className="text-white text-lg">{reason}</p>
               </div>
             ))}
@@ -42,7 +42,7 @@ const WhyChooseSection: React.FC<WhyChooseSectionProps> = ({ scrollToContact }) 
           <div className="mt-12 text-center">
             <button 
               onClick={scrollToContact}
-              className="px-8 py-3 rounded-full bg-purple-600 hover:bg-purple-700 text-white font-medium transition-all duration-300"
+              className="px-8 py-3 rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium transition-all duration-300"
             >
               Request Consultation
             </button>

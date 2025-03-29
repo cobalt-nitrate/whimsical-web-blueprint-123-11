@@ -48,7 +48,7 @@ const DifferentiationSection = () => {
               <thead>
                 <tr className="border-b border-white/10">
                   <th className="py-4 px-6 text-left text-sm font-medium text-gray-300">Aspect</th>
-                  <th className="py-4 px-6 text-left text-sm font-medium text-purple-400">Aetherminds</th>
+                  <th className="py-4 px-6 text-left text-sm font-medium text-teal-400">Aetherminds</th>
                   <th className="py-4 px-6 text-left text-sm font-medium text-gray-400">Generic AI Solutions</th>
                 </tr>
               </thead>
@@ -58,7 +58,7 @@ const DifferentiationSection = () => {
                     <td className="py-4 px-6 text-sm text-white">{item.aspect}</td>
                     <td className="py-4 px-6">
                       {item.aetherminds ? (
-                        <Check className="h-5 w-5 text-purple-400" />
+                        <Check className="h-5 w-5 text-teal-400" />
                       ) : (
                         <X className="h-5 w-5 text-gray-500" />
                       )}

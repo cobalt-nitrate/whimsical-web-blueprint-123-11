@@ -62,7 +62,7 @@ const ModelTypesSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {validations.map((validation, index) => (
               <div key={index} className="flex items-center space-x-3 p-4 bg-dark-700/50 rounded-lg">
-                <Check className="h-5 w-5 text-purple-400 flex-shrink-0" />
+                <Check className="h-5 w-5 text-teal-400 flex-shrink-0" />
                 <span className="text-white">{validation}</span>
               </div>
             ))}

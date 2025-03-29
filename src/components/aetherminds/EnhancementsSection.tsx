@@ -1,7 +1,6 @@
 
 import React from 'react';
 import SectionHeader from '@/components/ui/section-header';
-import FeatureCard from '@/components/ui/feature-card';
 import { Brain, BarChart3, ClockIcon, FastForward } from 'lucide-react';
 
 const EnhancementsSection = () => {

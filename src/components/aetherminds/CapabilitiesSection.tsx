@@ -7,22 +7,22 @@ import FeatureCard from '@/components/ui/feature-card';
 const CapabilitiesSection = () => {
   const capabilities = [
     {
-      icon: <Database className="h-10 w-10 text-purple-400" />,
+      icon: <Database className="h-10 w-10 text-teal-400" />,
       title: "Custom AI Models",
       description: "From predictive to prescriptive AI tailored for your specific industry challenges and data."
     },
     {
-      icon: <Activity className="h-10 w-10 text-purple-400" />,
+      icon: <Activity className="h-10 w-10 text-teal-400" />,
       title: "Real-Time Decision AI",
       description: "Adaptive, high-stakes automation systems that operate with millisecond latency for critical applications."
     },
     {
-      icon: <Rocket className="h-10 w-10 text-purple-400" />,
+      icon: <Rocket className="h-10 w-10 text-teal-400" />,
       title: "AI Agents",
       description: "Enhanced memory, reasoning & decision-making capabilities beyond what generic models can provide."
     },
     {
-      icon: <Layers className="h-10 w-10 text-purple-400" />,
+      icon: <Layers className="h-10 w-10 text-teal-400" />,
       title: "Research-Driven AI",
       description: "Domain-specific models with measurable impact, backed by rigorous scientific validation."
     }

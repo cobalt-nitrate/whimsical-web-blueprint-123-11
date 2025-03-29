@@ -2,10 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+  const handleSectionLink = (e: React.MouseEvent<HTMLAnchorElement>, path: string, id: string) => {
+    e.preventDefault();
+    
+    // If we're already on the home page, just scroll to the section
+    if (window.location.pathname === '/') {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // If we're on another page, navigate to home with the hash
+      window.location.href = `/${id ? '#' + id : ''}`;
     }
   };
   
@@ -26,19 +34,19 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-medium mb-4 text-sm">Solutions</h4>
             <ul className="space-y-2">
-              <FooterLink to="/#features">Foundation Models</FooterLink>
-              <FooterLink to="/#features">Training</FooterLink>
-              <FooterLink to="/#features">Deployment</FooterLink>
-              <FooterLink to="/#features">Fine-Tuning</FooterLink>
+              <FooterLink to="/" section="features">Foundation Models</FooterLink>
+              <FooterLink to="/" section="features">Training</FooterLink>
+              <FooterLink to="/" section="features">Deployment</FooterLink>
+              <FooterLink to="/" section="features">Fine-Tuning</FooterLink>
             </ul>
           </div>
           
           <div>
             <h4 className="text-white font-medium mb-4 text-sm">Resources</h4>
             <ul className="space-y-2">
-              <FooterLink to="/#case-studies">Case Studies</FooterLink>
-              <FooterLink to="/#research">Research</FooterLink>
-              <FooterLink to="/#case-studies">Blog</FooterLink>
+              <FooterLink to="/" section="case-studies">Case Studies</FooterLink>
+              <FooterLink to="/" section="research">Research</FooterLink>
+              <FooterLink to="/" section="case-studies">Blog</FooterLink>
               <FooterLink to="#">Documentation</FooterLink>
             </ul>
           </div>
@@ -49,7 +57,7 @@ const Footer = () => {
               <FooterLink to="/about">About</FooterLink>
               <FooterLink to="#">Careers</FooterLink>
               <FooterLink to="#">Team</FooterLink>
-              <FooterLink to="/#contact">Contact</FooterLink>
+              <FooterLink to="/" section="contact">Contact</FooterLink>
             </ul>
           </div>
           
@@ -87,17 +95,45 @@ const Footer = () => {
 
 const FooterLink = ({
   to,
+  section,
   children
 }: {
   to: string;
+  section?: string;
   children: React.ReactNode;
-}) => (
-  <li>
-    <Link to={to} className="text-gray-400 hover:text-teal-500 transition-colors duration-300 text-sm">
-      {children}
-    </Link>
-  </li>
-);
+}) => {
+  if (section) {
+    return (
+      <li>
+        <a 
+          href={`${to}#${section}`} 
+          className="text-gray-400 hover:text-teal-500 transition-colors duration-300 text-sm"
+          onClick={(e) => {
+            e.preventDefault();
+            if (window.location.pathname === '/') {
+              const element = document.getElementById(section);
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+              }
+            } else {
+              window.location.href = `/${section ? '#' + section : ''}`;
+            }
+          }}
+        >
+          {children}
+        </a>
+      </li>
+    );
+  }
+  
+  return (
+    <li>
+      <Link to={to} className="text-gray-400 hover:text-teal-500 transition-colors duration-300 text-sm">
+        {children}
+      </Link>
+    </li>
+  );
+};
 
 const SocialLink = ({
   href,

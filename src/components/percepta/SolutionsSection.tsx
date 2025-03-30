@@ -1,10 +1,27 @@
+
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
 import SolutionCard from './SolutionCard';
-const SolutionsSection = () => {
-  return <section className="py-20 bg-dark-800">
+
+interface SolutionsSectionProps {
+  scrollToContact?: () => void;
+}
+
+const SolutionsSection: React.FC<SolutionsSectionProps> = ({ scrollToContact }) => {
+  const handleContactClick = () => {
+    if (scrollToContact) {
+      scrollToContact();
+    } else {
+      const contactElement = document.getElementById('contact');
+      if (contactElement) {
+        contactElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
+  return (
+    <section className="py-20 bg-dark-800">
       <div className="container mx-auto px-6">
         <div className="mb-16">
           <div className="inline-block px-3 py-1 rounded-full bg-dark-700 text-teal-500 text-xs font-medium mb-4">
@@ -23,13 +40,14 @@ const SolutionsSection = () => {
             </p>
             
             <h3 className="text-2xl font-bold mb-4 text-white">Our Solution</h3>
-            <p className="text-gray-400 mb-6 leading-relaxed">Percepta reduces development costs by enabling high-precision AI performance with reduced training data. </p>
+            <p className="text-gray-400 mb-6 leading-relaxed">Percepta reduces development costs by enabling high-precision AI performance with reduced training data. </p>
             
-            <Link to="#contact">
-              <Button className="rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium">
-                Get Started <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
+            <Button 
+              onClick={handleContactClick}
+              className="rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium"
+            >
+              Get Started <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
           </div>
           
           <div className="grid grid-cols-1 gap-6">
@@ -40,6 +58,8 @@ const SolutionsSection = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default SolutionsSection;

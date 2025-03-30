@@ -2,7 +2,6 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
 
 interface HeroSectionProps {
   scrollToContact?: () => void;
@@ -17,6 +16,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToContact }) => {
       if (contactElement) {
         contactElement.scrollIntoView({ behavior: 'smooth' });
       }
+    }
+  };
+
+  const scrollToUseCases = () => {
+    const useCasesElement = document.getElementById('usecases');
+    if (useCasesElement) {
+      useCasesElement.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -41,20 +47,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToContact }) => {
             >
               Schedule a Demo
             </Button>
-            <Link to="#usecases">
-              <Button 
-                onClick={() => {
-                  const useCasesSection = document.getElementById('usecases');
-                  if (useCasesSection) {
-                    useCasesSection.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-                variant="outline" 
-                className="px-6 py-6 rounded-full border-white/20 hover:bg-dark-700 text-white font-medium text-base"
-              >
-                Explore Use Cases
-              </Button>
-            </Link>
+            <Button 
+              onClick={scrollToUseCases}
+              variant="outline" 
+              className="px-6 py-6 rounded-full border-white/20 hover:bg-dark-700 text-white font-medium text-base"
+            >
+              Explore Use Cases
+            </Button>
           </div>
         </div>
       </div>

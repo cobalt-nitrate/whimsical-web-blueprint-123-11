@@ -8,7 +8,7 @@ const ContactForm = () => {
     company: '',
     message: '',
     phone: '',
-    jobTitle: ''
+    organization: ''
   });
 
   // Define the heading and description with more engaging content
@@ -32,7 +32,7 @@ const ContactForm = () => {
       company: '',
       message: '',
       phone: '',
-      jobTitle: ''
+      organization: ''
     });
     
     // Show success feedback
@@ -93,15 +93,21 @@ const ContactForm = () => {
             
             <div>
               <label className="block text-white mb-2 text-sm font-medium">
-                Job Title
+                Organization Type
               </label>
-              <input 
-                name="jobTitle"
-                value={formData.jobTitle}
+              <select 
+                name="organization"
+                value={formData.organization}
                 onChange={handleChange}
                 className="w-full bg-dark-700 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-teal-500/50 transition-all duration-300"
-                placeholder="Enter your job title"
-              />
+              >
+                <option value="" disabled>Select Organization Type</option>
+                <option value="enterprise">Enterprise</option>
+                <option value="startup">Startup</option>
+                <option value="government">Government</option>
+                <option value="education">Education</option>
+                <option value="other">Other</option>
+              </select>
             </div>
             
             <div>

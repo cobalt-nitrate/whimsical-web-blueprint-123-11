@@ -23,7 +23,7 @@ const Percepta = () => {
   return (
     <PageLayout>
       <HeroSection scrollToContact={scrollToContact} />
-      <OverviewSection scrollToContact={scrollToContact} />
+      <OverviewSection />
       <CoreCapabilities scrollToContact={scrollToContact} />
       <SolutionsSection scrollToContact={scrollToContact} />
       <AdaptabilitySection scrollToContact={scrollToContact} />

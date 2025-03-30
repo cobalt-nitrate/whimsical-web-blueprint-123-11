@@ -71,10 +71,6 @@
   button, a {
     @apply font-normal;
   }
-
-  input, textarea {
-    user-select: text;
-  }
 }
 
 @layer utilities {

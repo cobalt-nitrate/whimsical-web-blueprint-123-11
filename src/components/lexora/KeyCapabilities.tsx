@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Layers, Shield, Cpu, Brain, Settings, Link } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import CapabilityCard from './CapabilityCard';
 
@@ -39,37 +39,37 @@ const KeyCapabilities: React.FC<KeyCapabilitiesProps> = ({ scrollToContact }) =>
           <CapabilityCard 
             title="Domain-Specific Models"
             description="Pre-trained models optimized for specific industries like healthcare, finance, legal, and technical domains."
-            icon="Layers"
+            Icon={Layers}
           />
           
           <CapabilityCard 
             title="Secure On-Premise Deployment"
             description="Deploy models within your infrastructure, ensuring data never leaves your environment."
-            icon="Shield"
+            Icon={Shield}
           />
           
           <CapabilityCard 
             title="Low Computational Overhead"
             description="Efficient architecture requiring minimal hardware resources while maintaining high performance."
-            icon="Cpu"
+            Icon={Cpu}
           />
           
           <CapabilityCard 
             title="Advanced Reasoning"
             description="Enhanced logical reasoning capabilities for complex problem-solving and decision support."
-            icon="Brain"
+            Icon={Brain}
           />
           
           <CapabilityCard 
             title="Customization Framework"
             description="Tools for fine-tuning and adapting models to your specific organizational needs and terminology."
-            icon="Settings"
+            Icon={Settings}
           />
           
           <CapabilityCard 
             title="Enterprise Integration"
             description="Seamless integration with existing workflows, databases, and enterprise systems."
-            icon="Link"
+            Icon={Link}
           />
         </div>
         

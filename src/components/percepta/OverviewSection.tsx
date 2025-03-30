@@ -3,11 +3,19 @@ import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-const OverviewSection = () => {
-  const scrollToContact = () => {
-    const contactElement = document.getElementById('contact');
-    if (contactElement) {
-      contactElement.scrollIntoView({ behavior: 'smooth' });
+interface OverviewSectionProps {
+  scrollToContact?: () => void;
+}
+
+const OverviewSection: React.FC<OverviewSectionProps> = ({ scrollToContact }) => {
+  const handleContactClick = () => {
+    if (scrollToContact) {
+      scrollToContact();
+    } else {
+      const contactElement = document.getElementById('contact');
+      if (contactElement) {
+        contactElement.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
@@ -26,7 +34,7 @@ const OverviewSection = () => {
               Percepta introduces a hybrid vision architecture that seamlessly combines deep learning with reasoning capabilities. By integrating large vision-language models with specialized vision models, Percepta intelligently activates specific model components based on task requirements through dynamic routing mechanisms.
             </p>
             <Button 
-              onClick={scrollToContact} 
+              onClick={handleContactClick} 
               className="rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium"
             >
               Partner With Us <ArrowRight className="ml-2 h-4 w-4" />

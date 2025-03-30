@@ -1,9 +1,17 @@
 
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
 import PageLayout from '@/components/PageLayout';
 
 const Models = () => {
+  const scrollToContact = () => {
+    const contactElement = document.getElementById('contact');
+    if (contactElement) {
+      contactElement.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  };
+
   const models = [
     {
       name: "NovaCognition-1",
@@ -61,10 +69,6 @@ const Models = () => {
                 </ul>
                 
                 <div className="aspect-video bg-dark-800 rounded-lg mb-6"></div>
-                
-                <button className="inline-flex items-center text-teal-500 hover:text-teal-400">
-                  Model Documentation <ArrowRight className="ml-2 h-4 w-4" />
-                </button>
               </div>
             ))}
           </div>
@@ -74,7 +78,10 @@ const Models = () => {
             <p className="text-gray-400 mb-6">
               Experience the capabilities of our foundation models through our interactive demos and API access
             </p>
-            <button className="px-6 py-3 rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium transition-all duration-300">
+            <button 
+              onClick={scrollToContact}
+              className="px-6 py-3 rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium transition-all duration-300"
+            >
               Request Access
             </button>
           </div>

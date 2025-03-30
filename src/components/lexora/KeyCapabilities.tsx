@@ -1,172 +1,85 @@
 
 import React from 'react';
-import { Database, Zap, GitBranch, Shield, ArrowRight, GraduationCap, Scale, LineChart, MessageCircle, HeartPulse, BarChart, Code, BookOpen, FileCheck, HelpCircle, FileText, FlaskConical, Activity, Brain } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import CapabilityCard from './CapabilityCard';
 
 interface KeyCapabilitiesProps {
-  scrollToContact: () => void;
+  scrollToContact?: () => void;
 }
 
 const KeyCapabilities: React.FC<KeyCapabilitiesProps> = ({ scrollToContact }) => {
+  const handleContactClick = () => {
+    if (scrollToContact) {
+      scrollToContact();
+    } else {
+      const contactElement = document.getElementById('contact');
+      if (contactElement) {
+        contactElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
-    <section className="py-20 bg-dark-900">
+    <section id="keycapabilities" className="py-20 bg-dark-800">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="mb-16 text-center">
           <div className="inline-block px-3 py-1 rounded-full bg-dark-700 text-teal-500 text-xs font-medium mb-4">
-            Key Capabilities
+            Enterprise-Grade
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Transformative AI Features for Modern Enterprises
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Key <span className="text-gradient">Capabilities</span>
           </h2>
           <p className="text-gray-400 max-w-3xl mx-auto">
-            Discover how Lexora's capabilities deliver substantial value across industries
+            Lexora provides a comprehensive suite of language model capabilities tailored for enterprise needs, with a focus on security, efficiency, and customization.
           </p>
         </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <CapabilityCard 
+            title="Domain-Specific Models"
+            description="Pre-trained models optimized for specific industries like healthcare, finance, legal, and technical domains."
+            icon="Layers"
+          />
+          
+          <CapabilityCard 
+            title="Secure On-Premise Deployment"
+            description="Deploy models within your infrastructure, ensuring data never leaves your environment."
+            icon="Shield"
+          />
+          
+          <CapabilityCard 
+            title="Low Computational Overhead"
+            description="Efficient architecture requiring minimal hardware resources while maintaining high performance."
+            icon="Cpu"
+          />
+          
+          <CapabilityCard 
+            title="Advanced Reasoning"
+            description="Enhanced logical reasoning capabilities for complex problem-solving and decision support."
+            icon="Brain"
+          />
+          
+          <CapabilityCard 
+            title="Customization Framework"
+            description="Tools for fine-tuning and adapting models to your specific organizational needs and terminology."
+            icon="Settings"
+          />
+          
+          <CapabilityCard 
+            title="Enterprise Integration"
+            description="Seamless integration with existing workflows, databases, and enterprise systems."
+            icon="Link"
+          />
+        </div>
         
-        <div className="grid grid-cols-1 gap-12 mb-16">
-          {/* High Context Space */}
-          <CapabilityCard
-            title={<>High Context Space <span className="text-gradient">(10M Tokens)</span></>}
-            icon={Database}
-            description="Scaling AI to handle vast amounts of information without losing accuracy."
-            whyItMatters={[
-              {
-                icon: Zap,
-                title: "Enhanced Accuracy",
-                description: "Retains crucial details over extended conversations."
-              },
-              {
-                icon: Brain,
-                title: "Better Decision Support",
-                description: "Contextual insights for superior reasoning."
-              },
-              {
-                icon: BarChart,
-                title: "Scalable Knowledge",
-                description: "Designed for enterprise-scale applications."
-              }
-            ]}
-            useCases={[
-              {
-                icon: Scale,
-                description: "AI-powered legal research & case analysis"
-              },
-              {
-                icon: LineChart,
-                description: "Financial modeling with extensive historical data"
-              },
-              {
-                icon: MessageCircle,
-                description: "AI chatbots with full conversation memory"
-              },
-              {
-                icon: Database,
-                description: "Large-scale enterprise knowledge retrieval"
-              },
-              {
-                icon: HeartPulse,
-                description: "Advanced medical diagnostics with historical insights"
-              }
-            ]}
-            scrollToContact={scrollToContact}
-            ctaText="Explore High Context Use Cases"
-          />
-          
-          {/* Step-by-Step Reasoning */}
-          <CapabilityCard
-            title={<>Step-by-Step <span className="text-gradient">Reasoning</span></>}
-            icon={GitBranch}
-            description="Breaks down complex tasks into logical steps for precise and explainable AI-driven outputs."
-            whyItMatters={[
-              {
-                icon: GraduationCap,
-                title: "Increased Transparency",
-                description: "Logical flow of AI decisions."
-              },
-              {
-                icon: Shield,
-                title: "Error Reduction",
-                description: "Iterative validation prevents misinformation."
-              },
-              {
-                icon: ArrowRight,
-                title: "Complex Workflows",
-                description: "Handles multi-step reasoning processes."
-              }
-            ]}
-            useCases={[
-              {
-                icon: FileCheck,
-                description: "AI-assisted contract review with clause breakdown"
-              },
-              {
-                icon: BookOpen,
-                description: "Research assistance with structured synthesis"
-              },
-              {
-                icon: BarChart,
-                description: "Financial reports with reasoning-based insights"
-              },
-              {
-                icon: Code,
-                description: "AI code debugging with step-by-step explanations"
-              },
-              {
-                icon: HelpCircle,
-                description: "Multi-hop AI-driven question answering"
-              }
-            ]}
-            scrollToContact={scrollToContact}
-            ctaText="Explore Reasoning Use Cases"
-          />
-          
-          {/* Lightweight & Precise */}
-          <CapabilityCard
-            title={<>Lightweight & Precise for <span className="text-gradient">Domain-Specific AI</span></>}
-            icon={Zap}
-            description="Powered by a 2 Billion Parameter Proprietary LLM for precision AI."
-            whyItMatters={[
-              {
-                icon: Zap,
-                title: "Faster Performance",
-                description: "Optimized for efficiency with rapid inference."
-              },
-              {
-                icon: Activity,
-                title: "Higher Accuracy",
-                description: "Domain-specific fine-tuning reduces noise."
-              },
-              {
-                icon: BarChart,
-                title: "Lower Costs",
-                description: "Reduced compute power requirements vs. massive LLMs."
-              }
-            ]}
-            useCases={[
-              {
-                icon: Shield,
-                description: "AI-driven compliance monitoring for enterprises"
-              },
-              {
-                icon: FileText,
-                description: "High-precision financial & legal document analysis"
-              },
-              {
-                icon: FlaskConical,
-                description: "AI-powered clinical research and diagnostics"
-              },
-              {
-                icon: MessageCircle,
-                description: "Intelligent domain-specific customer support"
-              },
-              {
-                icon: BarChart,
-                description: "Real-time business analytics & reporting"
-              }
-            ]}
-            scrollToContact={scrollToContact}
-            ctaText="Explore Domain-Specific Use Cases"
-          />
+        <div className="text-center">
+          <Button 
+            onClick={handleContactClick}
+            className="px-8 py-3 rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium"
+          >
+            Get Started <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
         </div>
       </div>
     </section>

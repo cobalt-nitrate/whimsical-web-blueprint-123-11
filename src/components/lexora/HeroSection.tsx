@@ -1,82 +1,68 @@
 
 import React from 'react';
-import { ArrowRight, Brain, BarChart, Zap } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 interface HeroSectionProps {
-  scrollToContact: () => void;
+  scrollToContact?: () => void;
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({ scrollToContact }) => {
+  const handleContactClick = () => {
+    if (scrollToContact) {
+      scrollToContact();
+    } else {
+      const contactElement = document.getElementById('contact');
+      if (contactElement) {
+        contactElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+  
+  const scrollToCapabilities = () => {
+    const capabilitiesSection = document.getElementById('keycapabilities');
+    if (capabilitiesSection) {
+      capabilitiesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section className="pt-32 pb-16 md:pb-24 bg-dark-900">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="max-w-xl">
-            <div className="flex flex-wrap gap-2 mb-6">
-              {['AI Language Models', 'Context-Aware AI', 'Enterprise NLP', 'Knowledge Retrieval', 'AI Agents'].map(tag => (
-                <span key={tag} className="px-3 py-1 rounded-full bg-dark-700 text-teal-500 text-xs font-medium">
-                  {tag}
-                </span>
-              ))}
-            </div>
-            
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Domain-Specific LLM for <span className="text-gradient">Enterprises</span>
-            </h1>
-            
-            <p className="text-gray-300 text-lg mb-8">
-              Lexora is your enterprise-ready AI platform, offering industry-leading natural language processing with a 10M token context space, structured reasoning, and a proprietary lightweight LLM.
-            </p>
-            
-            <div className="flex flex-wrap gap-4">
-              <button onClick={scrollToContact} className="px-6 py-3 rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium transition-all duration-300">
-                Get Started with Lexora
-              </button>
-              
-              <Link to="/research" className="px-6 py-3 rounded-full border border-white/10 hover:border-white/30 text-white hover:bg-dark-800 transition-all duration-300">
-                Learn More
-              </Link>
-            </div>
+    <section className="py-20 md:py-28 relative overflow-hidden">
+      {/* Background gradients */}
+      <div className="absolute inset-0 bg-gradient-to-b from-dark-900 via-dark-800 to-dark-900 z-0"></div>
+      
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="inline-block px-3 py-1 rounded-full bg-dark-700 text-teal-500 text-xs font-medium mb-6">
+            AI Toolkit for Enterprises
           </div>
-          
-          <div className="hidden md:block relative">
-            <div className="relative z-10 glass-card p-6 rounded-xl">
-              <div className="aspect-video bg-gradient-to-br from-dark-800 to-dark-700 rounded-lg flex items-center justify-center mb-4">
-                <Brain className="w-20 h-20 text-teal-500/70" />
-              </div>
-              <div className="space-y-4">
-                <div className="h-2 bg-dark-700 rounded-full w-3/4"></div>
-                <div className="h-2 bg-dark-700 rounded-full w-full"></div>
-                <div className="h-2 bg-dark-700 rounded-full w-1/2"></div>
-              </div>
-            </div>
-            
-            <div className="absolute -bottom-4 -right-4 glass-card p-4 rounded-lg border border-teal-500/20 teal-glow">
-              <div className="flex items-center gap-3">
-                <div className="p-2 bg-teal-500/10 rounded-lg">
-                  <Zap className="h-5 w-5 text-teal-500" />
-                </div>
-                <div>
-                  <div className="text-sm font-medium">Token Context</div>
-                  <div className="text-lg font-bold text-teal-500">10M</div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="absolute -top-4 -left-4 glass-card p-4 rounded-lg border border-teal-500/20">
-              <div className="flex items-center gap-3">
-                <div className="p-2 bg-teal-500/10 rounded-lg">
-                  <BarChart className="h-5 w-5 text-teal-500" />
-                </div>
-                <div>
-                  <div className="text-sm font-medium">Parameter Count</div>
-                  <div className="text-lg font-bold text-teal-500">2B</div>
-                </div>
-              </div>
-            </div>
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gradient">
+            Lexora
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-300 mb-10 leading-relaxed">
+            A suite of domain-specific language models and tools designed for enterprise applications, with minimal computational overhead.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button 
+              onClick={handleContactClick}
+              className="px-6 py-6 rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium text-base"
+            >
+              Schedule a Demo
+            </Button>
+            <Button 
+              onClick={scrollToCapabilities}
+              variant="outline" 
+              className="px-6 py-6 rounded-full border-white/20 hover:bg-dark-700 text-white font-medium text-base"
+            >
+              Learn More
+            </Button>
           </div>
         </div>
+      </div>
+      
+      {/* Abstract background pattern */}
+      <div className="absolute inset-0 opacity-10 z-0 pointer-events-none">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,200,150,0.1),transparent_70%)]"></div>
       </div>
     </section>
   );

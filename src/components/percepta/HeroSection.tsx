@@ -4,7 +4,22 @@ import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
-const HeroSection = () => {
+interface HeroSectionProps {
+  scrollToContact?: () => void;
+}
+
+const HeroSection: React.FC<HeroSectionProps> = ({ scrollToContact }) => {
+  const handleContactClick = () => {
+    if (scrollToContact) {
+      scrollToContact();
+    } else {
+      const contactElement = document.getElementById('contact');
+      if (contactElement) {
+        contactElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <section className="py-20 md:py-28 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-dark-900 via-dark-800 to-dark-900 z-0"></div>
@@ -20,12 +35,26 @@ const HeroSection = () => {
             An adaptive vision intelligence stack designed to deliver precise results across various domains with minimal training and low computational overhead.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button className="px-6 py-6 rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium text-base">
+            <Button 
+              onClick={handleContactClick}
+              className="px-6 py-6 rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium text-base"
+            >
               Schedule a Demo
             </Button>
-            <Button variant="outline" className="px-6 py-6 rounded-full border-white/20 hover:bg-dark-700 text-white font-medium text-base">
-              Explore Use Cases
-            </Button>
+            <Link to="#usecases">
+              <Button 
+                onClick={() => {
+                  const useCasesSection = document.getElementById('usecases');
+                  if (useCasesSection) {
+                    useCasesSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                variant="outline" 
+                className="px-6 py-6 rounded-full border-white/20 hover:bg-dark-700 text-white font-medium text-base"
+              >
+                Explore Use Cases
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

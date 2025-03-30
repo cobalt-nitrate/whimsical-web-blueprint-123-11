@@ -5,9 +5,24 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import UseCaseCard from './UseCaseCard';
 
-const UseCasesSection = () => {
+interface UseCasesSectionProps {
+  scrollToContact?: () => void;
+}
+
+const UseCasesSection: React.FC<UseCasesSectionProps> = ({ scrollToContact }) => {
+  const handleContactClick = () => {
+    if (scrollToContact) {
+      scrollToContact();
+    } else {
+      const contactElement = document.getElementById('contact');
+      if (contactElement) {
+        contactElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
-    <section className="py-20 bg-dark-900">
+    <section id="usecases" className="py-20 bg-dark-900">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <div className="inline-block px-3 py-1 rounded-full bg-dark-700 text-teal-500 text-xs font-medium mb-4">
@@ -49,11 +64,12 @@ const UseCasesSection = () => {
         </div>
         
         <div className="text-center mt-12">
-          <Link to="#contact">
-            <Button className="rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium">
-              Explore All Use Cases <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-          </Link>
+          <Button 
+            onClick={handleContactClick}
+            className="rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium"
+          >
+            Explore All Use Cases <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
         </div>
       </div>
     </section>

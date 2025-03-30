@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import HeroSection from '@/components/percepta/HeroSection';
 import OverviewSection from '@/components/percepta/OverviewSection';
@@ -21,14 +22,14 @@ const Percepta = () => {
 
   return (
     <PageLayout>
-      <HeroSection />
+      <HeroSection scrollToContact={scrollToContact} />
       <OverviewSection />
-      <CoreCapabilities />
+      <CoreCapabilities scrollToContact={scrollToContact} />
       <SolutionsSection />
-      <AdaptabilitySection />
-      <UseCasesSection />
-      <TechnicalHighlights />
-      <CTASection />
+      <AdaptabilitySection scrollToContact={scrollToContact} />
+      <UseCasesSection scrollToContact={scrollToContact} />
+      <TechnicalHighlights scrollToContact={scrollToContact} />
+      <CTASection scrollToContact={scrollToContact} />
     </PageLayout>
   );
 };

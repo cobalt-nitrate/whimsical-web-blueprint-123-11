@@ -2,10 +2,24 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
 import SolutionCard from './SolutionCard';
 
-const AdaptabilitySection = () => {
+interface AdaptabilitySectionProps {
+  scrollToContact?: () => void;
+}
+
+const AdaptabilitySection: React.FC<AdaptabilitySectionProps> = ({ scrollToContact }) => {
+  const handleContactClick = () => {
+    if (scrollToContact) {
+      scrollToContact();
+    } else {
+      const contactElement = document.getElementById('contact');
+      if (contactElement) {
+        contactElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <section className="py-20 bg-dark-900">
       <div className="container mx-auto px-6">
@@ -49,11 +63,12 @@ const AdaptabilitySection = () => {
               Percepta is engineered for continuous adaptation and scalability, leveraging real-world data dynamics to autonomously enhance performance. It supports seamless feature expansion, cross-domain generalization, and scalable deployment without the need for frequent retraining.
             </p>
             
-            <Link to="#contact">
-              <Button className="rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium">
-                Explore Scalability <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
+            <Button 
+              onClick={handleContactClick}
+              className="rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium"
+            >
+              Explore Scalability <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
           </div>
         </div>
       </div>

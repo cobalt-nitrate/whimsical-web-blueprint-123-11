@@ -2,10 +2,24 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
 import TechHighlightCard from './TechHighlightCard';
 
-const TechnicalHighlights = () => {
+interface TechnicalHighlightsProps {
+  scrollToContact?: () => void;
+}
+
+const TechnicalHighlights: React.FC<TechnicalHighlightsProps> = ({ scrollToContact }) => {
+  const handleContactClick = () => {
+    if (scrollToContact) {
+      scrollToContact();
+    } else {
+      const contactElement = document.getElementById('contact');
+      if (contactElement) {
+        contactElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <section className="py-20 bg-dark-800">
       <div className="container mx-auto px-6">
@@ -61,11 +75,12 @@ const TechnicalHighlights = () => {
         </div>
         
         <div className="text-center mt-12">
-          <Link to="#contact">
-            <Button className="rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium">
-              Request Technical Documentation <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-          </Link>
+          <Button 
+            onClick={handleContactClick}
+            className="rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium"
+          >
+            Request Technical Documentation <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
         </div>
       </div>
     </section>

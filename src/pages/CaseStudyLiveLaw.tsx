@@ -1,17 +1,13 @@
-
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Check, ArrowRight, Award, Search, FileText, Clock, Brain, Scroll, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
 const CaseStudyLiveLaw = () => {
   // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  return (
-    <PageLayout>
+  return <PageLayout>
       <div className="pt-28 pb-20">
         {/* Hero Section */}
         <section className="bg-dark-900 py-16 relative overflow-hidden">
@@ -69,7 +65,7 @@ const CaseStudyLiveLaw = () => {
         </section>
 
         {/* Challenge Section */}
-        <section className="py-16 bg-dark-900">
+        <section className="bg-dark-900 py-[9px]">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-2xl md:text-3xl font-bold mb-6">The Challenge</h2>
@@ -130,12 +126,7 @@ const CaseStudyLiveLaw = () => {
                 <p className="text-right mt-4 text-teal-500 font-medium">— High Court Lawyer</p>
               </div>
               
-              <div className="glass-card p-6 rounded-lg border-l-4 border-teal-500">
-                <p className="italic text-gray-300">
-                  "I read a judgment if it's around 30 pages but wouldn't prefer manually reading a 300-page judgment."
-                </p>
-                <p className="text-right mt-4 text-teal-500 font-medium">— Legal Professional</p>
-              </div>
+              
             </div>
           </div>
         </section>
@@ -298,7 +289,7 @@ const CaseStudyLiveLaw = () => {
         </section>
 
         {/* Results Section */}
-        <section className="py-16 bg-dark-900">
+        <section className="bg-dark-900 py-[16px]">
           <div className="container mx-auto px-6">
             <div className="max-w-3xl mx-auto">
               <h2 className="text-2xl md:text-3xl font-bold mb-6">Results & Impact</h2>
@@ -504,8 +495,6 @@ const CaseStudyLiveLaw = () => {
           </div>
         </section>
       </div>
-    </PageLayout>
-  );
+    </PageLayout>;
 };
-
 export default CaseStudyLiveLaw;

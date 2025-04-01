@@ -4,19 +4,18 @@ import PageLayout from '@/components/PageLayout';
 import HeroSection from '@/components/percepta/HeroSection';
 import OverviewSection from '@/components/percepta/OverviewSection';
 import CoreCapabilities from '@/components/percepta/CoreCapabilities';
-import SolutionsSection from '@/components/percepta/SolutionsSection';
-import AdaptabilitySection from '@/components/percepta/AdaptabilitySection';
 import TechnicalHighlights from '@/components/percepta/TechnicalHighlights';
+import SolutionsSection from '@/components/percepta/SolutionsSection';
 import UseCasesSection from '@/components/percepta/UseCasesSection';
+import AdaptabilitySection from '@/components/percepta/AdaptabilitySection';
 import CTASection from '@/components/percepta/CTASection';
 
-const Percepta = () => {
+const Percepta: React.FC = () => {
+  // This function will be used to scroll to the contact form when CTA buttons are clicked
   const scrollToContact = () => {
-    const contactElement = document.getElementById('contact');
-    if (contactElement) {
-      contactElement.scrollIntoView({
-        behavior: 'smooth'
-      });
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -24,12 +23,12 @@ const Percepta = () => {
     <PageLayout>
       <HeroSection scrollToContact={scrollToContact} />
       <OverviewSection />
-      <CoreCapabilities scrollToContact={scrollToContact} />
-      <SolutionsSection scrollToContact={scrollToContact} />
-      <AdaptabilitySection scrollToContact={scrollToContact} />
-      <UseCasesSection scrollToContact={scrollToContact} />
-      <TechnicalHighlights scrollToContact={scrollToContact} />
-      <CTASection scrollToContact={scrollToContact} />
+      <CoreCapabilities />
+      <TechnicalHighlights />
+      <SolutionsSection />
+      <UseCasesSection />
+      <AdaptabilitySection />
+      <CTASection />
     </PageLayout>
   );
 };

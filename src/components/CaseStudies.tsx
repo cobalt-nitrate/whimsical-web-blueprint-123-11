@@ -1,6 +1,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { ArrowRight, Search } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const CaseStudies = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -27,6 +28,43 @@ const CaseStudies = () => {
     };
   }, []);
 
+  // Define case studies data
+  const caseStudies = [
+    {
+      id: "satva",
+      title: "Revolutionizing Maritime Parametric Insurance",
+      description: "How NovaForge's Analytics Solution Delivered Rapid Trigger Verification for Satva Trust",
+      category: "Maritime Insurance",
+      industry: "Insurance & Maritime",
+      link: "/case-study-satva"
+    },
+    {
+      id: "msk",
+      title: "AI-Powered Medical Imaging Analysis",
+      description: "How NovaForge helped a leading hospital improve diagnostic accuracy",
+      category: "Healthcare",
+      industry: "Medical",
+      link: "/case-study-msk"
+    },
+    {
+      id: "livelaw",
+      title: "Automated Legal Document Processing",
+      description: "Intelligent document analysis for legal professionals",
+      category: "Legal Technology",
+      industry: "Legal",
+      link: "/case-study-livelaw"
+    }
+  ];
+
+  // Filter case studies based on search query
+  const filteredCaseStudies = searchQuery.length > 0
+    ? caseStudies.filter(study => 
+        study.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        study.industry.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        study.category.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+    : caseStudies;
+
   return (
     <section 
       id="case-studies" 
@@ -39,10 +77,10 @@ const CaseStudies = () => {
             Industry Research
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Research & Industry Whitepapers
+            Research & Industry Case Studies
           </h2>
           <p className="text-gray-400 max-w-3xl mx-auto mb-8">
-            Explore our thorough research on specific industries and evolving AI use cases across various sectors.
+            Explore our thorough research and successful implementations across various industries.
           </p>
           
           <div className="relative max-w-md mx-auto">
@@ -60,15 +98,23 @@ const CaseStudies = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-          {Array.from({ length: 4 }).map((_, index) => (
-            <CaseStudyCard key={index} delay={(index + 1) * 150} />
+          {filteredCaseStudies.map((study, index) => (
+            <CaseStudyCard 
+              key={study.id} 
+              title={study.title}
+              description={study.description}
+              category={study.category}
+              industry={study.industry}
+              link={study.link}
+              delay={(index + 1) * 150} 
+            />
           ))}
         </div>
         
         <div className="text-center">
-          <button className="px-8 py-3 rounded-full bg-dark-700 hover:bg-dark-600 text-white transition-all duration-300">
-            Load More
-          </button>
+          <Link to="/case-studies" className="px-8 py-3 rounded-full bg-dark-700 hover:bg-dark-600 text-white transition-all duration-300">
+            View All Case Studies
+          </Link>
         </div>
       </div>
     </section>
@@ -76,10 +122,15 @@ const CaseStudies = () => {
 };
 
 interface CaseStudyCardProps {
+  title: string;
+  description: string;
+  category: string;
+  industry: string;
+  link: string;
   delay: number;
 }
 
-const CaseStudyCard = ({ delay }: CaseStudyCardProps) => {
+const CaseStudyCard = ({ title, description, category, industry, link, delay }: CaseStudyCardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
@@ -113,21 +164,21 @@ const CaseStudyCard = ({ delay }: CaseStudyCardProps) => {
     >
       <div className="grid grid-cols-2 gap-4">
         {/* Left side reserved for image */}
-        <div className="hidden md:block">
-          {/* Image placeholder */}
+        <div className="hidden md:flex items-center justify-center">
+          <div className="aspect-video w-full bg-dark-700 rounded-lg"></div>
         </div>
         
         <div>
-          <div className="text-xs text-gray-400 mb-2">Category • Lorem Ipsum</div>
-          <h3 className="text-lg font-semibold mb-2 text-white">Building a Lorem Ipsum for Enterprise</h3>
-          <p className="text-gray-400 text-sm mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
-          <a 
-            href="#" 
+          <div className="text-xs text-gray-400 mb-2">{category} • {industry}</div>
+          <h3 className="text-lg font-semibold mb-2 text-white">{title}</h3>
+          <p className="text-gray-400 text-sm mb-4">{description}</p>
+          <Link 
+            to={link} 
             className="inline-flex items-center text-teal-500 hover:text-teal-400 transition-colors duration-300 text-sm font-medium group"
           >
             Read More 
             <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
-          </a>
+          </Link>
         </div>
       </div>
     </div>

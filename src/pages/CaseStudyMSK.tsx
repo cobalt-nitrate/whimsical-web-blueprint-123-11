@@ -22,7 +22,7 @@ const CaseStudyMSK = () => {
                 Healthcare Case Study
               </div>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 max-w-4xl">
-                How MSK Cancer Center Revolutionized Medical Image Analysis with NovaForge AI Integration
+              Medical Imaging: Enhancing PACS Viewer Functionality for MSK Cancer Center
               </h1>
               
               <div className="flex items-center space-x-4 text-sm text-gray-400 mb-8">
@@ -58,10 +58,6 @@ const CaseStudyMSK = () => {
                     faced significant challenges with their legacy PACS (Picture Archiving and Communication Systems) platform. 
                     Their existing solution lacked modern AI capabilities, creating inefficiencies in image analysis, 
                     diagnosis, and educational dataset creation.
-                  </p>
-                  <p className="text-gray-300 leading-relaxed">
-                    This case study explores how Authera's NovaForge platform transformed MSK's radiological 
-                    workflow through integrated AI capabilities, advanced visualization tools, and intuitive user experience.
                   </p>
                 </div>
               </div>
@@ -414,17 +410,6 @@ const CaseStudyMSK = () => {
                 <p className="text-right mt-4 text-teal-500 font-medium">— Dr. Giovanna Caxeiro, Radiologist at MSK</p>
               </div>
               
-              <div className="border-t border-white/10 pt-8 text-gray-300 italic">
-                <p className="mb-4">
-                  This case study demonstrates how NovaForge's integration of advanced AI capabilities with intuitive 
-                  user experience design has created a transformative solution for one of healthcare's most demanding 
-                  imaging environments.
-                </p>
-                <p>
-                  By addressing the specific pain points of radiologists and clinicians, Authera has delivered measurable 
-                  improvements in efficiency, diagnostic accuracy, and collaborative capabilities.
-                </p>
-              </div>
             </div>
           </div>
         </section>

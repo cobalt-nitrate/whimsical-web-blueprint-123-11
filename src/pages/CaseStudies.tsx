@@ -9,7 +9,7 @@ const CaseStudies = () => {
   }, []);
   const caseStudies = [{
     id: "msk-cancer-center",
-    title: "How MSK Cancer Center Revolutionized Medical Image Analysis",
+    title: "Medical Imaging: Enhancing PACS Viewer Functionality for MSK Cancer Center",
     category: "Healthcare",
     industry: "Medical Imaging",
     description: "Memorial Sloan Kettering Cancer Center transformed their radiology workflow with NovaForge AI integration.",

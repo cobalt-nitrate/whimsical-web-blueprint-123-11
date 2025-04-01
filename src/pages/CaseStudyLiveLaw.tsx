@@ -1,15 +1,12 @@
-
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Check, ArrowRight, Award, Search, FileText, Clock, Brain, Scroll, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
 const CaseStudyLiveLaw = () => {
   // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
   return <PageLayout>
       <div className="pt-28 pb-20">
         {/* Hero Section */}
@@ -47,11 +44,7 @@ const CaseStudyLiveLaw = () => {
                 {/* Live Law Logo Column */}
                 <div className="w-full md:w-1/3 flex justify-center md:justify-start">
                   <div className="p-4 rounded-lg w-48 h-48 flex items-center justify-center">
-                    <img 
-                      src="/lovable-uploads/2a8a9acd-d9f5-4c0e-8db6-a55ae5c0ac76.png" 
-                      alt="Live Law Logo" 
-                      className="w-full h-auto" 
-                    />
+                    <img src="/lovable-uploads/2a8a9acd-d9f5-4c0e-8db6-a55ae5c0ac76.png" alt="Live Law Logo" className="w-full h-auto" />
                   </div>
                 </div>
                 
@@ -341,74 +334,7 @@ const CaseStudyLiveLaw = () => {
               </div>
               
               {/* User Growth Timeline */}
-              <div className="mb-12">
-                <h3 className="text-xl font-semibold mb-6 flex items-center">
-                  <Users className="h-5 w-5 text-teal-500 mr-2" />
-                  User Growth & Adoption
-                </h3>
-                
-                <p className="text-gray-300 mb-4">
-                  Live Law followed a phased rollout plan for the AI-powered legal research platform:
-                </p>
-                
-                <div className="relative">
-                  {/* Timeline line */}
-                  <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-dark-700"></div>
-                  
-                  {/* Timeline items */}
-                  <div className="space-y-6">
-                    <div className="flex gap-6">
-                      <div className="w-8 h-8 rounded-full bg-teal-500/20 flex items-center justify-center z-10">
-                        <div className="w-3 h-3 bg-teal-500 rounded-full"></div>
-                      </div>
-                      <div>
-                        <h4 className="font-medium text-white">User Acceptance Testing (Nov 2024)</h4>
-                        <p className="text-gray-400">200 early users</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex gap-6">
-                      <div className="w-8 h-8 rounded-full bg-teal-500/20 flex items-center justify-center z-10">
-                        <div className="w-3 h-3 bg-teal-500 rounded-full"></div>
-                      </div>
-                      <div>
-                        <h4 className="font-medium text-white">Beta Program Launch (Jan 2025)</h4>
-                        <p className="text-gray-400">500 users</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex gap-6">
-                      <div className="w-8 h-8 rounded-full bg-teal-500/20 flex items-center justify-center z-10">
-                        <div className="w-3 h-3 bg-teal-500 rounded-full"></div>
-                      </div>
-                      <div>
-                        <h4 className="font-medium text-white">Early Access (May 2025)</h4>
-                        <p className="text-gray-400">10,000 users</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex gap-6">
-                      <div className="w-8 h-8 rounded-full bg-teal-500/20 flex items-center justify-center z-10">
-                        <div className="w-3 h-3 bg-teal-500 rounded-full"></div>
-                      </div>
-                      <div>
-                        <h4 className="font-medium text-white">Official Product Launch (Aug 2025)</h4>
-                        <p className="text-gray-400">25,000 users</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex gap-6">
-                      <div className="w-8 h-8 rounded-full bg-teal-500/20 flex items-center justify-center z-10">
-                        <div className="w-3 h-3 bg-teal-500 rounded-full"></div>
-                      </div>
-                      <div>
-                        <h4 className="font-medium text-white">Post-Launch Marketing (Aug-Dec 2025)</h4>
-                        <p className="text-gray-400">Targeting 100,000 users</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              
             </div>
           </div>
         </section>
@@ -508,5 +434,4 @@ const CaseStudyLiveLaw = () => {
       </div>
     </PageLayout>;
 };
-
 export default CaseStudyLiveLaw;

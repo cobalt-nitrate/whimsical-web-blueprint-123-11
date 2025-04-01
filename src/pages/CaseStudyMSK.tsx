@@ -44,94 +44,99 @@ const CaseStudyMSK = () => {
                 <HeartPulse className="w-16 h-16 text-teal-500/50" />
               </div>
             </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              <div className="glass-card p-6 rounded-lg text-center">
-                <div className="text-3xl font-bold text-teal-500 mb-2">40%</div>
-                <p className="text-gray-400 text-sm">Reduction in navigation time</p>
-              </div>
-              
-              <div className="glass-card p-6 rounded-lg text-center">
-                <div className="text-3xl font-bold text-teal-500 mb-2">25%</div>
-                <p className="text-gray-400 text-sm">Faster interpretation workflow</p>
-              </div>
-              
-              <div className="glass-card p-6 rounded-lg text-center">
-                <div className="text-3xl font-bold text-teal-500 mb-2">60%</div>
-                <p className="text-gray-400 text-sm">Reduced AI training dataset time</p>
-              </div>
-            </div>
           </div>
         </section>
 
-        {/* Overview Section */}
+        {/* Overview Section with MSK Logo */}
         <section className="py-16 bg-dark-800">
           <div className="container mx-auto px-6">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl md:text-3xl font-bold mb-6">Overview</h2>
-              <p className="text-gray-300 mb-6 leading-relaxed">
-                Memorial Sloan Kettering (MSK) Cancer Center, one of the world's premier cancer treatment facilities, 
-                faced significant challenges with their legacy PACS (Picture Archiving and Communication Systems) platform. 
-                Their existing solution lacked modern AI capabilities, creating inefficiencies in image analysis, 
-                diagnosis, and educational dataset creation.
-              </p>
-              <p className="text-gray-300 leading-relaxed">
-                This case study explores how Authera's NovaForge platform transformed MSK's radiological 
-                workflow through integrated AI capabilities, advanced visualization tools, and intuitive user experience.
-              </p>
+            <div className="max-w-4xl mx-auto">
+              <div className="flex flex-col md:flex-row items-start gap-12 mb-8">
+                {/* MSK Logo Column */}
+                <div className="w-full md:w-1/3 flex justify-center md:justify-start">
+                  <div className="bg-[#00438f] p-4 rounded-lg w-48 h-48 flex items-center justify-center">
+                    <img 
+                      src="/lovable-uploads/34d6a729-eba9-4164-9919-6d2762721bf5.png" 
+                      alt="Memorial Sloan Kettering Cancer Center Logo" 
+                      className="w-full"
+                    />
+                  </div>
+                </div>
+                
+                {/* Overview Content Column */}
+                <div className="w-full md:w-2/3">
+                  <h2 className="text-2xl md:text-3xl font-bold mb-6">Overview</h2>
+                  <p className="text-gray-300 mb-6 leading-relaxed">
+                    Memorial Sloan Kettering (MSK) Cancer Center, one of the world's premier cancer treatment facilities, 
+                    faced significant challenges with their legacy PACS (Picture Archiving and Communication Systems) platform. 
+                    Their existing solution lacked modern AI capabilities, creating inefficiencies in image analysis, 
+                    diagnosis, and educational dataset creation.
+                  </p>
+                  <p className="text-gray-300 leading-relaxed">
+                    This case study explores how Authera's NovaForge platform transformed MSK's radiological 
+                    workflow through integrated AI capabilities, advanced visualization tools, and intuitive user experience.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Challenge Section */}
+        {/* Challenge Section - Reorganized to 2 rows with multiple columns */}
         <section className="py-16 bg-dark-900">
           <div className="container mx-auto px-6">
-            <div className="max-w-3xl mx-auto">
+            <div className="max-w-4xl mx-auto">
               <h2 className="text-2xl md:text-3xl font-bold mb-6">The Challenge</h2>
               
               <p className="text-gray-300 mb-8 leading-relaxed">
                 MSK Cancer Center was struggling with several limitations in their outdated imaging system:
               </p>
               
-              <div className="space-y-6 mb-8">
-                <div className="glass-card p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold mb-3 text-white">Limited AI Integration</h3>
-                  <p className="text-gray-400">
-                    Their previous PACS system (GE PACS) had no native AI capabilities, making it impossible 
-                    to train custom algorithms or deploy automated analysis tools.
-                  </p>
+              <div className="mb-8">
+                {/* Row 1 */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+                  <div className="glass-card p-6 rounded-lg">
+                    <h3 className="text-xl font-semibold mb-3 text-white">Limited AI Integration</h3>
+                    <p className="text-gray-400">
+                      Their previous PACS system (GE PACS) had no native AI capabilities, making it impossible 
+                      to train custom algorithms or deploy automated analysis tools.
+                    </p>
+                  </div>
+                  
+                  <div className="glass-card p-6 rounded-lg">
+                    <h3 className="text-xl font-semibold mb-3 text-white">Inefficient Image Labeling</h3>
+                    <p className="text-gray-400">
+                      Radiologists needed to manually label thousands of images for creating training datasets, 
+                      a tedious process without specialized tools.
+                    </p>
+                  </div>
+                  
+                  <div className="glass-card p-6 rounded-lg">
+                    <h3 className="text-xl font-semibold mb-3 text-white">Workflow Bottlenecks</h3>
+                    <p className="text-gray-400">
+                      Clinicians reported "too many options" with poor organization, making it difficult to quickly 
+                      access needed functions or compare images across time periods.
+                    </p>
+                  </div>
                 </div>
                 
-                <div className="glass-card p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold mb-3 text-white">Inefficient Image Labeling</h3>
-                  <p className="text-gray-400">
-                    Radiologists needed to manually label thousands of images for creating training datasets, 
-                    a tedious process without specialized tools.
-                  </p>
-                </div>
-                
-                <div className="glass-card p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold mb-3 text-white">Workflow Bottlenecks</h3>
-                  <p className="text-gray-400">
-                    Clinicians reported "too many options" with poor organization, making it difficult to quickly 
-                    access needed functions or compare images across time periods.
-                  </p>
-                </div>
-                
-                <div className="glass-card p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold mb-3 text-white">Lack of Customization</h3>
-                  <p className="text-gray-400">
-                    The system couldn't be tailored to individual radiologist workflows or preferences, 
-                    requiring extra clicks and time-consuming navigation.
-                  </p>
-                </div>
-                
-                <div className="glass-card p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold mb-3 text-white">Poor Cross-Study Comparison</h3>
-                  <p className="text-gray-400">
-                    Physicians struggled to effectively compare patient images across different time periods, 
-                    especially for tracking treatment progress.
-                  </p>
+                {/* Row 2 */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="glass-card p-6 rounded-lg">
+                    <h3 className="text-xl font-semibold mb-3 text-white">Lack of Customization</h3>
+                    <p className="text-gray-400">
+                      The system couldn't be tailored to individual radiologist workflows or preferences, 
+                      requiring extra clicks and time-consuming navigation.
+                    </p>
+                  </div>
+                  
+                  <div className="glass-card p-6 rounded-lg">
+                    <h3 className="text-xl font-semibold mb-3 text-white">Poor Cross-Study Comparison</h3>
+                    <p className="text-gray-400">
+                      Physicians struggled to effectively compare patient images across different time periods, 
+                      especially for tracking treatment progress.
+                    </p>
+                  </div>
                 </div>
               </div>
               
@@ -288,7 +293,7 @@ const CaseStudyMSK = () => {
           </div>
         </section>
 
-        {/* Results Section */}
+        {/* Results Section - Without individual efficiency stats */}
         <section className="py-16 bg-dark-900">
           <div className="container mx-auto px-6">
             <div className="max-w-3xl mx-auto">
@@ -304,21 +309,12 @@ const CaseStudyMSK = () => {
                   Efficiency Gains
                 </h3>
                 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                  <div className="glass-card p-6 rounded-lg">
-                    <div className="text-2xl font-bold text-teal-500 mb-2">40%</div>
-                    <p className="text-gray-400 text-sm">reduction in time spent navigating between tools and functions</p>
-                  </div>
-                  
-                  <div className="glass-card p-6 rounded-lg">
-                    <div className="text-2xl font-bold text-teal-500 mb-2">25%</div>
-                    <p className="text-gray-400 text-sm">faster image interpretation workflows</p>
-                  </div>
-                  
-                  <div className="glass-card p-6 rounded-lg">
-                    <div className="text-2xl font-bold text-teal-500 mb-2">60%</div>
-                    <p className="text-gray-400 text-sm">decrease in time required for creating AI training datasets</p>
-                  </div>
+                <div className="glass-card p-6 rounded-lg mb-6">
+                  <p className="text-gray-300">
+                    The implementation resulted in a <span className="text-teal-500 font-bold">40% reduction</span> in navigation time, 
+                    <span className="text-teal-500 font-bold"> 25% faster</span> interpretation workflow, and a 
+                    <span className="text-teal-500 font-bold"> 60% decrease</span> in AI training dataset preparation time.
+                  </p>
                 </div>
               </div>
               
@@ -390,7 +386,7 @@ const CaseStudyMSK = () => {
           </div>
         </section>
 
-        {/* Future Outlook */}
+        {/* Future Outlook - Reorganized to 2x2 grid */}
         <section className="py-16 bg-dark-800">
           <div className="container mx-auto px-6">
             <div className="max-w-3xl mx-auto">
@@ -400,7 +396,8 @@ const CaseStudyMSK = () => {
                 MSK Cancer Center is continuing to expand their use of the NovaForge platform in several ways:
               </p>
               
-              <div className="space-y-6 mb-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                {/* Row 1, Column 1 */}
                 <div className="glass-card p-6 rounded-lg">
                   <h3 className="text-xl font-semibold mb-3 text-white">AI Model Library Development</h3>
                   <p className="text-gray-400">
@@ -409,6 +406,7 @@ const CaseStudyMSK = () => {
                   </p>
                 </div>
                 
+                {/* Row 1, Column 2 */}
                 <div className="glass-card p-6 rounded-lg">
                   <h3 className="text-xl font-semibold mb-3 text-white">Voice Dictation Integration</h3>
                   <p className="text-gray-400">
@@ -416,6 +414,7 @@ const CaseStudyMSK = () => {
                   </p>
                 </div>
                 
+                {/* Row 2, Column 1 */}
                 <div className="glass-card p-6 rounded-lg">
                   <h3 className="text-xl font-semibold mb-3 text-white">VR/AR Implementation</h3>
                   <p className="text-gray-400">
@@ -423,6 +422,7 @@ const CaseStudyMSK = () => {
                   </p>
                 </div>
                 
+                {/* Row 2, Column 2 */}
                 <div className="glass-card p-6 rounded-lg">
                   <h3 className="text-xl font-semibold mb-3 text-white">Multi-Institutional Collaboration</h3>
                   <p className="text-gray-400">
@@ -507,3 +507,4 @@ const CaseStudyMSK = () => {
 };
 
 export default CaseStudyMSK;
+

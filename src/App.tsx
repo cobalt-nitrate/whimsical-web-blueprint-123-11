@@ -10,6 +10,7 @@ import Solutions from "./pages/Solutions";
 import Research from "./pages/Research";
 import Enterprises from "./pages/Enterprises";
 import CaseStudies from "./pages/CaseStudies";
+import CaseStudyMSK from "./pages/CaseStudyMSK";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import AIToolkit from "./pages/AIToolkit";
@@ -48,6 +49,7 @@ const App = () => (
           <Route path="/research" element={<Research />} />
           <Route path="/enterprises" element={<Enterprises />} />
           <Route path="/case-studies" element={<CaseStudies />} />
+          <Route path="/case-study-msk" element={<CaseStudyMSK />} />
           <Route path="/about" element={<About />} />
           <Route path="/ai-toolkit" element={<AIToolkit />} />
           <Route path="/models" element={<Models />} />

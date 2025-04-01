@@ -1,12 +1,15 @@
+
 import React, { useEffect } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { Check, ArrowRight, Award, Search, FileText, Clock, Brain, Scroll, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
+
 const CaseStudyLiveLaw = () => {
   // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return <PageLayout>
       <div className="pt-28 pb-20">
         {/* Hero Section */}
@@ -43,8 +46,12 @@ const CaseStudyLiveLaw = () => {
               <div className="flex flex-col md:flex-row items-start gap-12 mb-8">
                 {/* Live Law Logo Column */}
                 <div className="w-full md:w-1/3 flex justify-center md:justify-start">
-                  <div className="bg-[#1a365d] p-4 rounded-lg w-48 h-48 flex items-center justify-center">
-                    <div className="text-3xl font-bold text-white">LIVE LAW</div>
+                  <div className="p-4 rounded-lg w-48 h-48 flex items-center justify-center">
+                    <img 
+                      src="/lovable-uploads/2a8a9acd-d9f5-4c0e-8db6-a55ae5c0ac76.png" 
+                      alt="Live Law Logo" 
+                      className="w-full h-auto" 
+                    />
                   </div>
                 </div>
                 
@@ -125,164 +132,168 @@ const CaseStudyLiveLaw = () => {
                 </p>
                 <p className="text-right mt-4 text-teal-500 font-medium">— High Court Lawyer</p>
               </div>
-              
-              
             </div>
           </div>
         </section>
 
-        {/* Solution Section */}
-        <section className="py-1 bg-dark-800">
+        {/* Solution Section - Improved Layout */}
+        <section className="py-12 bg-dark-800">
           <div className="container mx-auto px-6">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl md:text-3xl font-bold mb-6">The Solution</h2>
+            <div className="max-w-5xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">The Solution</h2>
               
-              <p className="text-gray-300 mb-8 leading-relaxed">
+              <p className="text-gray-300 mb-10 text-center max-w-3xl mx-auto">
                 To address these challenges, Live Law integrated NovaForge's next-generation legal research platform, 
-                tailored for the Indian legal ecosystem. Key innovations included:
+                tailored for the Indian legal ecosystem.
               </p>
               
-              {/* AI-Enhanced Search Engine */}
-              <div className="mb-12">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 rounded-full bg-teal-500/10 flex items-center justify-center">
-                    <Search className="w-6 h-6 text-teal-500" />
+              {/* Solution Grid - Redesigned */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                {/* AI-Enhanced Search Engine */}
+                <div className="glass-card p-8 rounded-xl border border-dark-700 hover:border-teal-500/30 transition-colors duration-300">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-14 h-14 rounded-full bg-teal-500/10 flex items-center justify-center">
+                      <Search className="w-7 h-7 text-teal-500" />
+                    </div>
+                    <h3 className="text-xl font-semibold">AI-Enhanced Search Engine</h3>
                   </div>
-                  <h3 className="text-xl font-semibold">AI-Enhanced Search Engine</h3>
+                  
+                  <ul className="space-y-4">
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <div>
+                        <span className="font-medium text-white">Semantic Search:</span>
+                        <span className="text-gray-400"> Enabled conceptual and intent-based search rather than keyword matching.</span>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <div>
+                        <span className="font-medium text-white">Contextual Processing:</span>
+                        <span className="text-gray-400"> Factored user behavior and history for more relevant results.</span>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <div>
+                        <span className="font-medium text-white">Natural Language Processing:</span>
+                        <span className="text-gray-400"> Incorporated spelling corrections and query enrichment.</span>
+                      </div>
+                    </li>
+                  </ul>
                 </div>
                 
-                <ul className="space-y-4">
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <span className="font-medium text-white">Semantic Search:</span>
-                      <span className="text-gray-400"> Enabled conceptual and intent-based search rather than relying solely on keyword matching.</span>
+                {/* Comprehensive Legal Database */}
+                <div className="glass-card p-8 rounded-xl border border-dark-700 hover:border-teal-500/30 transition-colors duration-300">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-14 h-14 rounded-full bg-teal-500/10 flex items-center justify-center">
+                      <FileText className="w-7 h-7 text-teal-500" />
                     </div>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <span className="font-medium text-white">Contextual Processing:</span>
-                      <span className="text-gray-400"> Factored in user behavior, browsing history, and bookmarks to deliver more relevant results.</span>
+                    <h3 className="text-xl font-semibold">Comprehensive Legal Database</h3>
+                  </div>
+                  
+                  <ul className="space-y-4">
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <div>
+                        <span className="font-medium text-white">Diverse Legal Content:</span>
+                        <span className="text-gray-400"> High Court judgments, tribunal decisions, and legal documents.</span>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <div>
+                        <span className="font-medium text-white">Automated Updates:</span>
+                        <span className="text-gray-400"> 24-hour refresh cycle for up-to-date legal references.</span>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <div>
+                        <span className="font-medium text-white">Data Structuring:</span>
+                        <span className="text-gray-400"> Improved document organization and citation linking.</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                
+                {/* Intuitive User Experience */}
+                <div className="glass-card p-8 rounded-xl border border-dark-700 hover:border-teal-500/30 transition-colors duration-300">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-14 h-14 rounded-full bg-teal-500/10 flex items-center justify-center">
+                      <Scroll className="w-7 h-7 text-teal-500" />
                     </div>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <span className="font-medium text-white">Natural Language Processing (NLP):</span>
-                      <span className="text-gray-400"> Incorporated spelling corrections, query enrichment, and paraphrasing for more accurate search outcomes.</span>
+                    <h3 className="text-xl font-semibold">Intuitive User Experience</h3>
+                  </div>
+                  
+                  <ul className="space-y-4">
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <div>
+                        <span className="font-medium text-white">Research Workspaces:</span>
+                        <span className="text-gray-400"> Dedicated environments for organizing case research.</span>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <div>
+                        <span className="font-medium text-white">Modular Search Filters:</span>
+                        <span className="text-gray-400"> Google-like search with predefined categories.</span>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <div>
+                        <span className="font-medium text-white">Document Bookmarking:</span>
+                        <span className="text-gray-400"> Efficient organization of legal references.</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                
+                {/* AI-Powered Legal Assistance */}
+                <div className="glass-card p-8 rounded-xl border border-dark-700 hover:border-teal-500/30 transition-colors duration-300">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-14 h-14 rounded-full bg-teal-500/10 flex items-center justify-center">
+                      <Brain className="w-7 h-7 text-teal-500" />
                     </div>
-                  </li>
-                </ul>
+                    <h3 className="text-xl font-semibold">AI-Powered Legal Assistance</h3>
+                  </div>
+                  
+                  <ul className="space-y-4">
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <div>
+                        <span className="font-medium text-white">Chat-Based AI Assistant:</span>
+                        <span className="text-gray-400"> Responds to legal queries with source citations.</span>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <div>
+                        <span className="font-medium text-white">Judgment Summaries:</span>
+                        <span className="text-gray-400"> AI-generated case overviews for efficiency.</span>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <div>
+                        <span className="font-medium text-white">Legal Drafting Tools:</span>
+                        <span className="text-gray-400"> Template-based document creation assistance.</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
               </div>
               
-              {/* Comprehensive Legal Database */}
-              <div className="mb-12">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 rounded-full bg-teal-500/10 flex items-center justify-center">
-                    <FileText className="w-6 h-6 text-teal-500" />
+              {/* Visual Demo Section */}
+              <div className="glass-card p-6 rounded-xl border border-dark-700 mb-8">
+                <div className="aspect-video bg-dark-900 rounded-lg flex items-center justify-center">
+                  <div className="text-center">
+                    <p className="text-gray-400 mb-2">Platform Demo</p>
+                    <p className="text-sm text-gray-500">[Interactive demo would appear here]</p>
                   </div>
-                  <h3 className="text-xl font-semibold">Comprehensive Legal Database</h3>
                 </div>
-                
-                <ul className="space-y-4">
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <span className="font-medium text-white">Diverse Legal Content:</span>
-                      <span className="text-gray-400"> Included High Court judgments, tribunal decisions, central and state acts, and other critical legal documents.</span>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <span className="font-medium text-white">Automated Updates:</span>
-                      <span className="text-gray-400"> Ensured a 24-hour refresh cycle for up-to-date legal references.</span>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <span className="font-medium text-white">Data Processing & Structuring:</span>
-                      <span className="text-gray-400"> Improved document organization, citation linking, and metadata tagging for better accessibility.</span>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              
-              {/* Intuitive User Experience */}
-              <div className="mb-12">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 rounded-full bg-teal-500/10 flex items-center justify-center">
-                    <Scroll className="w-6 h-6 text-teal-500" />
-                  </div>
-                  <h3 className="text-xl font-semibold">Intuitive User Experience</h3>
-                </div>
-                
-                <ul className="space-y-4">
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <span className="font-medium text-white">Research Workspaces:</span>
-                      <span className="text-gray-400"> Provided dedicated environments for lawyers to organize and track case research.</span>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <span className="font-medium text-white">Modular Search Filters:</span>
-                      <span className="text-gray-400"> Designed Google-like search functionality with predefined categories for refined results.</span>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <span className="font-medium text-white">Document Bookmarking & Notes:</span>
-                      <span className="text-gray-400"> Allowed users to annotate and organize legal references efficiently.</span>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              
-              {/* AI-Powered Legal Assistance */}
-              <div className="mb-12">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 rounded-full bg-teal-500/10 flex items-center justify-center">
-                    <Brain className="w-6 h-6 text-teal-500" />
-                  </div>
-                  <h3 className="text-xl font-semibold">AI-Powered Legal Assistance</h3>
-                </div>
-                
-                <ul className="space-y-4">
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <span className="font-medium text-white">Chat-Based AI Assistant:</span>
-                      <span className="text-gray-400"> Responded to legal queries with source citations.</span>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <span className="font-medium text-white">Judgment Summaries:</span>
-                      <span className="text-gray-400"> Provided AI-generated case overviews, reducing time spent on lengthy judgments.</span>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <span className="font-medium text-white">Legal Drafting Tools:</span>
-                      <span className="text-gray-400"> Assisted in creating legal documents based on templates and user inputs.</span>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-teal-500 mr-3 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <span className="font-medium text-white">Document Review:</span>
-                      <span className="text-gray-400"> Highlighted missing citations, red-lined changes, and flagged grammatical errors.</span>
-                    </div>
-                  </li>
-                </ul>
               </div>
             </div>
           </div>
@@ -497,4 +508,5 @@ const CaseStudyLiveLaw = () => {
       </div>
     </PageLayout>;
 };
+
 export default CaseStudyLiveLaw;

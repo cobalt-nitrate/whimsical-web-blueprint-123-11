@@ -33,23 +33,23 @@ const CaseStudies = () => {
     {
       id: "satva",
       title: "Revolutionizing Maritime Parametric Insurance",
-      description: "How NovaForge's Analytics Solution Delivered Rapid Trigger Verification for Satva Trust",
+      description: "Domain Expertise of Satva Trust in Marine Space coming together with our technical capabilities, Novaforge.ai implemented custom model for predicting fuel consumption of ships",
       category: "Maritime Insurance",
-      industry: "Insurance & Maritime",
+      industry: "Logistics",
       link: "/case-study-satva"
     },
     {
       id: "msk",
       title: "AI-Powered Medical Imaging Analysis",
-      description: "How NovaForge helped a leading hospital improve diagnostic accuracy",
+      description: "How NovaForge.ai helped a MSK Cancer Center integrate an advanced DICOM Viewer with AI Assisted Solutions for Automated Image Segmentation and annotation",
       category: "Healthcare",
       industry: "Medical",
       link: "/case-study-msk"
     },
     {
       id: "livelaw",
-      title: "Automated Legal Document Processing",
-      description: "Intelligent document analysis for legal professionals",
+      title: "Legal AI Agent for Research Workflows",
+      description: "In Partnership with LiveLaw, the largest Indian Legal Media House, NovaForge.ai is developing an AI powered legal search engine for the Indian Lawyers",
       category: "Legal Technology",
       industry: "Legal",
       link: "/case-study-livelaw"

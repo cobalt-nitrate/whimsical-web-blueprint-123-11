@@ -24,20 +24,20 @@ const Partners = () => {
     {
     tech: ["Predictive Model"],
     industry: "Insurance & Maritime",
-    title: "Revolutionizing Maritime Parametric Insurance",
-    description: "How NovaForge's Analytics Solution Delivered Rapid Trigger Verification for Satva Trust",
+    title: "Predicting Fuel Consumption for Maritime Parametric Insurance",
+    description: "Domain Expertise of Satva Trust in Marine Space coming together with our technical capabilities, Noavforge.ai implemented custom model for predicting fuel consumption of ships",
     link: "/case-study-satva"
     },    
     {  
     title: "AI-Powered Medical Imaging Analysis",
-    description: "How NovaForge helped a leading hospital improve diagnostic accuracy",
+    description: "How NovaForge helped a MSK Cancer Center integrate an advanced DICOM Viewer with AI Assisted Solutions",
     tech: ["Computer Vision", "Segmentation"],
     industry: "Medical",
     link: "/case-study-msk"
     },
     {
-    title: "Automated Legal Document Processing",
-    description: "Intelligent document analysis for legal professionals",
+    title: "Legal AI Agent for Research Workflows",
+    description: "In Partnershiop with LiveLaw, the largest Indian Legal Media House, NovaForge.ai is developing an AI powered legal search engine for the Indian Lawyers",
     tech: ["Agent", "RAG"],
     industry: "Legal",
     link: "/case-study-livelaw"

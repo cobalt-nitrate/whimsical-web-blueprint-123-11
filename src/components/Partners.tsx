@@ -165,7 +165,7 @@ const ProjectCard = ({
           alt={title} 
           className="w-full h-full object-cover"
           onError={(e) => {
-            e.currentTarget.src = '/placeholder.svg';
+            e.currentTarget.src = 'image';
             e.currentTarget.classList.add('p-4');
           }} 
         />

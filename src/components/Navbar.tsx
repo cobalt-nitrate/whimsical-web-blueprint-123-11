@@ -70,7 +70,7 @@ const Navbar = () => {
         </div>
         
         <div className="flex items-center gap-4">
-          <button className="px-5 py-2 rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium transition-all duration-300 text-sm" onClick={scrollToContact}>Schedule Discovery Call</button>
+          <button className="px-5 py-2 rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium transition-all duration-300 text-sm" onClick={scrollToContact}>Contact Us</button>
           
           <button className="md:hidden" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             {isMobileMenuOpen ? <X className="h-6 w-6 text-white" /> : <Menu className="h-6 w-6 text-white" />}

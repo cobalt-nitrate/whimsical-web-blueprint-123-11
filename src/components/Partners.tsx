@@ -20,29 +20,25 @@ const Partners = () => {
       }
     };
   }, []);
-  const projects = [
-    {
+  const projects = [{
     tech: ["Predictive Model"],
     industry: "Insurance & Maritime",
     title: "Predicting Fuel Consumption for Maritime Parametric Insurance",
     description: "Domain Expertise of Satva Trust in Marine Space coming together with our technical capabilities, Noavforge.ai implemented custom model for predicting fuel consumption of ships",
     link: "/case-study-satva"
-    },    
-    {  
+  }, {
     title: "AI-Powered Medical Imaging Analysis",
     description: "How NovaForge helped a MSK Cancer Center integrate an advanced DICOM Viewer with AI Assisted Solutions for Automated Image Segmentation and annotation",
     tech: ["Computer Vision", "Segmentation"],
     industry: "Medical",
     link: "/case-study-msk"
-    },
-    {
+  }, {
     title: "Legal AI Agent for Research Workflows",
     description: "In Partnershiop with LiveLaw, the largest Indian Legal Media House, NovaForge.ai is developing an AI powered legal search engine for the Indian Lawyers",
     tech: ["Agent", "RAG"],
     industry: "Legal",
     link: "/case-study-livelaw"
-    }
-  ];
+  }];
   return <section id="partners" ref={sectionRef} className="py-20 bg-dark-800 opacity-0">
       <div className="container mx-auto px-6">
         <div className="mb-12 text-center">
@@ -59,10 +55,10 @@ const Partners = () => {
           <Carousel className="w-full">
             <CarouselContent>
               {projects.map((project, index) => <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                  <ProjectCard industry={project.industry} tech={project.tech} title={project.title} description={project.description} link={project.link}/>
+                  <ProjectCard industry={project.industry} tech={project.tech} title={project.title} description={project.description} link={project.link} />
                 </CarouselItem>)}
             </CarouselContent>
-            <div className="flex justify-center mt-8 gap-4">
+            <div className="flex justify-center mt-8 gap-4 hidden">
               <CarouselPrevious className="relative static left-0 right-0 translate-y-0 bg-dark-700 hover:bg-dark-600 border-teal-500/20 text-white" />
               <CarouselNext className="relative static left-0 right-0 translate-y-0 bg-dark-700 hover:bg-dark-600 border-teal-500/20 text-white" />
             </div>
@@ -83,7 +79,7 @@ const ProjectCard = ({
   tech,
   title,
   description,
-  link,
+  link
 }: ProjectCardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
   useEffect(() => {

@@ -20,37 +20,29 @@ const Partners = () => {
       }
     };
   }, []);
-  const projects = [{
-    industry: "Healthcare",
-    tech: ["Computer Vision", "Gen AI"],
-    title: "AI-Powered Medical Imaging",
-    description: "Advanced medical image analysis using state-of-the-art computer vision models."
-  }, {
+  const projects = [
+    {
+    tech: ["Predictive Model"],
+    industry: "Insurance & Maritime",
+    title: "Revolutionizing Maritime Parametric Insurance",
+    description: "How NovaForge's Analytics Solution Delivered Rapid Trigger Verification for Satva Trust",
+    link: "/case-study-satva"
+    },    
+    {  
+    title: "AI-Powered Medical Imaging Analysis",
+    description: "How NovaForge helped a leading hospital improve diagnostic accuracy",
+    tech: ["Computer Vision", "Segmentation"],
+    industry: "Medical",
+    link: "/case-study-msk"
+    },
+    {
+    title: "Automated Legal Document Processing",
+    description: "Intelligent document analysis for legal professionals",
+    tech: ["Agent", "RAG"],
     industry: "Legal",
-    tech: ["NLP", "Gen AI"],
-    title: "Automated Legal Analysis",
-    description: "Intelligent document processing and analysis for legal professionals."
-  }, {
-    industry: "Education",
-    tech: ["Multimodal AI", "NLP"],
-    title: "Personalized Learning Platform",
-    description: "Adaptive learning systems that tailor educational content to individual needs."
-  }, {
-    industry: "Finance",
-    tech: ["Predictive Analytics", "NLP"],
-    title: "Risk Assessment Framework",
-    description: "Advanced financial risk modeling and prediction systems."
-  }, {
-    industry: "Sustainability",
-    tech: ["Computer Vision", "IoT"],
-    title: "Environmental Monitoring",
-    description: "Real-time environmental data analysis and predictive modeling."
-  }, {
-    industry: "Manufacturing",
-    tech: ["Computer Vision", "Edge AI"],
-    title: "Quality Control Automation",
-    description: "Automated visual inspection systems for manufacturing processes."
-  }];
+    link: "/case-study-livelaw"
+    }
+  ];
   return <section id="partners" ref={sectionRef} className="py-20 bg-dark-800 opacity-0">
       <div className="container mx-auto px-6">
         <div className="mb-12 text-center">
@@ -67,7 +59,7 @@ const Partners = () => {
           <Carousel className="w-full">
             <CarouselContent>
               {projects.map((project, index) => <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                  <ProjectCard industry={project.industry} tech={project.tech} title={project.title} description={project.description} />
+                  <ProjectCard industry={project.industry} tech={project.tech} title={project.title} description={project.description} link={project.link}/>
                 </CarouselItem>)}
             </CarouselContent>
             <div className="flex justify-center mt-8 gap-4">
@@ -84,12 +76,14 @@ interface ProjectCardProps {
   tech: string[];
   title: string;
   description: string;
+  link: string;
 }
 const ProjectCard = ({
   industry,
   tech,
   title,
-  description
+  description,
+  link,
 }: ProjectCardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -124,6 +118,9 @@ const ProjectCard = ({
       
       <h3 className="text-xl font-semibold mb-3 text-white h-14">{title}</h3>
       <p className="text-gray-400 mb-4 flex-grow">{description}</p>
+      <a href={link} className="inline-flex items-center text-teal-500 hover:text-teal-400 transition-colors font-medium mt-2">
+          Read More <ArrowRight className="ml-2 h-4 w-4" />
+        </a>
     </div>;
 };
 export default Partners;

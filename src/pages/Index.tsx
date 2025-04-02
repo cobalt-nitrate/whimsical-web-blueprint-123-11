@@ -41,7 +41,6 @@ const Index = () => {
       <Research />
       <Partners />
       <Tools />
-      <CaseStudies />
     </PageLayout>
   );
 };

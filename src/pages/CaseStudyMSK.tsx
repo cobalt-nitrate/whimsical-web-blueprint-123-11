@@ -422,25 +422,25 @@ const CaseStudyMSK = () => {
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="glass-card p-6 rounded-lg hover:border-teal-500/40 border border-transparent transition-colors duration-300">
-                  <div className="text-xs text-gray-400 mb-2">Financial Services</div>
-                  <h3 className="text-lg font-semibold mb-2 text-white">AI-Powered Fraud Detection at Global Bank</h3>
-                  <p className="text-gray-400 text-sm mb-4">How NovaForge helped reduce fraudulent transactions by 65%</p>
-                  <Link to="#" className="inline-flex items-center text-teal-500 hover:text-teal-400 transition-colors duration-300 text-sm font-medium group">
-                    Coming Soon
+                  <div className="text-xs text-gray-400 mb-2">Insurance & Maritime</div>
+                  <h3 className="text-lg font-semibold mb-2 text-white">Revolutionizing Maritime Parametric Insurance</h3>
+                  <p className="text-gray-400 text-sm mb-4">How NovaForge's Analytics Solution Delivered Rapid Trigger Verification for Satva Trust</p>
+                  <Link to="/case-study-msk" className="inline-flex items-center text-teal-500 hover:text-teal-400 transition-colors duration-300 text-sm font-medium group">
+                    Read Case Study
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </Link>
                 </div>
                 
                 <div className="glass-card p-6 rounded-lg hover:border-teal-500/40 border border-transparent transition-colors duration-300">
-                  <div className="text-xs text-gray-400 mb-2">Retail</div>
-                  <h3 className="text-lg font-semibold mb-2 text-white">Personalizing Customer Experience with AI</h3>
-                  <p className="text-gray-400 text-sm mb-4">How a Fortune 500 retailer increased revenue by 27%</p>
-                  <Link to="#" className="inline-flex items-center text-teal-500 hover:text-teal-400 transition-colors duration-300 text-sm font-medium group">
-                    Coming Soon
+                  <div className="text-xs text-gray-400 mb-2">Legal</div>
+                  <h3 className="text-lg font-semibold mb-2 text-white">Improved Search Accuracy and Efficiency with AI for Live Law</h3>
+                  <p className="text-gray-400 text-sm mb-4">Intelligent document analysis for legal professionals</p>
+                  <Link to="/case-study-livelaw" className="inline-flex items-center text-teal-500 hover:text-teal-400 transition-colors duration-300 text-sm font-medium group">
+                   Read Case Study
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </Link>
+                  </div>
                 </div>
-              </div>
               
               <div className="text-center mt-8">
                 <Link to="/case-studies" className="px-6 py-3 rounded-full bg-dark-700 hover:bg-dark-600 text-white transition-all duration-300 inline-flex items-center">

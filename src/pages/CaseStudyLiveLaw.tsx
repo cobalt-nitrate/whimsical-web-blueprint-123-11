@@ -396,41 +396,37 @@ const CaseStudyLiveLaw = () => {
         </section>
 
         {/* More Case Studies Section */}
-        <section className="py-16 bg-dark-900">
-          <div className="container mx-auto px-6">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl font-bold mb-8 text-center">More Case Studies</h2>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="glass-card p-6 rounded-lg hover:border-teal-500/40 border border-transparent transition-colors duration-300">
-                  <div className="text-xs text-gray-400 mb-2">Healthcare</div>
-                  <h3 className="text-lg font-semibold mb-2 text-white">Enhancing PACS Viewer for MSK Cancer Center</h3>
-                  <p className="text-gray-400 text-sm mb-4">How NovaForge transformed radiological workflow with AI integration</p>
-                  <Link to="/case-study-msk" className="inline-flex items-center text-teal-500 hover:text-teal-400 transition-colors duration-300 text-sm font-medium group">
-                    Read Case Study
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
-                  </Link>
-                </div>
-                
-                <div className="glass-card p-6 rounded-lg hover:border-teal-500/40 border border-transparent transition-colors duration-300">
-                  <div className="text-xs text-gray-400 mb-2">Finance</div>
-                  <h3 className="text-lg font-semibold mb-2 text-white">AI-Powered Fraud Detection at Global Bank</h3>
-                  <p className="text-gray-400 text-sm mb-4">How NovaForge helped reduce fraudulent transactions by 65%</p>
-                  <Link to="#" className="inline-flex items-center text-gray-400 transition-colors duration-300 text-sm font-medium group">
-                    Coming Soon
-                  </Link>
-                </div>
-              </div>
-              
-              <div className="text-center mt-8">
-                <Link to="/case-studies" className="px-6 py-3 rounded-full bg-dark-700 hover:bg-dark-600 text-white transition-all duration-300 inline-flex items-center">
-                  View All Case Studies
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
+<section className="py-16 bg-dark-900">
+  <div className="container mx-auto px-6">
+    <div className="max-w-3xl mx-auto">
+      <h2 className="text-2xl font-bold mb-8 text-center">More Case Studies</h2>
+      
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {/* First card */}
+        <div className="glass-card p-6 rounded-lg hover:border-teal-500/40 border border-transparent transition-colors duration-300">
+          <div className="text-xs text-gray-400 mb-2">Insurance & Maritime</div>
+          <h3 className="text-lg font-semibold mb-2 text-white">Revolutionizing Maritime Parametric Insurance</h3>
+          <p className="text-gray-400 text-sm mb-4">How NovaForge's Analytics Solution Delivered Rapid Trigger Verification for Satva Trust</p>
+          <Link to="/case-study-satva" className="inline-flex items-center text-teal-500 hover:text-teal-400 transition-colors duration-300 text-sm font-medium group">
+            Read Case Study
+            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+          </Link>
+        </div>
+        
+        {/* Second card */}
+        <div className="glass-card p-6 rounded-lg hover:border-teal-500/40 border border-transparent transition-colors duration-300">
+          <div className="text-xs text-gray-400 mb-2">Medical</div>
+          <h3 className="text-lg font-semibold mb-2 text-white">AI-Powered Medical Imaging Analysis</h3>
+          <p className="text-gray-400 text-sm mb-4">How NovaForge helped a MSK Cancer Center integrate an advanced DICOM Viewer with AI Assisted Solutions</p>
+          <Link to="/case-study-msk" className="inline-flex items-center text-teal-500 hover:text-teal-400 transition-colors duration-300 text-sm font-medium group">
+            Read Case Study
+            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+          </Link>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
       </div>
     </PageLayout>;
 };

@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight, Anchor, BarChart2, Clock, FileCheck, RefreshCcw, Shield, Zap } from 'lucide-react';
 import PageLayout from '@/components/PageLayout';
-
+import { Link } from 'react-router-dom';
 const CaseStudySatva = () => {
   // Refs for animation elements
   const heroRef = useRef<HTMLDivElement>(null);
@@ -474,6 +474,39 @@ const CaseStudySatva = () => {
           </div>
         </div>
       </section>
+
+{/* More Case Studies Section */}
+<section className="py-16 bg-dark-900">
+  <div className="container mx-auto px-6">
+    <div className="max-w-3xl mx-auto">
+      <h2 className="text-2xl font-bold mb-8 text-center">More Case Studies</h2>
+      
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {/* First case study */}
+        <div className="glass-card p-6 rounded-lg hover:border-teal-500/40 border border-transparent transition-colors duration-300">
+          <div className="text-xs text-gray-400 mb-2">Medical</div>
+          <h3 className="text-lg font-semibold mb-2 text-white">AI-Powered Medical Imaging Analysis</h3>
+          <p className="text-gray-400 text-sm mb-4">How NovaForge helped a MSK Cancer Center integrate an advanced DICOM Viewer with AI Assisted Solutions</p>
+          <Link to="/case-study-msk" className="inline-flex items-center text-teal-500 hover:text-teal-400 transition-colors duration-300 text-sm font-medium group">
+            Read Case Study
+            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+          </Link>
+        </div>
+        
+        {/* Second case study */}
+        <div className="glass-card p-6 rounded-lg hover:border-teal-500/40 border border-transparent transition-colors duration-300">
+          <div className="text-xs text-gray-400 mb-2">Legal</div>
+          <h3 className="text-lg font-semibold mb-2 text-white">Improved Search Accuracy and Efficiency with AI for Live Law</h3>
+          <p className="text-gray-400 text-sm mb-4">Intelligent document analysis for legal professionals</p>
+          <Link to="/case-study-livelaw" className="inline-flex items-center text-teal-500 hover:text-teal-400 transition-colors duration-300 text-sm font-medium group">
+            Read Case Study
+            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+          </Link>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Call to Action */}
       <section className="py-16 bg-gradient-to-b from-dark-800 to-dark-900">

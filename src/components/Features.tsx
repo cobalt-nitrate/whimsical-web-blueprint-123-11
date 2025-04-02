@@ -129,7 +129,7 @@ const FeatureCard = ({ title, description, delay, ctaText = "Learn More", linkTo
       
       <Link 
         to={linkTo} 
-        className="inline-flex items-center text-teal-500 hover:text-teal-400 transition-colors duration-300 text-sm font-medium group"
+        className="inline-flex items-center text-teal-500 hover:text-teal-400 transition-colors duration-300 text-sm font-medium group hidden"
       >
         {ctaText}
         <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />

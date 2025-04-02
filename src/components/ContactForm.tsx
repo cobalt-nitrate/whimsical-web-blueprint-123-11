@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 
 const ContactForm = () => {
@@ -8,112 +7,73 @@ const ContactForm = () => {
     company: '',
     message: '',
     phone: '',
-    organization: ''
+    jobTitle: ''
   });
 
-  // Define the heading and description with more engaging content
   const heading = "Ready to Transform Your Business with AI?";
   const description = "Connect with our team of AI experts to explore how our cutting-edge solutions can address your unique challenges and unlock new opportunities for innovation and growth.";
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Here you would typically send the data to your backend
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      company: '',
-      message: '',
-      phone: '',
-      organization: ''
+
+    const googleFormURL = "https://docs.google.com/forms/d/e/1FAIpQLSfd4GsSwSVFA1Xv6tKVxcb5I1SW3y2H11dRAS1hNoV_DlcVBA/formResponse";
+    const formDataToGoogleForm = new URLSearchParams();
+
+    formDataToGoogleForm.append("entry.997349557", formData.name);
+    formDataToGoogleForm.append("entry.1197879923", formData.email);
+    formDataToGoogleForm.append("entry.248641685", formData.company);
+    formDataToGoogleForm.append("entry.1986168981", formData.phone);
+    formDataToGoogleForm.append("entry.1801593651", formData.jobTitle);
+    formDataToGoogleForm.append("entry.582647937", formData.message);
+
+    fetch(googleFormURL, {
+      method: "POST",
+      body: formDataToGoogleForm,
+      mode: "no-cors",  // This prevents CORS errors
+    })
+    .then(() => {
+      alert("Your message has been sent. We will get back to you soon!");
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        message: '',
+        phone: '',
+        jobTitle: ''
+      });
+    })
+    .catch((error) => {
+      console.error("Error submitting form:", error);
+      alert("There was an error submitting the form. Please try again.");
     });
-    
-    // Show success feedback
-    alert('Your message has been sent. We will get back to you soon!');
   };
 
   return (
-    <section 
-      id="contact" 
-      className="py-20 bg-dark-900"
-    >
+    <section id="contact" className="py-20 bg-dark-900">
       <div className="container mx-auto px-6">
         <div className="mb-12 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            {heading}
-          </h2>
-          <p className="text-gray-400 max-w-3xl mx-auto">
-            {description}
-          </p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">{heading}</h2>
+          <p className="text-gray-400 max-w-3xl mx-auto">{description}</p>
         </div>
 
         <div className="max-w-3xl mx-auto">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <InputField 
-                label="Name" 
-                name="name" 
-                value={formData.name} 
-                onChange={handleChange} 
-                required 
-              />
-              
-              <InputField 
-                label="Email" 
-                name="email" 
-                type="email" 
-                value={formData.email} 
-                onChange={handleChange} 
-                required 
-              />
-              
-              <InputField 
-                label="Company" 
-                name="company" 
-                value={formData.company} 
-                onChange={handleChange} 
-                required 
-              />
-              
-              <InputField 
-                label="Phone" 
-                name="phone" 
-                type="tel" 
-                value={formData.phone} 
-                onChange={handleChange} 
-              />
+              <InputField label="Name" name="name" value={formData.name} onChange={handleChange} required />
+              <InputField label="Email" name="email" type="email" value={formData.email} onChange={handleChange} required />
+              <InputField label="Company" name="company" value={formData.company} onChange={handleChange} required />
+              <InputField label="Phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} required={false} />
             </div>
             
-            <div>
-              <label className="block text-white mb-2 text-sm font-medium">
-                Organization Type
-              </label>
-              <select 
-                name="organization"
-                value={formData.organization}
-                onChange={handleChange}
-                className="w-full bg-dark-700 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-teal-500/50 transition-all duration-300"
-              >
-                <option value="" disabled>Select Organization Type</option>
-                <option value="enterprise">Enterprise</option>
-                <option value="startup">Startup</option>
-                <option value="government">Government</option>
-                <option value="education">Education</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
+            <InputField label="Job Title" name="jobTitle" value={formData.jobTitle} onChange={handleChange} required />
             
             <div>
-              <label className="block text-white mb-2 text-sm font-medium">
-                Message
-              </label>
+              <label className="block text-white mb-2 text-sm font-medium">Description</label>
               <textarea 
                 name="message"
                 value={formData.message}
@@ -140,20 +100,9 @@ const ContactForm = () => {
   );
 };
 
-interface InputFieldProps {
-  label: string;
-  name: string;
-  type?: string;
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  required?: boolean;
-}
-
-const InputField = ({ label, name, type = "text", value, onChange, required }: InputFieldProps) => (
+const InputField = ({ label, name, type = "text", value, onChange, required }) => (
   <div>
-    <label className="block text-white mb-2 text-sm font-medium">
-      {label}
-    </label>
+    <label className="block text-white mb-2 text-sm font-medium">{label}</label>
     <input
       type={type}
       name={name}

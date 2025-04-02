@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef, useState } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Brain, Eye, Layers, Mic, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Research = () => {
@@ -34,6 +34,7 @@ const Research = () => {
       subtitle: 'Adaptive vision intelligence for domain specific use-cases',
       focus: 'Building A unified vision AI stack delivering precise results with minimal training and low computational overhead',
       path: '/percepta',
+      icon: <Eye className="h-16 w-16 text-teal-400" />,
       capabilities: [
         {
           title: 'Hybrid Vision Language Models',
@@ -59,6 +60,7 @@ const Research = () => {
       subtitle: 'Domain-specific LLM Stack for Enterprises',
       focus: 'Optimizing lightweight LLMs for sector-specific applications & tools, delivering high accuracy with minimal compute costs.',
       path: '/lexora',
+      icon: <Brain className="h-16 w-16 text-teal-400" />,
       capabilities: [
         {
           title: 'Contextual window of 10M Tokens',
@@ -84,6 +86,7 @@ const Research = () => {
       subtitle: 'Speech and audio intelligence solutions',
       focus: 'Creating responsive audio processing systems with minimal latency',
       path: '/vocalis',
+      icon: <Mic className="h-16 w-16 text-teal-400" />,
       capabilities: [
         {
           title: 'Real-time Speech Recognition',
@@ -109,6 +112,7 @@ const Research = () => {
       subtitle: 'Advanced reasoning and decision systems',
       focus: 'Developing AI with robust reasoning capabilities for complex decision-making',
       path: '/aetherminds',
+      icon: <Zap className="h-16 w-16 text-teal-400" />,
       capabilities: [
         {
           title: 'Causal Reasoning',
@@ -134,6 +138,7 @@ const Research = () => {
       subtitle: 'Foundational model infrastructure',
       focus: 'Building scalable and efficient infrastructure for AI model deployment',
       path: '/stratum',
+      icon: <Layers className="h-16 w-16 text-teal-400" />,
       capabilities: [
         {
           title: 'Model Optimization',
@@ -212,9 +217,19 @@ const Research = () => {
               <p className="text-gray-400 mb-6">{activeVerticalData.focus}</p>
             </div>
             
-            {/* Right top corner reserved for image */}
-            <div className="md:block bg-gray-700 rounded-xl">
-              {/* Image placeholder */}
+            {/* Visual element for each vertical */}
+            <div className="flex items-center justify-center bg-dark-700 rounded-xl p-8">
+              <div className="relative w-full h-full flex items-center justify-center">
+                {/* Icon with animation */}
+                <div className="bg-dark-600 rounded-full p-8 shadow-[0_0_30px_-6px_rgba(57,223,208,0.3)]">
+                  {activeVerticalData.icon}
+                </div>
+                
+                {/* Animated rings */}
+                <div className="absolute inset-0 rounded-full border border-teal-500/10 animate-pulse"></div>
+                <div className="absolute inset-[15%] rounded-full border border-teal-500/20 animate-pulse" style={{animationDelay: '500ms'}}></div>
+                <div className="absolute inset-[30%] rounded-full border border-teal-500/30 animate-pulse" style={{animationDelay: '1000ms'}}></div>
+              </div>
             </div>
           </div>
           

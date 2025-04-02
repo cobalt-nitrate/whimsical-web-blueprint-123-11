@@ -160,15 +160,7 @@ const ProjectCard = ({
       
       {/* Image Section with proper error handling and fallback */}
       <div className="mb-4 w-full aspect-video rounded-lg overflow-hidden bg-dark-700">
-        <img 
-          src={image} 
-          alt={title} 
-          className="w-full h-full object-cover"
-          onError={(e) => {
-            e.currentTarget.src = 'image';
-            e.currentTarget.classList.add('p-4');
-          }} 
-        />
+        <img src={image} alt={title} className="rounded-lg mb-4 w-full aspect-video object-cover" />
       </div>
       
       <h3 className="text-xl font-semibold mb-3 text-white line-clamp-2">{title}</h3>

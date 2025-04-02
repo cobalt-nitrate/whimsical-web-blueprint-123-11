@@ -33,7 +33,7 @@ const CapabilitiesSection = () => {
       <div className="container mx-auto px-6">
         <SectionHeader
           badge="Offerings & Capabilities"
-          title="What We Build"
+          title="Our Architecturally Optimized Models"
           description="Aetherminds engineers precision AI solutions for organizations where standard AI approaches fall short."
           align="center"
         />

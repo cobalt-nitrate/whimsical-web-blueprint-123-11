@@ -114,7 +114,7 @@ const CaseStudies = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {filteredCaseStudies.filter(cs => !cs.featured).map(caseStudy => {
                 const CaseIcon = caseStudy.icon;
-                const isAvailable = caseStudy.id === "msk-cancer-center" || caseStudy.id === "maritime-insurace" ||
+                const isAvailable = ["msk-cancer-center", "live-law-search", "maritime-insurance"].includes(caseStudy.id);
                 
                 return (
                   <div key={caseStudy.id} className="glass-card p-6 rounded-xl border border-white/5 hover:border-teal-500/20 transition-colors duration-300">

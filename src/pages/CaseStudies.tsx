@@ -17,50 +17,30 @@ const CaseStudies = () => {
       title: "Medical Imaging: Enhancing PACS Viewer Functionality for MSK Cancer Center",
       category: "Healthcare",
       industry: "Medical Imaging",
-      description: "Memorial Sloan Kettering Cancer Center transformed their radiology workflow with NovaForge AI integration.",
+      description: "Memorial Sloan Kettering Cancer Center, one of the premier global research institute headquartered in New York transformed their radiology workflow with NovaForge AI integration.",
       icon: HeartPulse,
       featured: false,
       link: "/case-study-msk"
     },
     {
       id: "live-law-search",
-      title: "How Live Law Improved Search Accuracy and Efficiency with AI",
+      title: "Legal AI Agent for Automated Research Workflows",
       category: "Legal Tech",
       industry: "Legal Research",
-      description: "How NovaForge helped transform legal research for India's leading legal platform.",
+      description: "In Partnership with LiveLaw, the largest Indian Legal Media House, NovaForge.ai is developing an AI powered legal search engine for the Indian Lawyers",
       icon: FileText,
       featured: true,
       link: "/case-study-livelaw"
     },
     {
-      id: "global-bank-fraud",
-      title: "AI-Powered Fraud Detection at Global Bank",
-      category: "Finance",
-      industry: "Banking",
-      description: "How NovaForge helped reduce fraudulent transactions by 65% for a leading financial institution.",
+      id: "maritime-insurance",
+      title: "Predicting Fuel Consumption for Maritime Parametric Insurance",
+      category: "Climate Tech",
+      industry: "Logistics",
+      description: "Domain Expertise of Satva Trust in Marine Space coming together with our technical capabilities, Novaforge.ai implemented custom model for predicting fuel consumption of ships",
       icon: LineChart,
       featured: false,
-      link: "#"
-    }, 
-    {
-      id: "retail-personalization",
-      title: "Personalizing Customer Experience with AI",
-      category: "Retail",
-      industry: "E-Commerce",
-      description: "How a Fortune 500 retailer increased conversion rates by 27% with personalized recommendations.",
-      icon: Building,
-      featured: false,
-      link: "#"
-    }, 
-    {
-      id: "autonomous-manufacturing",
-      title: "AI Quality Control in Manufacturing",
-      category: "Manufacturing",
-      industry: "Automotive",
-      description: "Implementing computer vision systems for real-time quality control in automotive production.",
-      icon: Brain,
-      featured: false,
-      link: "#"
+      link: "/case-study-satva"
     }
   ];
 

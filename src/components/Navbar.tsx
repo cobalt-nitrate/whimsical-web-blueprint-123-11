@@ -35,6 +35,21 @@ const Navbar = () => {
     }
   };
 
+  const scrollToSection = (sectionId: string) => {
+    if (location.pathname === '/') {
+      // If already on homepage, just scroll to the section
+      const sectionElement = document.getElementById(sectionId);
+      if (sectionElement) {
+        sectionElement.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+    } else {
+      // If on another page, navigate to homepage with the section hash
+      window.location.href = `/#${sectionId}`;
+    }
+  };
+
   // Close mobile menu when changing routes
   useEffect(() => {
     setIsMobileMenuOpen(false);
@@ -52,8 +67,18 @@ const Navbar = () => {
         
         <div className="hidden md:flex items-center space-x-8">
           <NavLink to="/" onClick={scrollToTop}>Home</NavLink>
-          <NavLink to="/research">Research</NavLink>
-          <NavLink to="/enterprises">For Enterprises</NavLink>
+          <button 
+            onClick={() => scrollToSection('research')} 
+            className="text-gray-300 hover:text-teal-500 transition-colors duration-300 text-sm font-medium"
+          >
+            Research
+          </button>
+          <button 
+            onClick={() => scrollToSection('tools')} 
+            className="text-gray-300 hover:text-teal-500 transition-colors duration-300 text-sm font-medium"
+          >
+            For Enterprises
+          </button>
           <NavLink to="/case-studies">Case Studies</NavLink>
           <NavLink to="/about">About Us</NavLink>
         </div>
@@ -74,8 +99,24 @@ const Navbar = () => {
         <div className="md:hidden absolute top-full left-0 right-0 bg-dark-800/95 backdrop-blur-lg py-4 border-t border-white/10">
           <div className="flex flex-col space-y-4 px-6">
             <NavLink to="/" onClick={scrollToTop} mobile>Home</NavLink>
-            <NavLink to="/research" mobile>Research</NavLink>
-            <NavLink to="/enterprises" mobile>For Enterprises</NavLink>
+            <button 
+              onClick={() => {
+                scrollToSection('research');
+                setIsMobileMenuOpen(false);
+              }} 
+              className="text-gray-300 hover:text-teal-500 transition-colors duration-300 text-base py-2 text-left"
+            >
+              Research
+            </button>
+            <button 
+              onClick={() => {
+                scrollToSection('tools');
+                setIsMobileMenuOpen(false);
+              }} 
+              className="text-gray-300 hover:text-teal-500 transition-colors duration-300 text-base py-2 text-left"
+            >
+              For Enterprises
+            </button>
             <NavLink to="/case-studies" mobile>Case Studies</NavLink>
             <NavLink to="/about" mobile>About Us</NavLink>
             <button 

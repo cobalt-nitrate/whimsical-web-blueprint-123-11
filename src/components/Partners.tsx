@@ -25,19 +25,22 @@ const Partners = () => {
     industry: "Insurance & Maritime",
     title: "Predicting Fuel Consumption for Maritime Parametric Insurance",
     description: "Domain Expertise of Satva Trust in Marine Space coming together with our technical capabilities, Noavforge.ai implemented custom model for predicting fuel consumption of ships",
-    link: "/case-study-satva"
+    link: "/case-study-satva",
+    image:"/Marine Logistics Case Study_1x.webp",
   }, {
     title: "AI-Powered Medical Imaging Analysis",
     description: "How NovaForge helped a MSK Cancer Center integrate an advanced DICOM Viewer with AI Assisted Solutions for Automated Image Segmentation and annotation",
     tech: ["Computer Vision", "Segmentation"],
     industry: "Medical",
-    link: "/case-study-msk"
+    link: "/case-study-msk",
+    image:"/MRI Case Study_1x.webp",
   }, {
     title: "Legal AI Agent for Research Workflows",
     description: "In Partnershiop with LiveLaw, the largest Indian Legal Media House, NovaForge.ai is developing an AI powered legal search engine for the Indian Lawyers",
     tech: ["Agent", "RAG"],
     industry: "Legal",
-    link: "/case-study-livelaw"
+    link: "/case-study-livelaw",
+    image:"/Legal Case Study_1x.webp",
   }];
   return <section id="partners" ref={sectionRef} className="py-20 bg-dark-800 opacity-0">
       <div className="container mx-auto px-6">
@@ -55,7 +58,7 @@ const Partners = () => {
           <Carousel className="w-full">
             <CarouselContent>
               {projects.map((project, index) => <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                  <ProjectCard industry={project.industry} tech={project.tech} title={project.title} description={project.description} link={project.link} />
+                  <ProjectCard industry={project.industry} tech={project.tech} title={project.title} description={project.description} link={project.link} image={project.image} />
                 </CarouselItem>)}
             </CarouselContent>
             <div className="flex justify-center mt-8 gap-4 hidden">
@@ -73,13 +76,15 @@ interface ProjectCardProps {
   title: string;
   description: string;
   link: string;
+  image: string;
 }
 const ProjectCard = ({
   industry,
   tech,
   title,
   description,
-  link
+  link,
+  image,
 }: ProjectCardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -109,8 +114,8 @@ const ProjectCard = ({
           {industry}
         </div>
       </div>
-
-      <div className="aspect-video bg-dark-700 rounded-lg mb-4 w-full"></div>
+ {/* Image Section */}
+ <img src={image} alt={title} className="rounded-lg mb-4 w-full aspect-video object-cover" />
       
       <h3 className="text-xl font-semibold mb-3 text-white h-14">{title}</h3>
       <p className="text-gray-400 mb-4 flex-grow">{description}</p>

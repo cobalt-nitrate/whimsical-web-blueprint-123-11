@@ -27,8 +27,8 @@ const Percepta = () => {
       <CoreCapabilities scrollToContact={scrollToContact} />
       <SolutionsSection scrollToContact={scrollToContact} />
       <AdaptabilitySection scrollToContact={scrollToContact} />
-      <UseCasesSection scrollToContact={scrollToContact} />
       <TechnicalHighlights scrollToContact={scrollToContact} />
+      <UseCasesSection scrollToContact={scrollToContact} />
       <CTASection scrollToContact={scrollToContact} />
     </PageLayout>
   );

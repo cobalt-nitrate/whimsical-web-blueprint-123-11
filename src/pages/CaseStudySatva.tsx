@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight, Anchor, BarChart2, Clock, FileCheck, RefreshCcw, Shield, Zap } from 'lucide-react';
 import PageLayout from '@/components/PageLayout';
@@ -10,27 +9,25 @@ const CaseStudySatva = () => {
 
   // Set up intersection observer for animations
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-    
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
     // Observe hero section
     if (heroRef.current) {
       observer.observe(heroRef.current);
     }
-    
+
     // Observe stat items
-    statsRefs.current.forEach((ref) => {
+    statsRefs.current.forEach(ref => {
       if (ref) observer.observe(ref);
     });
-    
     return () => {
       observer.disconnect();
     };
@@ -40,17 +37,14 @@ const CaseStudySatva = () => {
   const scrollToContact = () => {
     const contactElement = document.getElementById('contact');
     if (contactElement) {
-      contactElement.scrollIntoView({ behavior: 'smooth' });
+      contactElement.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <PageLayout>
+  return <PageLayout>
       {/* Hero Section */}
-      <section 
-        ref={heroRef}
-        className="pt-32 pb-20 bg-dark-900 relative overflow-hidden opacity-0"
-      >
+      <section ref={heroRef} className="pt-32 pb-20 bg-dark-900 relative overflow-hidden opacity-0">
         <div className="absolute inset-0 overflow-hidden z-0">
           <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-teal-500/10 blur-[100px]" />
           <div className="absolute bottom-0 -left-20 w-96 h-96 rounded-full bg-teal-500/5 blur-[100px]" />
@@ -60,33 +54,21 @@ const CaseStudySatva = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="w-full md:w-1/2">
               <div className="mb-6">
-                <img 
-                  src="/lovable-uploads/df1e37af-fd75-456f-a0d1-f8aafa731046.png" 
-                  alt="Satva Trust Logo" 
-                  className="h-16 mb-6"
-                />
+                <img src="/lovable-uploads/df1e37af-fd75-456f-a0d1-f8aafa731046.png" alt="Satva Trust Logo" className="h-16 mb-6" />
                 <span className="text-teal-500 text-sm font-medium">CASE STUDY</span>
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-2 mb-6 leading-tight">
-                  Revolutionizing Maritime Parametric Insurance
-                </h1>
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-2 mb-6 leading-tight">Predicting Fuel Consumption for Parametric Insurance</h1>
                 <p className="text-xl text-gray-300 mb-6">
                   How NovaForge's Analytics Solution Delivered Rapid Trigger Verification
                 </p>
               </div>
               
               <div className="flex flex-wrap gap-4">
-                <button 
-                  onClick={scrollToContact} 
-                  className="px-6 py-3 rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium transition-all duration-300 flex items-center"
-                >
+                <button onClick={scrollToContact} className="px-6 py-3 rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium transition-all duration-300 flex items-center">
                   Get Similar Solution
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </button>
                 
-                <a 
-                  href="#solution" 
-                  className="px-6 py-3 rounded-full border border-white/20 hover:border-white/40 text-white transition-all duration-300"
-                >
+                <a href="#solution" className="px-6 py-3 rounded-full border border-white/20 hover:border-white/40 text-white transition-all duration-300">
                   View Solution Details
                 </a>
               </div>
@@ -359,10 +341,7 @@ const CaseStudySatva = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
               {/* Stats cards with animation refs */}
-              <div 
-                ref={(el) => (statsRefs.current[0] = el)} 
-                className="bg-dark-800 p-6 rounded-lg opacity-0"
-              >
+              <div ref={el => statsRefs.current[0] = el} className="bg-dark-800 p-6 rounded-lg opacity-0">
                 <h3 className="text-xl font-semibold mb-4">Operational Efficiency</h3>
                 <ul className="space-y-3 text-gray-300">
                   <li className="flex items-start">
@@ -380,11 +359,9 @@ const CaseStudySatva = () => {
                 </ul>
               </div>
               
-              <div 
-                ref={(el) => (statsRefs.current[1] = el)} 
-                className="bg-dark-800 p-6 rounded-lg opacity-0"
-                style={{ animationDelay: '150ms' }}
-              >
+              <div ref={el => statsRefs.current[1] = el} className="bg-dark-800 p-6 rounded-lg opacity-0" style={{
+              animationDelay: '150ms'
+            }}>
                 <h3 className="text-xl font-semibold mb-4">Enhanced Insurance Products</h3>
                 <ul className="space-y-3 text-gray-300">
                   <li className="flex items-start">
@@ -402,11 +379,9 @@ const CaseStudySatva = () => {
                 </ul>
               </div>
               
-              <div 
-                ref={(el) => (statsRefs.current[2] = el)} 
-                className="bg-dark-800 p-6 rounded-lg opacity-0"
-                style={{ animationDelay: '300ms' }}
-              >
+              <div ref={el => statsRefs.current[2] = el} className="bg-dark-800 p-6 rounded-lg opacity-0" style={{
+              animationDelay: '300ms'
+            }}>
                 <h3 className="text-xl font-semibold mb-4">Competitive Advantage</h3>
                 <ul className="space-y-3 text-gray-300">
                   <li className="flex items-start">
@@ -475,8 +450,8 @@ const CaseStudySatva = () => {
         </div>
       </section>
 
-{/* More Case Studies Section */}
-<section className="py-16 bg-dark-900">
+    {/* More Case Studies Section */}
+    <section className="py-16 bg-dark-900">
   <div className="container mx-auto px-6">
     <div className="max-w-3xl mx-auto">
       <h2 className="text-2xl font-bold mb-8 text-center">More Case Studies</h2>
@@ -506,7 +481,7 @@ const CaseStudySatva = () => {
       </div>
     </div>
   </div>
-</section>
+    </section>
 
       {/* Call to Action */}
       <section className="py-16 bg-gradient-to-b from-dark-800 to-dark-900">
@@ -518,17 +493,12 @@ const CaseStudySatva = () => {
             <p className="text-gray-300 mb-8">
               Discover how our innovative AI solutions can address your unique industry challenges.
             </p>
-            <button 
-              onClick={scrollToContact} 
-              className="px-8 py-3 rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium transition-all duration-300"
-            >
+            <button onClick={scrollToContact} className="px-8 py-3 rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium transition-all duration-300">
               Contact Our Team Today
             </button>
           </div>
         </div>
       </section>
-    </PageLayout>
-  );
+    </PageLayout>;
 };
-
 export default CaseStudySatva;

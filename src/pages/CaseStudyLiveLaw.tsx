@@ -22,7 +22,7 @@ const CaseStudyLiveLaw = () => {
                 Legal Technology Case Study
               </div>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 max-w-4xl">
-                How Live Law Improved Search Accuracy and Efficiency with AI
+                Building Next-Gen Legal AI Suite for Legal research, draft and review in partnership with LiveLaw
               </h1>
               
               <div className="flex items-center space-x-4 text-sm text-gray-400 mb-8">

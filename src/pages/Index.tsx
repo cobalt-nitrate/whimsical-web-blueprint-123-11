@@ -34,6 +34,31 @@ const Index = () => {
     };
   }, []);
 
+  // Handle scroll from navbar for Research and Tools sections
+  useEffect(() => {
+    const handleHashChange = () => {
+      const { hash } = window.location;
+      if (hash) {
+        const element = document.querySelector(hash);
+        if (element) {
+          setTimeout(() => {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }, 0);
+        }
+      }
+    };
+
+    // Handle hash on initial load
+    handleHashChange();
+
+    // Add event listener for hash changes
+    window.addEventListener('hashchange', handleHashChange);
+    
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, []);
+
   return (
     <PageLayout>
       <Hero />

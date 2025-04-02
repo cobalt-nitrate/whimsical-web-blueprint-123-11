@@ -1,7 +1,11 @@
+
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { Activity, Bot, FileText, Headphones, Image, Search, Video, Zap } from 'lucide-react';
+
 const Tools = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
@@ -10,16 +14,77 @@ const Tools = () => {
     }, {
       threshold: 0.1
     });
+    
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
+    
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
       }
     };
   }, []);
-  return <section id="tools" ref={sectionRef} className="py-20 bg-dark-900 opacity-0">
+  
+  const toolsData = [
+    {
+      id: 1,
+      title: "AI Agents",
+      description: "Your Automated AI Workforce for complex business operations, lead generation, marketing, HR, Products teams and much more",
+      icon: Bot
+    },
+    {
+      id: 2,
+      title: "Enterprise Search Engine",
+      description: "Next Gen RAG powered knowledge management and retrieval system without hallucinations",
+      icon: Search
+    },
+    {
+      id: 3,
+      title: "Synthetic Data Generation",
+      description: "High Quality Synthetic Data to train ML Models without compromising sensitive real-world data",
+      icon: Zap
+    },
+    {
+      id: 4,
+      title: "Customer Support Assistant",
+      description: "Chatbot and Voice assistant that handles customer queries & resolves complaints all by itself",
+      icon: Headphones
+    },
+    {
+      id: 5,
+      title: "Audio Analytics Business Intelligence",
+      description: "Analyzes customer calls, meetings, and voice interactions to extract actionable insights",
+      icon: Activity
+    },
+    {
+      id: 6,
+      title: "AI-Powered Document Intelligence",
+      description: "Extracts key information from documents, PDFs, and contracts with NLP and Vision Models to provide meaningful insights",
+      icon: FileText
+    },
+    {
+      id: 7,
+      title: "Video Interpretation & Analytics",
+      description: "Complete suite for object detection, motion tracking, facial recognition, and behavioral analysis in real-time video streams",
+      icon: Video
+    },
+    {
+      id: 8,
+      title: "AI Content Generation Suite",
+      description: "Creates, enhances, and personalize auto captioned video and audio, voice-over effortlessly for marketing, media production, e-learning",
+      icon: Image
+    },
+    {
+      id: 9,
+      title: "Vision AI for Quality Assurance",
+      description: "Leverages computer vision to detect defects, anomalies, and inconsistencies in real-time during the manufacturing process",
+      icon: Image
+    }
+  ];
+
+  return (
+    <section id="tools" ref={sectionRef} className="py-20 bg-dark-900 opacity-0">
       <div className="container mx-auto px-6">
         <div className="mb-12 text-center">
           <div className="inline-block px-3 py-1 rounded-full bg-dark-700 text-teal-500 text-xs font-medium mb-4">
@@ -33,10 +98,16 @@ const Tools = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-10">
-          {Array.from({
-          length: 8
-        }).map((_, index) => <ToolCard key={index} delay={(index + 1) * 100} />)}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-10">
+          {toolsData.slice(0, 8).map((tool) => (
+            <ToolCard 
+              key={tool.id} 
+              title={tool.title} 
+              description={tool.description} 
+              Icon={tool.icon} 
+              delay={(tool.id) * 100} 
+            />
+          ))}
         </div>
         
         <div className="text-center">
@@ -45,15 +116,20 @@ const Tools = () => {
           </Link>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 interface ToolCardProps {
+  title: string;
+  description: string;
+  Icon: React.ElementType;
   delay: number;
 }
-const ToolCard = ({
-  delay
-}: ToolCardProps) => {
+
+const ToolCard = ({ title, description, Icon, delay }: ToolCardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
+  
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
@@ -66,30 +142,33 @@ const ToolCard = ({
       threshold: 0.1,
       rootMargin: '0px 0px -100px 0px'
     });
+    
     if (cardRef.current) {
       observer.observe(cardRef.current);
     }
+    
     return () => {
       if (cardRef.current) {
         observer.unobserve(cardRef.current);
       }
     };
   }, [delay]);
-  return <div ref={cardRef} className="glass-card glass-card-hover rounded-lg p-6 opacity-0 flex flex-col items-center justify-center aspect-square overflow-hidden relative group">
+
+  return (
+    <div 
+      ref={cardRef} 
+      className="glass-card glass-card-hover rounded-lg p-6 opacity-0 flex flex-col h-full overflow-hidden relative group"
+    >
       <div className="absolute inset-0 bg-teal-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       
-      <div className="flex items-center justify-center mb-3 w-12 h-12 rounded-full bg-dark-700 group-hover:bg-teal-500/20 transition-colors duration-300">
-        <BrainIcon className="w-6 h-6 text-teal-500" />
+      <div className="flex items-center justify-center mb-4 w-12 h-12 rounded-full bg-dark-700 group-hover:bg-teal-500/20 transition-colors duration-300">
+        <Icon className="w-6 h-6 text-teal-500" />
       </div>
       
-      <h3 className="text-white font-medium text-center">Lorem Ipsum</h3>
-    </div>;
+      <h3 className="text-white font-medium text-lg mb-2">{title}</h3>
+      <p className="text-gray-400 text-sm">{description}</p>
+    </div>
+  );
 };
-const BrainIcon = ({
-  className
-}: {
-  className?: string;
-}) => <svg xmlns="http://www.w3.org/2000/svg" className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-  </svg>;
+
 export default Tools;

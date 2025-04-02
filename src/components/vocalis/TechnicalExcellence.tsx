@@ -30,7 +30,7 @@ const TechnicalExcellence = () => {
           badge="Technical Excellence"
           title={<>Industry-Leading <span className="text-gradient">Speech & Audio Processing</span></>}
           description="Our high-performance AI-driven architecture ensures real-time responsiveness, multilingual accuracy, and scalable deployment."
-          className="text-center mb-16"
+          align="center"
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">

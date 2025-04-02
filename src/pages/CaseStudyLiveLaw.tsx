@@ -44,7 +44,7 @@ const CaseStudyLiveLaw = () => {
                 {/* Live Law Logo Column */}
                 <div className="w-full md:w-1/3 flex justify-center md:justify-start">
                   <div className="p-4 rounded-lg w-48 h-48 flex items-center justify-center">
-                    <img src="/lovable-uploads/2a8a9acd-d9f5-4c0e-8db6-a55ae5c0ac76.png" alt="Live Law Logo" className="w-full h-auto" />
+                    <img src="/Legal-Case-Study_1x.webp" alt="Live Law Logo" className="w-full h-auto" />
                   </div>
                 </div>
                 

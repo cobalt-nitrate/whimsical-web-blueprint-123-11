@@ -30,7 +30,7 @@ const Partners = () => {
     },    
     {  
     title: "AI-Powered Medical Imaging Analysis",
-    description: "How NovaForge helped a MSK Cancer Center integrate an advanced DICOM Viewer with AI Assisted Solutions",
+    description: "How NovaForge helped a MSK Cancer Center integrate an advanced DICOM Viewer with AI Assisted Solutions for Automated Image Segmentation and annotation",
     tech: ["Computer Vision", "Segmentation"],
     industry: "Medical",
     link: "/case-study-msk"

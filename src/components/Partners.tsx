@@ -32,7 +32,7 @@ const Partners = () => {
     title: "Predicting Fuel Consumption for Maritime Parametric Insurance",
     description: "Domain Expertise of Satva Trust in Marine Space coming together with our technical capabilities, Noavforge.ai implemented custom model for predicting fuel consumption of ships",
     link: "/case-study-satva",
-    image:"/lovable-uploads/Marine Logistics Case Study_1x.webp",
+    image:"/lovable-uploads/Marine-Logistics-Case-Study_1x.webp",
   }, {
     title: "AI-Powered Medical Imaging Analysis",
     description: "How NovaForge helped a MSK Cancer Center integrate an advanced DICOM Viewer with AI Assisted Solutions for Automated Image Segmentation and annotation",

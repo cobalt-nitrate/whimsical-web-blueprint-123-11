@@ -39,14 +39,14 @@ const Partners = () => {
     tech: ["Computer Vision", "Segmentation"],
     industry: "Medical",
     link: "/case-study-msk",
-    image:"/lovable-uploads/MRI Case Study.png",
+    image:"/lovable-uploads/MRI-Case-Study_1x.webp",
   }, {
     title: "Legal AI Agent for Research Workflows",
     description: "In Partnership with LiveLaw, the largest Indian Legal Media House, NovaForge.ai is developing an AI powered legal search engine for the Indian Lawyers",
     tech: ["Agent", "RAG"],
     industry: "Legal",
     link: "/case-study-livelaw",
-    image:"/lovable-uploads/Legal Case Study_1x.webp",
+    image:"/lovable-uploads/Legal-Case-Study_1x.webp",
   }];
   
   return (

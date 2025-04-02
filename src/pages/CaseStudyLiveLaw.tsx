@@ -280,7 +280,7 @@ const CaseStudyLiveLaw = () => {
               </div>
               
               {/* Visual Demo Section */}
-              <div className="glass-card p-6 rounded-xl border border-dark-700 mb-8">
+              <div className="glass-card p-6 rounded-xl border border-dark-700 mb-8 hidden">
                 <div className="aspect-video bg-dark-900 rounded-lg flex items-center justify-center">
                   <div className="text-center">
                     <p className="text-gray-400 mb-2">Platform Demo</p>
@@ -396,7 +396,7 @@ const CaseStudyLiveLaw = () => {
         </section>
 
         {/* More Case Studies Section */}
-<section className="py-16 bg-dark-900">
+      <section className="py-16 bg-dark-900">
   <div className="container mx-auto px-6">
     <div className="max-w-3xl mx-auto">
       <h2 className="text-2xl font-bold mb-8 text-center">More Case Studies</h2>
@@ -426,7 +426,7 @@ const CaseStudyLiveLaw = () => {
       </div>
     </div>
   </div>
-</section>
+      </section>
       </div>
     </PageLayout>;
 };

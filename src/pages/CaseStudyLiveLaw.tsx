@@ -37,7 +37,7 @@ const CaseStudyLiveLaw = () => {
         </section>
 
         {/* Overview Section with Live Law Logo */}
-        <section className="py-1 bg-dark-800">
+        <section className="bg-dark-800 my-0 py-[47px]">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto">
               <div className="flex flex-col md:flex-row items-start gap-12 mb-8">
@@ -66,7 +66,7 @@ const CaseStudyLiveLaw = () => {
 
         {/* Challenge Section */}
         <section className="bg-dark-900 py-[9px]">
-          <div className="container mx-auto px-6">
+          <div className="container mx-auto px-6 my-[20px]">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-2xl md:text-3xl font-bold mb-6">The Challenge</h2>
               

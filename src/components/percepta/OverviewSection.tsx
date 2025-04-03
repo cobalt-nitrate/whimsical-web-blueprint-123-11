@@ -1,12 +1,9 @@
-
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-
 const OverviewSection = () => {
-  return (
-    <section className="py-20 bg-dark-800">
+  return <section className="py-20 bg-dark-800">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div>
@@ -20,7 +17,7 @@ const OverviewSection = () => {
               Percepta introduces a hybrid vision architecture that seamlessly combines deep learning with reasoning capabilities. By integrating large vision-language models with specialized vision models, Percepta intelligently activates specific model components based on task requirements through dynamic routing mechanisms.
             </p>
             <Link to="#contact">
-              <Button className="rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium">
+              <Button className="rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium hidden">
                 Partner With Us <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
@@ -32,8 +29,6 @@ const OverviewSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default OverviewSection;

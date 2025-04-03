@@ -43,9 +43,9 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-medium mb-4 text-sm">Resources</h4>
             <ul className="space-y-2">
-              <FooterLink to="/" section="partners">Case Studies</FooterLink>
+              <FooterLink to="/case-studies">Case Studies</FooterLink>
               <FooterLink to="/" section="research">Research</FooterLink>
-              <FooterLink to="/" section="partners">Blog</FooterLink>
+              <FooterLink to="/case-studies">Blog</FooterLink>
               <FooterLink to="#">Documentation</FooterLink>
             </ul>
           </div>

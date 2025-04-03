@@ -26,9 +26,9 @@ const CaseStudyLiveLaw = () => {
               </h1>
               
               <div className="flex items-center space-x-4 text-sm text-gray-400 mb-8">
-                <span>Legal Technology</span>
+                <span className="text-teal-300">Legal Technology</span>
                 <span>•</span>
-                <span>AI Search</span>
+                <span className="text-teal-400">AI Search</span>
                 <span>•</span>
                 <span>Document Processing</span>
               </div>

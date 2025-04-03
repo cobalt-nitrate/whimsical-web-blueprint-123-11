@@ -50,7 +50,7 @@ const Footer = () => {
             </ul>
           </div>
           
-          <div>
+          <div className="hidden">
             <h4 className="text-white font-medium mb-4 text-sm">Company</h4>
             <ul className="space-y-2">
               <FooterLink to="/about">About</FooterLink>

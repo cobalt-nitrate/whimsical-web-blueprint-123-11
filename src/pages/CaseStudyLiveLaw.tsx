@@ -51,13 +51,7 @@ const CaseStudyLiveLaw = () => {
                 {/* Overview Content Column */}
                 <div className="w-full md:w-2/3">
                   <h2 className="text-2xl md:text-3xl font-bold mb-6">Introduction</h2>
-                  <p className="text-gray-300 mb-6 leading-relaxed">
-                    Legal professionals in India spend a significant portion of their working hours conducting research 
-                    and drafting legal documents. However, traditional research platforms have long been inefficient, 
-                    leading to lost productivity and frustration among legal practitioners. Live Law, a leading legal 
-                    news and research platform, partnered with NovaForge to leverage its AI-powered legal research tool 
-                    and address these challenges.
-                  </p>
+                  <p className="text-gray-300 mb-6 leading-relaxed">Legal professionals in India spend a significant portion of their working hours conducting research and drafting legal documents. However, traditional research platforms have long been inefficient, leading to lost productivity and frustration among legal practitioners. Live Law, the leading Indian legal news and media, partnered with NovaForge to leverage its AI-powered legal research tool and address these challenges.</p>
                 </div>
               </div>
             </div>
@@ -294,7 +288,7 @@ const CaseStudyLiveLaw = () => {
 
         {/* Results Section */}
         <section className="bg-dark-900 py-[16px]">
-          <div className="container mx-auto px-6">
+          <div className="container mx-auto px-6 my-[21px]">
             <div className="max-w-3xl mx-auto">
               <h2 className="text-2xl md:text-3xl font-bold mb-6">Results & Impact</h2>
               

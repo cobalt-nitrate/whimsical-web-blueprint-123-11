@@ -75,7 +75,7 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} Novaforge AI. All rights reserved.
           </p>
           
-          <div className="flex space-x-6">
+          <div className="flex space-x-6 hidden">
             <SocialLink href="#" ariaLabel="Twitter">
               <TwitterIcon className="h-5 w-5" />
             </SocialLink>

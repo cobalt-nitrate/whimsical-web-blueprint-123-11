@@ -43,8 +43,8 @@ const CaseStudyLiveLaw = () => {
               <div className="flex flex-col md:flex-row items-start gap-12 mb-8">
                 {/* Live Law Logo Column */}
                 <div className="w-full md:w-1/3 flex justify-center md:justify-start">
-                  <div className="p-4 rounded-lg w-48 h-48 flex items-center justify-center">
-                    <img src="/Legal-Case-Study_1x.webp" alt="Live Law Logo" className="w-full h-auto" />
+                  <div className="p-4 rounded-lg w-60 h-48 flex items-center justify-center px-0 py-0">
+                    <img src="/Legal-Case-Study_1x.webp" alt="Live Law Logo" className="w-full h-auto object-cover" />
                   </div>
                 </div>
                 

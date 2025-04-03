@@ -11,11 +11,7 @@ const About = () => {
       position: "CEO",
       institution: "IIT MADRAS"
     },
-    {
-      name: "Gokul AV",
-      position: "CTO",
-      institution: "IIT MADRAS"
-    },
+    
     {
       name: "Harshit Singh",
       position: "Product",

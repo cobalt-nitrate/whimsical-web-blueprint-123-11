@@ -1,24 +1,20 @@
-
 import React from 'react';
 import { ArrowRight, Brain, BarChart, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
 interface HeroSectionProps {
   scrollToContact: () => void;
 }
-
-const HeroSection: React.FC<HeroSectionProps> = ({ scrollToContact }) => {
-  return (
-    <section className="pt-32 pb-16 md:pb-24 bg-dark-900">
+const HeroSection: React.FC<HeroSectionProps> = ({
+  scrollToContact
+}) => {
+  return <section className="pt-32 pb-16 md:pb-24 bg-dark-900">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="max-w-xl">
             <div className="flex flex-wrap gap-2 mb-6">
-              {['AI Language Models', 'Context-Aware AI', 'Enterprise NLP', 'Knowledge Retrieval', 'AI Agents'].map(tag => (
-                <span key={tag} className="px-3 py-1 rounded-full bg-dark-700 text-teal-500 text-xs font-medium">
+              {['AI Language Models', 'Context-Aware AI', 'Enterprise NLP', 'Knowledge Retrieval', 'AI Agents'].map(tag => <span key={tag} className="px-3 py-1 rounded-full bg-dark-700 text-teal-500 text-xs font-medium">
                   {tag}
-                </span>
-              ))}
+                </span>)}
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
@@ -34,7 +30,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToContact }) => {
                 Get Started with Lexora
               </button>
               
-              <Link to="/research" className="px-6 py-3 rounded-full border border-white/10 hover:border-white/30 text-white hover:bg-dark-800 transition-all duration-300">
+              <Link to="/research" className="px-6 py-3 rounded-full border border-white/10 hover:border-white/30 text-white hover:bg-dark-800 transition-all duration-300 hidden">
                 Learn More
               </Link>
             </div>
@@ -78,8 +74,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToContact }) => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;

@@ -1,24 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 const Footer = () => {
   const handleSectionLink = (e: React.MouseEvent<HTMLAnchorElement>, path: string, id: string) => {
     e.preventDefault();
-    
+
     // If we're already on the home page, just scroll to the section
     if (window.location.pathname === '/') {
       const element = document.getElementById(id);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        element.scrollIntoView({
+          behavior: 'smooth'
+        });
       }
     } else {
       // If we're on another page, navigate to home with the hash
       window.location.href = `/${id ? '#' + id : ''}`;
     }
   };
-  
-  return (
-    <footer className="bg-dark-900 border-t border-white/5 py-10">
+  return <footer className="bg-dark-900 border-t border-white/5 py-10">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-6 gap-8 mb-10">
           <div className="col-span-2">
@@ -89,10 +88,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 const FooterLink = ({
   to,
   section,
@@ -103,38 +100,30 @@ const FooterLink = ({
   children: React.ReactNode;
 }) => {
   if (section) {
-    return (
-      <li>
-        <a 
-          href={`${to}#${section}`} 
-          className="text-gray-400 hover:text-teal-500 transition-colors duration-300 text-sm"
-          onClick={(e) => {
-            e.preventDefault();
-            if (window.location.pathname === '/') {
-              const element = document.getElementById(section);
-              if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-              }
-            } else {
-              window.location.href = `/${section ? '#' + section : ''}`;
-            }
-          }}
-        >
+    return <li>
+        <a href={`${to}#${section}`} className="text-gray-400 hover:text-teal-500 transition-colors duration-300 text-sm" onClick={e => {
+        e.preventDefault();
+        if (window.location.pathname === '/') {
+          const element = document.getElementById(section);
+          if (element) {
+            element.scrollIntoView({
+              behavior: 'smooth'
+            });
+          }
+        } else {
+          window.location.href = `/${section ? '#' + section : ''}`;
+        }
+      }}>
           {children}
         </a>
-      </li>
-    );
+      </li>;
   }
-  
-  return (
-    <li>
+  return <li className="hidden">
       <Link to={to} className="text-gray-400 hover:text-teal-500 transition-colors duration-300 text-sm">
         {children}
       </Link>
-    </li>
-  );
+    </li>;
 };
-
 const SocialLink = ({
   href,
   ariaLabel,
@@ -146,7 +135,6 @@ const SocialLink = ({
 }) => <a href={href} aria-label={ariaLabel} className="text-gray-400 hover:text-teal-500 transition-colors duration-300">
     {children}
   </a>;
-
 const TwitterIcon = ({
   className
 }: {
@@ -154,7 +142,6 @@ const TwitterIcon = ({
 }) => <svg xmlns="http://www.w3.org/2000/svg" className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-1-4.8 4-8.9 8-5 1.6-1 3-2.2 4-3z" />
   </svg>;
-
 const LinkedInIcon = ({
   className
 }: {
@@ -163,7 +150,6 @@ const LinkedInIcon = ({
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 14v7h4v-7M4 7a2 2 0 114 0 2 2 0 01-4 0z" />
   </svg>;
-
 const GitHubIcon = ({
   className
 }: {
@@ -171,5 +157,4 @@ const GitHubIcon = ({
 }) => <svg xmlns="http://www.w3.org/2000/svg" className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 00-1.3-3.2c.1-.3.6-1.6-.2-3.2 0 0-1.1-.3-3.5 1.3a12.3 12.3 0 00-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1c-.8 1.6-.3 2.9-.2 3.2A4.6 4.6 0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21" />
   </svg>;
-
 export default Footer;

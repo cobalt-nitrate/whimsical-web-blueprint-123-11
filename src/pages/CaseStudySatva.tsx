@@ -469,7 +469,7 @@ const CaseStudySatva = () => {
         </div>
         
         {/* Second case study */}
-        <div className="glass-card p-6 rounded-lg hover:border-teal-500/40 border border-transparent transition-colors duration-300">
+        <div className="glass-card p-6 rounded-lg hover:border-teal-500/40 border border-transparent transition-colors duration-300" hidden>
           <div className="text-xs text-gray-400 mb-2">Legal</div>
           <h3 className="text-lg font-semibold mb-2 text-white">Improved Search Accuracy and Efficiency with AI for Live Law</h3>
           <p className="text-gray-400 text-sm mb-4">Intelligent document analysis for legal professionals</p>

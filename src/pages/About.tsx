@@ -70,10 +70,25 @@ const About = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            {['Vision', 'Innovation', 'Impact'].map(item => <div key={item} className="glass-card p-6 rounded-xl">
-                <h3 className="text-xl font-medium mb-2">{item}</h3>
-                <p className="text-gray-400">Our commitment to excellence and innovation in AI technology.</p>
-              </div>)}
+            {[
+              {
+                title: 'Vision',
+                description: 'To be the global leader in AI innovation, transforming industries through cutting-edge research and practical applications that drive sustainable growth.'
+              },
+              {
+                title: 'Innovation',
+                description: 'Pioneering new frontiers in AI technology, we continuously push boundaries to develop solutions that solve complex real-world challenges.'
+              },
+              {
+                title: 'Impact',
+                description: 'Partnering with existing market leaders, our commitment towards Enterprise AI is about collaboration and shared knowledge.'
+              }
+            ].map(item => (
+              <div key={item.title} className="glass-card p-6 rounded-xl">
+                <h3 className="text-xl font-medium mb-2">{item.title}</h3>
+                <p className="text-gray-400">{item.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

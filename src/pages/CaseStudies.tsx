@@ -2,11 +2,13 @@ import React, { useEffect, useRef, useState } from 'react';
 import PageLayout from '@/components/PageLayout';
 import { ArrowRight, Search, Brain, LineChart, HeartPulse, Building, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
+
 const CaseStudies = () => {
   const [searchQuery, setSearchQuery] = useState('');
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   const caseStudies = [{
     id: "msk-cancer-center",
     title: "Medical Imaging: Enhancing PACS Viewer Functionality for MSK Cancer Center",
@@ -35,12 +37,18 @@ const CaseStudies = () => {
     featured: false,
     link: "/case-study-satva"
   }];
-  const filteredCaseStudies = searchQuery ? caseStudies.filter(cs => cs.title.toLowerCase().includes(searchQuery.toLowerCase()) || cs.category.toLowerCase().includes(searchQuery.toLowerCase()) || cs.industry.toLowerCase().includes(searchQuery.toLowerCase()) || cs.description.toLowerCase().includes(searchQuery.toLowerCase())) : caseStudies;
-  .filter(cs => cs.id !== "msk-cancer-center") // 👈 hide MSK case study
-  : caseStudies.filter(cs => cs.id !== "msk-cancer-center"); // 👈 hide when no search too
 
-  // Find the featured case study
+  const filteredCaseStudies = searchQuery 
+    ? caseStudies
+        .filter(cs => cs.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+          cs.category.toLowerCase().includes(searchQuery.toLowerCase()) || 
+          cs.industry.toLowerCase().includes(searchQuery.toLowerCase()) || 
+          cs.description.toLowerCase().includes(searchQuery.toLowerCase()))
+        .filter(cs => cs.id !== "msk-cancer-center") // hide MSK case study when searching
+    : caseStudies.filter(cs => cs.id !== "msk-cancer-center"); // hide when no search too
+
   const featuredCaseStudy = caseStudies.find(cs => cs.featured && cs.id !== "msk-cancer-center");
+
   return <PageLayout>
       <div className="pt-28 pb-20">
         <section className="py-16 bg-dark-900">
@@ -59,7 +67,6 @@ const CaseStudies = () => {
               </div>
             </div>
 
-            {/* Featured Case Study */}
             {featuredCaseStudy && <div className="mb-16">
                 <h2 className="text-2xl font-bold mb-6">Featured Case Study</h2>
                 
@@ -92,7 +99,6 @@ const CaseStudies = () => {
                 </div>
               </div>}
 
-            {/* All Case Studies */}
             <div>
               <h2 className="text-2xl font-bold mb-6">All Case Studies</h2>
               
@@ -124,4 +130,5 @@ const CaseStudies = () => {
       </div>
     </PageLayout>;
 };
+
 export default CaseStudies;

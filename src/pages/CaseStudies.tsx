@@ -36,9 +36,11 @@ const CaseStudies = () => {
     link: "/case-study-satva"
   }];
   const filteredCaseStudies = searchQuery ? caseStudies.filter(cs => cs.title.toLowerCase().includes(searchQuery.toLowerCase()) || cs.category.toLowerCase().includes(searchQuery.toLowerCase()) || cs.industry.toLowerCase().includes(searchQuery.toLowerCase()) || cs.description.toLowerCase().includes(searchQuery.toLowerCase())) : caseStudies;
+  .filter(cs => cs.id !== "msk-cancer-center") // 👈 hide MSK case study
+  : caseStudies.filter(cs => cs.id !== "msk-cancer-center"); // 👈 hide when no search too
 
   // Find the featured case study
-  const featuredCaseStudy = caseStudies.find(cs => cs.featured);
+  const featuredCaseStudy = caseStudies.find(cs => cs.featured && cs.id !== "msk-cancer-center");
   return <PageLayout>
       <div className="pt-28 pb-20">
         <section className="py-16 bg-dark-900">
@@ -97,7 +99,7 @@ const CaseStudies = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {filteredCaseStudies.filter(cs => !cs.featured).map(caseStudy => {
                 const CaseIcon = caseStudy.icon;
-                const isAvailable = ["msk-cancer-center", "live-law-search", "maritime-insurance"].includes(caseStudy.id);
+                const isAvailable = ["live-law-search", "maritime-insurance", "msk-cancer-center"].includes(caseStudy.id);
                 return <div key={caseStudy.id} className="glass-card p-6 rounded-xl border border-white/5 hover:border-teal-500/20 transition-colors duration-300">
                     <div className="flex items-center space-x-2 mb-4">
                       <div className="w-10 h-10 rounded-full bg-teal-500/10 flex items-center justify-center">

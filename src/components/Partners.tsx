@@ -49,6 +49,10 @@ const Partners = () => {
     image:"/lovable-uploads/Legal-Case-Study_1x.webp",
   }];
   
+  const visibleProjects = projects.filter(
+    project => project.title !== "AI-Powered Medical Imaging Analysis"
+  );
+  
   return (
     <section id="partners" ref={sectionRef} className="py-20 bg-dark-800 opacity-0">
       <div className="container mx-auto px-6">
@@ -66,7 +70,7 @@ const Partners = () => {
         <div className="md:hidden">
           <Carousel className="w-full">
             <CarouselContent>
-              {projects.map((project, index) => (
+              {visibleProjects.map((project, index) => (
                 <CarouselItem key={index} className="w-full">
                   <ProjectCard 
                     industry={project.industry} 
@@ -88,7 +92,7 @@ const Partners = () => {
 
         {/* Desktop Grid */}
         <div className="hidden md:grid md:grid-cols-3 gap-6">
-          {projects.map((project, index) => (
+          {visibleProjects.map((project, index) => (
             <ProjectCard 
               key={index}
               industry={project.industry} 

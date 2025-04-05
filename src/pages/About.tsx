@@ -9,7 +9,7 @@ const About = () => {
     institution: "IIT MADRAS"
   }, {
     name: "Harshit Singh",
-    position: "Product",
+    position: "Co-Founder",
     institution: "IIT DELHI"
   }];
   const missionPoints = [{

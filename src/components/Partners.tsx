@@ -35,7 +35,7 @@ const Partners = () => {
     image:"/Marine-Logistics-Case-Study_1x.webp",
   }, {
     title: "AI-Powered Medical Imaging Analysis",
-    description: "How NovaForge helped a MSK Cancer Center integrate an advanced DICOM Viewer with AI Assisted Solutions for Automated Image Segmentation and annotation",
+    description: "How NovaForge helped a Authera.ai integrate an advanced DICOM Viewer with AI Assisted Solutions for Automated Image Segmentation and annotation",
     tech: ["Computer Vision", "Segmentation"],
     industry: "Medical",
     link: "/case-study-msk",
@@ -49,9 +49,11 @@ const Partners = () => {
     image:"/lovable-uploads/Legal-Case-Study_1x.webp",
   }];
   
-  const visibleProjects = projects.filter(
-    project => project.title !== "AI-Powered Medical Imaging Analysis"
-  );
+  //const visibleProjects = projects.filter(
+  //  project => project.title !== "AI-Powered Medical Imaging Analysis"
+  //);
+
+  const visibleProjects = projects; // ✅ Replaced with full list to show all projects, including the previously hidden one
   
   return (
     <section id="partners" ref={sectionRef} className="py-20 bg-dark-800 opacity-0">

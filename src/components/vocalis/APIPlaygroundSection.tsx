@@ -2,23 +2,59 @@
 import React, { useState } from 'react';
 import { Play, Code, Volume2, Mic } from 'lucide-react';
 import SectionHeader from '@/components/ui/section-header';
+import { Textarea } from '@/components/ui/textarea';
+
+const useCaseSamples: Record<string, string> = {
+  'Try Your Text': '',
+  Healthcare:
+    "Good morning, Dr. Smith. The patient in room 302 is stable, but we'll need to run additional tests for a full diagnosis.",
+  'Customer Service':
+    "Thank you for calling ACME support. How may I assist you with your recent purchase?",
+  Sales:
+    "Hi there! Are you interested in learning more about our exclusive summer offers? Let me know how I can help.",
+  'Food Ordering':
+    "Hi, I'd like to order a large pepperoni pizza with extra cheese and a side of garlic bread, please.",
+};
 
 const APIPlaygroundSection = () => {
   const [activeTab, setActiveTab] = useState('text-to-speech');
-  const [isGenerating, setIsGenerating] = useState(false);
-
-  const apiTabs = [
-    { id: 'text-to-speech', label: 'Text to Speech', icon: Volume2 },
-    { id: 'speech-to-text', label: 'Speech to Text', icon: Mic },
-    { id: 'audio-intelligence', label: 'Audio Intelligence', icon: Code }
-  ];
-
   const useCases = [
     'Try Your Text',
     'Healthcare',
     'Customer Service',
     'Sales',
     'Food Ordering'
+  ];
+  const [activeUseCase, setActiveUseCase] = useState('Try Your Text');
+  const [inputText, setInputText] = useState(
+    useCaseSamples['Try Your Text'] ||
+      "Yeah, I'd like the uh, order a Double-Double Animal Style with, you know, well-done fries, and like, a Neapolitan shake, and could you, you make the burger protein style? Also, like, can you cut the buns business or make sure!"
+  );
+  const [isCustomText, setIsCustomText] = useState(false);
+  const [isGenerating, setIsGenerating] = useState(false);
+
+  // Handle when a use case (tag) is selected
+  const handleUseCaseClick = (useCase: string) => {
+    setActiveUseCase(useCase);
+    if (useCase === 'Try Your Text') {
+      setInputText('');
+      setIsCustomText(false);
+    } else {
+      setInputText(useCaseSamples[useCase]);
+      setIsCustomText(false);
+    }
+  };
+
+  // When user types, mark as custom (so we don't override with tag selection)
+  const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setInputText(e.target.value);
+    setIsCustomText(true);
+  };
+
+  const apiTabs = [
+    { id: 'text-to-speech', label: 'Text to Speech', icon: Volume2 },
+    { id: 'speech-to-text', label: 'Speech to Text', icon: Mic },
+    { id: 'audio-intelligence', label: 'Audio Intelligence', icon: Code }
   ];
 
   const handleGenerate = () => {
@@ -57,12 +93,17 @@ const APIPlaygroundSection = () => {
             })}
           </div>
 
-          {/* Use Case Buttons */}
+          {/* Use Case Tags */}
           <div className="flex flex-wrap gap-2 mb-8 justify-center">
             {useCases.map((useCase) => (
               <button
                 key={useCase}
-                className="px-3 py-1.5 text-sm rounded-full border border-white/20 text-gray-300 hover:border-teal-500/50 hover:text-teal-400 transition-all duration-300"
+                onClick={() => handleUseCaseClick(useCase)}
+                className={`px-3 py-1.5 text-sm rounded-full border ${
+                  activeUseCase === useCase
+                    ? 'border-teal-500/70 text-teal-400 bg-dark-800'
+                    : 'border-white/20 text-gray-300 hover:border-teal-500/50 hover:text-teal-400'
+                } transition-all duration-300`}
               >
                 {useCase}
               </button>
@@ -82,12 +123,16 @@ const APIPlaygroundSection = () => {
               </div>
 
               <div className="bg-dark-700 rounded-lg p-4 mb-4 min-h-[120px]">
-                <p className="text-gray-300 text-sm leading-relaxed">
-                  Yeah, I'd like the uh, order a Double-Double Animal Style with, you know, well-done fries, and 
-                  like, a Neapolitan shake, and could you, you make the burger protein style? Also, like, can you 
-                  cut the buns business or make sure!
-                </p>
-                <div className="text-xs text-gray-500 mt-2">237 / 5,000</div>
+                <Textarea
+                  placeholder="Write or paste text here"
+                  className="bg-dark-700 text-gray-300 text-sm leading-relaxed border-none resize-none p-0 min-h-[80px] focus-visible:ring-0 focus:outline-none"
+                  value={inputText}
+                  onChange={handleInputChange}
+                  maxLength={5000}
+                />
+                <div className="text-xs text-gray-500 mt-2 text-right">
+                  {inputText.length} / 5,000
+                </div>
               </div>
 
               <div className="flex items-center gap-2">

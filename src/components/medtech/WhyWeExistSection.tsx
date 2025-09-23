@@ -1,9 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { Zap, TrendingUp, Shield } from 'lucide-react';
-
 const WhyWeExistSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
@@ -12,20 +10,16 @@ const WhyWeExistSection = () => {
     }, {
       threshold: 0.2
     });
-
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
-
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
       }
     };
   }, []);
-
-  return (
-    <section ref={sectionRef} className="py-20 bg-dark-800">
+  return <section ref={sectionRef} className="py-20 bg-dark-800">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Text */}
@@ -37,9 +31,7 @@ const WhyWeExistSection = () => {
               </span>
             </h2>
             
-            <p className="text-gray-300 text-lg leading-relaxed mb-6">
-              Healthcare's next leap depends on deployable, compliant, edge-ready systems—not just research papers.
-            </p>
+            <p className="text-gray-300 text-lg leading-relaxed mb-6">Healthcare's next leap depends on deployable, compliant, edge-ready systems.</p>
             
             <p className="text-teal-400 text-lg font-medium">
               We shorten the gap between lab breakthroughs and clinical adoption.
@@ -48,7 +40,7 @@ const WhyWeExistSection = () => {
             {/* Key metrics */}
             <div className="grid grid-cols-3 gap-6 mt-8">
               <div className="text-center">
-                <div className="text-2xl font-bold text-teal-400 mb-1">85%</div>
+                <div className="text-2xl font-bold text-teal-400 mb-1">60%</div>
                 <div className="text-xs text-gray-400">Faster Deployment</div>
               </div>
               <div className="text-center">
@@ -68,15 +60,11 @@ const WhyWeExistSection = () => {
               {/* Background pattern */}
               <div className="absolute inset-0 opacity-10">
                 <div className="grid grid-cols-8 h-full">
-                  {Array.from({ length: 64 }).map((_, i) => (
-                    <div 
-                      key={i} 
-                      className="border border-teal-500/20"
-                      style={{
-                        animationDelay: `${(i * 50)}ms`
-                      }}
-                    />
-                  ))}
+                  {Array.from({
+                  length: 64
+                }).map((_, i) => <div key={i} className="border border-teal-500/20" style={{
+                  animationDelay: `${i * 50}ms`
+                }} />)}
                 </div>
               </div>
 
@@ -133,8 +121,6 @@ const WhyWeExistSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default WhyWeExistSection;

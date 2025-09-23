@@ -24,6 +24,7 @@ import Percepta from "./pages/Percepta";
 import Vocalis from "./pages/Vocalis";
 import Lexora from "./pages/Lexora";
 import Aetherminds from "./pages/Aetherminds";
+import MedTech from "./pages/MedTech";
 
 const queryClient = new QueryClient();
 
@@ -62,6 +63,7 @@ const App = () => (
           <Route path="/vocalis" element={<Vocalis />} />
           <Route path="/lexora" element={<Lexora />} />
           <Route path="/aetherminds" element={<Aetherminds />} />
+          <Route path="/med-tech" element={<MedTech />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Toaster />

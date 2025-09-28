@@ -1,14 +1,13 @@
 import React from 'react';
 import { ArrowRight, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
 interface HeroSectionProps {
   scrollToContact: () => void;
 }
-
-const HeroSection: React.FC<HeroSectionProps> = ({ scrollToContact }) => {
-  return (
-    <section className="relative py-20 md:py-32 bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900 overflow-hidden">
+const HeroSection: React.FC<HeroSectionProps> = ({
+  scrollToContact
+}) => {
+  return <section className="relative py-20 md:py-32 bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900 overflow-hidden">
       {/* Background Animation Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-teal-500/10 rounded-full blur-3xl animate-pulse"></div>
@@ -19,28 +18,28 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToContact }) => {
           <svg className="w-full h-full" viewBox="0 0 1000 1000">
             <defs>
               <radialGradient id="nodeGradient" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stopColor="#14b8a6" stopOpacity="0.8"/>
-                <stop offset="100%" stopColor="#14b8a6" stopOpacity="0"/>
+                <stop offset="0%" stopColor="#14b8a6" stopOpacity="0.8" />
+                <stop offset="100%" stopColor="#14b8a6" stopOpacity="0" />
               </radialGradient>
             </defs>
             
             {/* Animated connections */}
             <g className="animate-pulse">
-              <line x1="100" y1="200" x2="300" y2="150" stroke="#14b8a6" strokeWidth="1" opacity="0.6"/>
-              <line x1="300" y1="150" x2="500" y2="200" stroke="#14b8a6" strokeWidth="1" opacity="0.6"/>
-              <line x1="500" y1="200" x2="700" y2="180" stroke="#14b8a6" strokeWidth="1" opacity="0.6"/>
-              <line x1="200" y1="400" x2="400" y2="350" stroke="#14b8a6" strokeWidth="1" opacity="0.4"/>
-              <line x1="400" y1="350" x2="600" y2="400" stroke="#14b8a6" strokeWidth="1" opacity="0.4"/>
+              <line x1="100" y1="200" x2="300" y2="150" stroke="#14b8a6" strokeWidth="1" opacity="0.6" />
+              <line x1="300" y1="150" x2="500" y2="200" stroke="#14b8a6" strokeWidth="1" opacity="0.6" />
+              <line x1="500" y1="200" x2="700" y2="180" stroke="#14b8a6" strokeWidth="1" opacity="0.6" />
+              <line x1="200" y1="400" x2="400" y2="350" stroke="#14b8a6" strokeWidth="1" opacity="0.4" />
+              <line x1="400" y1="350" x2="600" y2="400" stroke="#14b8a6" strokeWidth="1" opacity="0.4" />
             </g>
             
             {/* Nodes */}
-            <circle cx="100" cy="200" r="4" fill="url(#nodeGradient)" className="animate-pulse"/>
-            <circle cx="300" cy="150" r="4" fill="url(#nodeGradient)" className="animate-pulse delay-500"/>
-            <circle cx="500" cy="200" r="4" fill="url(#nodeGradient)" className="animate-pulse delay-1000"/>
-            <circle cx="700" cy="180" r="4" fill="url(#nodeGradient)" className="animate-pulse delay-1500"/>
-            <circle cx="200" cy="400" r="4" fill="url(#nodeGradient)" className="animate-pulse delay-700"/>
-            <circle cx="400" cy="350" r="4" fill="url(#nodeGradient)" className="animate-pulse delay-300"/>
-            <circle cx="600" cy="400" r="4" fill="url(#nodeGradient)" className="animate-pulse delay-1200"/>
+            <circle cx="100" cy="200" r="4" fill="url(#nodeGradient)" className="animate-pulse" />
+            <circle cx="300" cy="150" r="4" fill="url(#nodeGradient)" className="animate-pulse delay-500" />
+            <circle cx="500" cy="200" r="4" fill="url(#nodeGradient)" className="animate-pulse delay-1000" />
+            <circle cx="700" cy="180" r="4" fill="url(#nodeGradient)" className="animate-pulse delay-1500" />
+            <circle cx="200" cy="400" r="4" fill="url(#nodeGradient)" className="animate-pulse delay-700" />
+            <circle cx="400" cy="350" r="4" fill="url(#nodeGradient)" className="animate-pulse delay-300" />
+            <circle cx="600" cy="400" r="4" fill="url(#nodeGradient)" className="animate-pulse delay-1200" />
           </svg>
         </div>
       </div>
@@ -61,25 +60,15 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToContact }) => {
           </h2>
 
           {/* Support Line */}
-          <p className="text-gray-400 max-w-3xl mx-auto mb-8 text-lg leading-relaxed animate-fade-in delay-500">
-            AI-native platforms that integrate directly into clinical workflows—from imaging systems to health data pipelines—purpose-built for hospitals, med-tech companies, and research institutions.
-          </p>
+          
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in delay-700">
-            <Button 
-              onClick={scrollToContact}
-              size="lg"
-              className="px-8 py-4 rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium text-lg transition-all duration-300 hover:scale-105"
-            >
+            <Button onClick={scrollToContact} size="lg" className="px-8 py-4 rounded-full bg-teal-500 hover:bg-teal-600 text-black font-medium text-lg transition-all duration-300 hover:scale-105">
               Let's Collaborate <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             
-            <Button 
-              variant="outline"
-              size="lg"
-              className="px-8 py-4 rounded-full border-2 border-teal-500/50 text-teal-400 hover:bg-teal-500/10 hover:border-teal-400 transition-all duration-300 hover:scale-105"
-            >
+            <Button variant="outline" size="lg" className="px-8 py-4 rounded-full border-2 border-teal-500/50 text-teal-400 hover:bg-teal-500/10 hover:border-teal-400 transition-all duration-300 hover:scale-105">
               <Play className="mr-2 h-5 w-5" />
               See Our Work
             </Button>
@@ -123,8 +112,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToContact }) => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;

@@ -105,7 +105,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                   <div className="w-8 h-8 bg-purple-500/20 rounded-lg mx-auto mb-2 flex items-center justify-center">
                     <div className="w-4 h-4 bg-purple-400 rounded animate-pulse delay-1000"></div>
                   </div>
-                  <p className="text-xs text-gray-400">Research Institutions</p>
+                  <p className="text-xs text-gray-400">Med-Tech Enterprises</p>
                 </div>
               </div>
             </div>

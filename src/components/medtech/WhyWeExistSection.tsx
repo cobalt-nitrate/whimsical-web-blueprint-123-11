@@ -31,7 +31,7 @@ const WhyWeExistSection = () => {
               </span>
             </h2>
             
-            <p className="text-gray-300 text-lg leading-relaxed mb-6">Healthcare's next leap depends on deployable, compliant, edge-ready systems.</p>
+            <p className="text-gray-300 text-lg leading-relaxed mb-6">Solving the hardest R&D challenges</p>
             
             <p className="text-teal-400 text-lg font-medium">
               We shorten the gap between lab breakthroughs and clinical adoption.

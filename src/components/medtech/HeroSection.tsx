@@ -83,7 +83,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                   <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                   <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                 </div>
-                <span className="text-xs text-gray-500">AI Diagnostic Pipeline</span>
+                <span className="text-xs text-gray-500">Medical AI Models & Data-Ops Solutions for</span>
               </div>
               
               <div className="grid grid-cols-3 gap-4 text-center">
@@ -91,21 +91,21 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                   <div className="w-8 h-8 bg-teal-500/20 rounded-lg mx-auto mb-2 flex items-center justify-center">
                     <div className="w-4 h-4 bg-teal-400 rounded animate-pulse"></div>
                   </div>
-                  <p className="text-xs text-gray-400">Image Ingestion</p>
+                  <p className="text-xs text-gray-400">Hospitals & Universities</p>
                 </div>
                 
                 <div className="p-4 bg-dark-700/50 rounded-lg">
                   <div className="w-8 h-8 bg-blue-500/20 rounded-lg mx-auto mb-2 flex items-center justify-center">
                     <div className="w-4 h-4 bg-blue-400 rounded animate-pulse delay-500"></div>
                   </div>
-                  <p className="text-xs text-gray-400">AI Analysis</p>
+                  <p className="text-xs text-gray-400">Equipment Manufacturers</p>
                 </div>
                 
                 <div className="p-4 bg-dark-700/50 rounded-lg">
                   <div className="w-8 h-8 bg-purple-500/20 rounded-lg mx-auto mb-2 flex items-center justify-center">
                     <div className="w-4 h-4 bg-purple-400 rounded animate-pulse delay-1000"></div>
                   </div>
-                  <p className="text-xs text-gray-400">Clinical Report</p>
+                  <p className="text-xs text-gray-400">Research Institutions</p>
                 </div>
               </div>
             </div>

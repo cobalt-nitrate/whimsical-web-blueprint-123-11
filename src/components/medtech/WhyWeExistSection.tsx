@@ -31,7 +31,7 @@ const WhyWeExistSection = () => {
               </span>
             </h2>
             
-            <p className="text-gray-300 text-lg leading-relaxed mb-6">Solving the hardest R&D challenges</p>
+            <p className="text-gray-300 text-lg leading-relaxed mb-6">Our advanced models are expertly designed to understand medical terminolog</p>
             
             <p className="text-teal-400 text-lg font-medium">
               We shorten the gap between lab breakthroughs and clinical adoption.
@@ -100,11 +100,11 @@ const WhyWeExistSection = () => {
                 {/* Features grid */}
                 <div className="grid grid-cols-2 gap-4">
                   <div className="p-4 bg-dark-700/50 rounded-lg text-center">
-                    <div className="text-teal-400 font-semibold text-sm mb-1">Compliance Ready</div>
-                    <div className="text-xs text-gray-400">HIPAA, GDPR, FDA</div>
+                    <div className="text-teal-400 font-semibold text-sm mb-1">Compliant Solution Framework</div>
+                    <div className="text-xs text-gray-400">HIPAA, GDPR, CE</div>
                   </div>
                   <div className="p-4 bg-dark-700/50 rounded-lg text-center">
-                    <div className="text-blue-400 font-semibold text-sm mb-1">Edge Optimized</div>
+                    <div className="text-blue-400 font-semibold text-sm mb-1">On-Prem & Edge Deployments</div>
                     <div className="text-xs text-gray-400">Hospital Hardware</div>
                   </div>
                   <div className="p-4 bg-dark-700/50 rounded-lg text-center">

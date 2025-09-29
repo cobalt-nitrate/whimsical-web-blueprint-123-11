@@ -57,7 +57,13 @@ const HowWeBuildSection = () => {
         {/* Differentiators Grid */}
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
-            {differentiators.map((item, index) => {})}
+            {differentiators.map((item, index) => (
+              <div key={index} className="flex flex-col items-center text-center bg-dark-800 rounded-lg p-6 shadow-md">
+                <div className="mb-4 text-teal-400">{item.icon}</div>
+                <h4 className="text-lg font-semibold text-white mb-2">{item.title}</h4>
+                <p className="text-gray-400 text-sm">{item.description}</p>
+              </div>
+            ))}
           </div>
 
           {/* Process Flow Visualization */}

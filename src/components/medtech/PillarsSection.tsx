@@ -34,11 +34,11 @@ const PillarsSection = () => {
     {
       icon: <Brain className="h-8 w-8 text-blue-400" />,
       title: "Generative & Vision AI",
-      description: "Custom VLLMs and diffusion models for scan QA, segmentation, 3D generation."
+      description: "Vast library of segmentation, detection, generative & reasoning models for medical applications"
     },
     {
       icon: <Database className="h-8 w-8 text-purple-400" />,
-      title: "Healthcare Data Infrastructure",
+      title: "Research Ready Data",
       description: "Localized data networks, PGHD platforms, research-grade pipelines."
     },
     {

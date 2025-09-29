@@ -108,12 +108,12 @@ const WhyWeExistSection = () => {
                     <div className="text-xs text-gray-400">Services deployable on Hospital hardware and infrastructure</div>
                   </div>
                   <div className="p-4 bg-dark-700/50 rounded-lg text-center">
-                    <div className="text-purple-400 font-semibold text-sm mb-1">Optimized</div>
-                    <div className="text-xs text-gray-400">EHR Integration</div>
+                    <div className="text-purple-400 font-semibold text-sm mb-1">Custom Integrations Support</div>
+                    <div className="text-xs text-gray-400">Integrates seamlessly with exisiting Clinical & Research Workflows</div>
                   </div>
                   <div className="p-4 bg-dark-700/50 rounded-lg text-center">
-                    <div className="text-green-400 font-semibold text-sm mb-1">Rapid Deploy</div>
-                    <div className="text-xs text-gray-400">Weeks not Years</div>
+                    <div className="text-green-400 font-semibold text-sm mb-1">Cost Optimized Serving Frameworks</div>
+                    <div className="text-xs text-gray-400">Clinical Data Science </div>
                   </div>
                 </div>
               </div>

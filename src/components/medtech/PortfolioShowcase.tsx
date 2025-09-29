@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { ArrowRight, ExternalLink } from 'lucide-react';
+import { ArrowRight, ExternalLink, Tags } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 const PortfolioShowcase = () => {
@@ -24,42 +24,42 @@ const PortfolioShowcase = () => {
   }, []);
   const portfolioItems = [{
     id: 1,
-    name: "AI-Native Radiology Imaging",
-    country: "USA",
-    outcome: "Unified platform for Medical Imaging AI  ",
-    details: ["Reduced diagnostic time by 40%", "99.2% accuracy in lesion detection"],
+    name: "In Radiology",
+    tags: "USA",
+    outcome: "Enterprise Imaging Platform for Radiology Practioners & Scientists",
+    details: ["Diagnose, monitor & report with AI Assitance", "Train, Validate & Deploy custom radiology AI models","AI guided data annotation & labelling automation"],
     link: "/case-study-msk"
   }, {
     id: 2,
-    name: "AI Assisted Endoscopy Surgeries",
-    country: "USA",
-    outcome: "Diffusion-based 3D denture design with automated QA.",
-    details: ["50% faster design process", "Automated quality assurance pipeline"],
+    name: "In Surgeries",
+    tags: "India",
+    outcome: "Surgical vision intelligence stack for Surgeons & HODs",
+    details: ["Real time AI assistance in Surgical Decisions such as dissections zones & safety judgements ", "Monitor Safety & Protocols for Surgeries via Post-Op Video Analysis", "Automate Surgical Video Labelling for Anatomy & Safe Zones with AI"],
     link: "#"
   }, {
     id: 3,
-    name: "AI in Prosthetics Manufacturing",
-    country: "India",
-    outcome: "AI-driven second opinions powering localized datasets.",
-    details: ["Localized medical AI for Indian demographics", "24/7 diagnostic support system"],
+    name: "In Prosthetics",
+    tags: "USA",
+    outcome: "Gen AI suite Prosthetic 3D models generation & Automated Quality Control",
+    details: ["Automate 3D prosthetics model generation with diffusion Models", "Build Robust QC pipelines with Computer Vision and Anomaly Detection", "Automate 3D data annotation & labelling with AI"],
     link: "#"
   }, {
     id: 4,
-    name: "Early Detection and Diagnosis with AI",
-    country: "India",
-    outcome: "Foundation models embedded in ophthalmology devices.",
-    details: ["Real-time retinal analysis", "Edge deployment on medical devices"],
+    name: "In Diagnostics",
+    tags: "India",
+    outcome: "Library of Diagnostics AI Models ready to embed with Medical Devices",
+    details: ["Custom Diagnostics models for integration with Medical Devices", "Train, Fine-tune or validate models on your private datasets", "Access open-source and exclusive medical datasets curated by us"],
     link: "#"
   }];
   return <section ref={sectionRef} className="py-20 bg-dark-900">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <div className="inline-block px-3 py-1 rounded-full bg-dark-700 text-teal-500 text-xs font-medium mb-4">AI Research</div>
+          <div className="inline-block px-3 py-1 rounded-full bg-dark-700 text-teal-500 text-xs font-medium mb-4">Deeptech Research</div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Portfolio <span className="text-gradient bg-gradient-to-r from-teal-400 to-blue-400 bg-clip-text text-transparent">Showcase</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Building credibility with recognizable deployments across healthcare institutions and med-tech companies.
+            Co-innovating the future of Medical AI with leading healthcare institutions and med-tech companies across the Globe.
           </p>
         </div>
 
@@ -77,7 +77,7 @@ const PortfolioShowcase = () => {
                     <div className="flex items-center gap-2 mb-2">
                       <h3 className="text-xl font-semibold text-white">{item.name}</h3>
                       <span className="px-2 py-1 text-xs bg-teal-500/20 text-teal-400 rounded-full">
-                        {item.country}
+                        {item.tags}
                       </span>
                     </div>
                     <p className="text-gray-300 text-sm">{item.outcome}</p>

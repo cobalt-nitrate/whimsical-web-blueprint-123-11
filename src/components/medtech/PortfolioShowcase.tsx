@@ -24,28 +24,28 @@ const PortfolioShowcase = () => {
   }, []);
   const portfolioItems = [{
     id: 1,
-    name: "MSKCC × Authera",
+    name: "AI-Native Radiology Imaging",
     country: "USA",
-    outcome: "AI-native PACS with lesion detection and urgent-case triage.",
+    outcome: "Unified platform for Medical Imaging AI  ",
     details: ["Reduced diagnostic time by 40%", "99.2% accuracy in lesion detection"],
     link: "/case-study-msk"
   }, {
     id: 2,
-    name: "Smileshape",
+    name: "AI Assisted Endoscopy Surgeries",
     country: "USA",
     outcome: "Diffusion-based 3D denture design with automated QA.",
     details: ["50% faster design process", "Automated quality assurance pipeline"],
     link: "#"
   }, {
     id: 3,
-    name: "Ashoka × Manipal",
+    name: "AI in Prosthetics Manufacturing",
     country: "India",
     outcome: "AI-driven second opinions powering localized datasets.",
     details: ["Localized medical AI for Indian demographics", "24/7 diagnostic support system"],
     link: "#"
   }, {
     id: 4,
-    name: "Appasamy Associates",
+    name: "Early Detection and Diagnosis with AI",
     country: "India",
     outcome: "Foundation models embedded in ophthalmology devices.",
     details: ["Real-time retinal analysis", "Edge deployment on medical devices"],

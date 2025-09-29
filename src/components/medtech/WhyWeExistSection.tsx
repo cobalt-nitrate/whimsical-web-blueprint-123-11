@@ -31,25 +31,25 @@ const WhyWeExistSection = () => {
               </span>
             </h2>
             
-            <p className="text-gray-300 text-lg leading-relaxed mb-6">Our advanced models are expertly designed to understand medical terminolog</p>
+            <p className="text-gray-300 text-lg leading-relaxed mb-6">Our Bio-Foundation models are expertly designed to understand medical terminology and healthcare specific reasoning, ensuring vital, accurate outputs. </p>
             
             <p className="text-teal-400 text-lg font-medium">
-              We shorten the gap between lab breakthroughs and clinical adoption.
+              Explore our tools and full-service R&D solutions to accelerate your projects.
             </p>
 
             {/* Key metrics */}
             <div className="grid grid-cols-3 gap-6 mt-8">
               <div className="text-center">
-                <div className="text-2xl font-bold text-teal-400 mb-1">60%</div>
-                <div className="text-xs text-gray-400">Faster Deployment</div>
+                <div className="text-2xl font-bold text-teal-400 mb-1">R&D Tools</div>
+                <div className="text-s text-gray-400">Unified Platform for Datasets, AI Models & Development Kit</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-blue-400 mb-1">99.7%</div>
-                <div className="text-xs text-gray-400">Accuracy Rate</div>
+                <div className="text-2xl font-bold text-blue-400 mb-1">Data Ops</div>
+                <div className="text-s text-gray-400">Database Migration, Cleansing & Labelling Services</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-purple-400 mb-1">24/7</div>
-                <div className="text-xs text-gray-400">Monitoring</div>
+                <div className="text-2xl font-bold text-purple-400 mb-1">R&D Solutions</div>
+                <div className="text-s text-gray-400">End-to-End Services tailored to your custom R&D Needs</div>
               </div>
             </div>
           </div>
@@ -100,15 +100,15 @@ const WhyWeExistSection = () => {
                 {/* Features grid */}
                 <div className="grid grid-cols-2 gap-4">
                   <div className="p-4 bg-dark-700/50 rounded-lg text-center">
-                    <div className="text-teal-400 font-semibold text-sm mb-1">Compliant Solution Framework</div>
-                    <div className="text-xs text-gray-400">HIPAA, GDPR, CE</div>
+                    <div className="text-teal-400 font-semibold text-sm mb-1">Compliant Solution Frameworks</div>
+                    <div className="text-xs text-gray-400">Robust data privacy & safety measures with HIPAA, GDPR, CE</div>
                   </div>
                   <div className="p-4 bg-dark-700/50 rounded-lg text-center">
                     <div className="text-blue-400 font-semibold text-sm mb-1">On-Prem & Edge Deployments</div>
-                    <div className="text-xs text-gray-400">Hospital Hardware</div>
+                    <div className="text-xs text-gray-400">Services deployable on Hospital hardware and infrastructure</div>
                   </div>
                   <div className="p-4 bg-dark-700/50 rounded-lg text-center">
-                    <div className="text-purple-400 font-semibold text-sm mb-1">Workflow Native</div>
+                    <div className="text-purple-400 font-semibold text-sm mb-1">Optimized</div>
                     <div className="text-xs text-gray-400">EHR Integration</div>
                   </div>
                   <div className="p-4 bg-dark-700/50 rounded-lg text-center">

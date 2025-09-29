@@ -47,16 +47,16 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Main Headline */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in">
-            Calibrated AI for{' '}
+              <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-6 animate-fade-in">
+                Calibrated AI for{' '}
             <span className="text-gradient bg-gradient-to-r from-teal-400 to-blue-400 bg-clip-text text-transparent">
               Life Sciences
             </span>
           </h1>
 
           {/* Subheadline */}
-          <h2 className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-4 animate-fade-in delay-300 font-light">
-            Applied AI systems for diagnostics, devices, and health data infrastructure.
+          <h2 className="text-sm md:text-lg lg:text-2xl text-gray-300 mb-4 animate-fade-in delay-300 font-light">
+            Applied AI systems for diagnostics, devices, and medical applications
           </h2>
 
           {/* Support Line */}

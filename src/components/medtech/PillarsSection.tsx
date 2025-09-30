@@ -114,6 +114,24 @@ const PillarsSection = () => {
         <div className="mt-16 flex justify-center">
           <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-teal-500 to-transparent"></div>
         </div>
+
+        {/* CTA Section */}
+        <div className="mt-16 text-center animate-fade-in">
+          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+            From model to medicine, we are your partner in turning healthcare AI into measurable impact
+          </p>
+          <button 
+            onClick={() => {
+              const contactElement = document.getElementById('contact');
+              if (contactElement) {
+                contactElement.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+            className="glass-card glass-card-hover px-8 py-4 rounded-lg text-white font-semibold transition-all duration-300 hover:scale-105"
+          >
+            Schedule a Discovery Call
+          </button>
+        </div>
       </div>
     </section>
   );

@@ -83,7 +83,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                   <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                   <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                 </div>
-                <span className="text-xs text-gray-500">Medical AI Models & Data-Ops Solutions for</span>
+                <span className="text-xs text-gray-500">Medical AI & Data-Ops Solutions for</span>
               </div>
               
               <div className="grid grid-cols-3 gap-4 text-center">

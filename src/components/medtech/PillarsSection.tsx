@@ -28,8 +28,8 @@ const PillarsSection = () => {
   const pillars = [
     {
       icon: <Activity className="h-8 w-8 text-teal-400" />,
-      title: "AI-Native Clinical Workflows",
-      description: "Diagnostic co-pilots embedded in PACS, EHR, imaging systems."
+      title: "Technical & Domain Expertise",
+      description: "Our team combines advanced biomedical engineering expertise with deep applied AI experience"
     },
     {
       icon: <Brain className="h-8 w-8 text-blue-400" />,
@@ -39,12 +39,12 @@ const PillarsSection = () => {
     {
       icon: <Database className="h-8 w-8 text-purple-400" />,
       title: "Research Ready Data",
-      description: "Localized data networks, PGHD platforms, research-grade pipelines."
+      description: "On-Demand cleaned, annotated & structured multimodal medical datasets for AI model training."
     },
     {
       icon: <Microscope className="h-8 w-8 text-green-400" />,
-      title: "Research & Translation Labs",
-      description: "Co-develop with hospitals to move research into production in months."
+      title: "Optimized Cost & Time",
+      description: "State of the Art serving frameworks & Hardware level optimizations to reduce cloud costs and latency."
     }
   ];
 
@@ -53,13 +53,13 @@ const PillarsSection = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <div className="inline-block px-3 py-1 rounded-full bg-dark-700 text-teal-500 text-xs font-medium mb-4">
-            Core Capabilities
+            Our Strengths
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Our Four <span className="text-gradient bg-gradient-to-r from-teal-400 to-blue-400 bg-clip-text text-transparent">Pillars</span>
+            Accelerate your success <span className="text-gradient bg-gradient-to-r from-teal-400 to-blue-400 bg-clip-text text-transparent">With Novaforge.ai</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Comprehensive AI solutions designed to accelerate healthcare innovation and clinical adoption.
+            Our core pillars that empower healthcare organizations to innovate and excel in the AI-driven future.
           </p>
         </div>
 

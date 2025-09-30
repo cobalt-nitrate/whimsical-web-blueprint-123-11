@@ -59,7 +59,7 @@ const PortfolioShowcase = () => {
             Portfolio <span className="text-gradient bg-gradient-to-r from-teal-400 to-blue-400 bg-clip-text text-transparent">Showcase</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Co-innovating the future of Medical AI with leading healthcare institutions and med-tech companies across the Globe.
+             Partner with us to co-develop cutting-edge AI solutions that transform healthcare delivery and patient outcomes.
           </p>
         </div>
 

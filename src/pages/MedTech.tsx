@@ -25,8 +25,6 @@ const MedTech = () => {
       <WhyWeExistSection />
       <PortfolioShowcase />
       <PillarsSection />
-      <HowWeBuildSection />
-      <InfrastructureSection />
       <WhoWeServeSection />
       <CTASection scrollToContact={scrollToContact} />
     </PageLayout>

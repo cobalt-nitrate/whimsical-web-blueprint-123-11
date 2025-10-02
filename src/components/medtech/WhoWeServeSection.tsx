@@ -27,7 +27,7 @@ const WhoWeServeSection = () => {
   const segments = [
     {
       icon: <Building2 className="h-8 w-8" />,
-      title: "Hospitals & Health Systems",
+      title: "Hospitals & Universities",
       subtitle: "Oncology, Ophthalmology, Neuroscience",
       description: "AI-powered diagnostic systems integrated directly into clinical workflows",
       color: "teal"
@@ -41,14 +41,14 @@ const WhoWeServeSection = () => {
     },
     {
       icon: <GraduationCap className="h-8 w-8" />,
-      title: "Research Institutions & Universities",
+      title: "Life sciences & Bio Consultancies",
       subtitle: "Academic Medical Centers",
       description: "Accelerate research translation from lab to clinical practice",
       color: "purple"
     },
     {
       icon: <Rocket className="h-8 w-8" />,
-      title: "Healthcare Startups",
+      title: "CROs & Healthcare Startups",
       subtitle: "Early & Mid-Stage Companies",
       description: "Scale healthcare innovation with production-ready AI infrastructure",
       color: "green"

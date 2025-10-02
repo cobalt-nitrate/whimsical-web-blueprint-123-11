@@ -59,7 +59,7 @@ const PillarsSection = () => {
             Accelerate your success <span className="text-gradient bg-gradient-to-r from-teal-400 to-blue-400 bg-clip-text text-transparent">With Novaforge.ai</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Our core pillars that empower healthcare organizations to innovate and excel in the AI-driven future.
+            Building the AI foundation for next-generation healthcare innovation
           </p>
         </div>
 
